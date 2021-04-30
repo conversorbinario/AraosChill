@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability = "blocksDescendants"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="@dimen/sizeLet"
+            android:minHeight="@dimen/sizeSpinner"
+            android:id="@+id/avistamentoSelec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/seleccione" />
+        <Button
+            android:id="@+id/seleccionadoAvis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avistamentoSelec"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/lightGrey"
+            android:text="@string/seguinte" />
+
+            <Spinner
+                android:layout_below="@id/seleccionadoAvis"
+                android:id="@+id/avistamentosVellos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+    </RelativeLayout>

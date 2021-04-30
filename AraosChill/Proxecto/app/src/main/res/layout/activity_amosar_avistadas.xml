@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="@string/tituloprocura"
+        android:id="@+id/tituloprocura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <EditText
+        android:hint="@string/buscarCon"
+        android:id="@+id/edPorConcello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_marginTop="@dimen/marginDp"
+        android:id="@+id/buscarConcello"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:layout_toRightOf="@+id/edPorConcello"
+        android:backgroundTint="@color/lightGrey"
+        android:minWidth="@dimen/minSize"
+        android:minHeight="@dimen/minSize"
+        android:src="@drawable/icon" />
+
+    <TextView
+        android:text="@string/todosAv"
+        android:id="@+id/spIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buscarConcello" />
+
+    <ImageView
+            android:layout_below="@id/buscarConcello"
+        android:id="@+id/buscarTodas"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:layout_toRightOf="@+id/spIdade"
+        android:backgroundTint="@color/lightGrey"
+        android:minWidth="@dimen/minSize"
+        android:minHeight="@dimen/minSize"
+        android:src="@drawable/icon" />
+
+    <Button
+        android:backgroundTint="@color/lightGreen"
+        android:layout_below="@id/spIdade"
+        android:minWidth="@dimen/minSize"
+        android:id="@+id/previa"
+        android:drawableLeft="@android:drawable/ic_media_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:text="@string/cero"
+        android:layout_below="@id/buscarTodas"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/totalAvis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:backgroundTint="@color/lightGreen"
+
+        android:layout_below="@id/spIdade"
+        android:minWidth="@dimen/minSize"
+        android:layout_alignParentRight="true"
+        android:id="@+id/seguinte"
+        android:drawableRight="@android:drawable/ic_media_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_below="@+id/seguinte"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableLayout
+            android:id="@+id/tabAvist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*" >
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

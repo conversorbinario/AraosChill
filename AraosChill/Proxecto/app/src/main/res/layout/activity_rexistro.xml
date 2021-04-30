@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_blue">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/datosPaxaro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sizeSpinner">
+
+                <LinearLayout
+                    android:id="@+id/layoutScro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+
+                    <EditText
+
+                        android:id="@+id/xeneroEd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/hinXenero"
+                        android:inputType="textCapWords" />
+
+                    <EditText
+
+                        android:id="@+id/especie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/hinEspecie" />
+                </LinearLayout>
+            </ScrollView>
+
+
+            <EditText
+                android:id="@+id/tamanho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollView1"
+                android:hint="@string/hintcm"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/peso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scrollView1"
+                android:layout_toRightOf="@id/tamanho"
+                android:hint="@string/hintgramos"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/sexoTV"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tamanho"
+                android:text="@string/sexoSp" />
+
+            <TextView
+                android:id="@+id/plumaxeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tamanho"
+                android:layout_toRightOf="@+id/sexoTV"
+                android:text="@string/plumaxeSp" />
+
+
+            <Spinner
+                android:id="@+id/sexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sexoTV"
+                android:entries="@array/sexo" />
+
+            <Spinner
+                android:id="@+id/plumaxe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plumaxeTV"
+                android:layout_toRightOf="@id/sexo"
+                android:entries="@array/pluma" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contidoMultimedia"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/foto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/foto" />
+
+            <Button
+                android:id="@+id/audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/audio" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/reproAud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/repro" />
+
+            <Button
+                android:id="@+id/fotoAmos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/amosar" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/insertar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/black"
+            android:text="@string/aceptar" />
+        <Button
+            android:id="@+id/indXaAvis"
+            android:backgroundTint="@color/lightGrey"
+            android:text="@string/inRex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/comeAgain"
+            android:text="@string/inicio"
+            android:backgroundTint="@color/red"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

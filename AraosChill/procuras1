@@ -1,0 +1,88 @@
+xquery version "3.1";
+<ul>{
+let $books:=doc("/db/exemplo/books.xml")/bookstore/book
+for $book in $books
+where $book/price>30
+return <li> {data($book/title)} </li>
+}</ul>
+
+
+
+
+EXERCICIOS XQUERY
+Crea en eXist unha colección de nome “coleccionGimnasio” e garda nela os documentos xml correspondentes.
+    1. Usando o documento universidad.xml, devolve o nome de departamento encerrado entre as etiquetas <tipoA></tipoA>, se é do tipo=A, e <tipoB></tipoB>, se non o é.
+
+xquery version "3.1";
+for $dep in doc("/db/gimnasio/universidad.xml")/universidad/departamento
+return if ($dep/@tipo="A")
+    then <tipoA>{$dep/nombre/text()}</tipoA>
+    else <tipoB>{$dep/nombre/text()}</tipoB>
+
+    2. Usando o documento universidad.xml, obtén os nomes de departamentos, o numero de empregados que ten e a media do salario entre etiquetas:
+       <depart>Informática
+	<numeroEmple>1</numeroEmple>
+	<mediaSalario>2150</mediaSalario>
+	</depart>
+    <depart>Matemáticas
+	<numeroEmple>1</numeroEmple>
+	<mediaSalario>2200</mediaSalario>
+	</depart>
+	...
+
+for $dep in doc("/db/gimnasio/universidad.xml")/universidad/departamento
+return
+    <depart>{$dep/nombre/text()}, 
+    <numeroEmple>{count($dep/empleado)}</numeroEmple>
+    <mediaSalario>{avg($dep/empleado/@salario)}</mediaSalario>
+         
+     </depart>
+
+    3. Empregando EMPLEADOS.xml, obtén:
+xquery version "3.1";
+for $empleado in doc("/db/gimnasio/empleados.xml")/EMPLEADOS/EMP_ROW[matches(./APELLIDO, "^S")]
+return $empleado
+  
+    • Os nomes de oficio que empezan por P.
+for $oficio in doc("/db/gimnasio/empleados.xml")/EMPLEADOS/EMP_ROW/OFICIO[matches(., "^P")]
+return $oficio
+    • Os nomes de oficio co número de empregados de cada oficio. Utiliza a función distinct-values para devolver os distintos oficios.
+
+let $oficios := doc("/db/gimnasio/empleados.xml")/EMPLEADOS/EMP_ROW/OFICIO
+let $oficiosDif:= distinct-values($oficios)
+for $of in $oficiosDif
+let $count := count($of/../EMP_ROW)
+return $count
+
+let $oficios := doc("/db/gimnasio/empleados.xml")/EMPLEADOS/EMP_ROW/OFICIO/text()
+let $oficiosDif:= distinct-values($oficios)
+return $oficiosDif
+
+    • Obtén o número de empregados que ten cada departamento e a media de salario redondeada.
+      
+5.	Utilizando o documento productos.xml, realiza as seguintes consultas Xquery:
+    • Obtén por cada zona o número de produtos que ten.
+    • Obtén a denominación dos produtos entre as etiquetas <zona10></zona10> se son do código de zona 10, <zona20></zona20> se son da zona 20, <zona30></zona30> se son da 30 e <zona40></zona40> se son da 40.
+    • Obtén por cada zona a denominación do ou dos produtos máis caros.
+    • Obtén a denominación dos produtos contida entre as etiquetas <placa></placa> para os produtos que teñan na denominación a palabra “Placa Base”, <memoria></memoria>, para os que conteñen a palabra Memoria, <micro></micro> para os que conteñen a palabra Micro, e <otros></otro> para o resto de produtos.
+      
+6.	Utilizando o documento sucursais.xml. Realiza as seguintes consultas Xquery:
+    • Devolve o código de sucursal e o número de contas que ten de tipo AHORRO e de tipo PENSIONES.
+    • Devolve por cada sucursal o código de sucursal, o director, a poboación, a suma do total debe e a suma do total haber das súas contas.
+    • Devolve o nome dos directores, o código de sucursal e a poboación das sucursais con máis de 3 contas.
+
+
+(joins de documentos)
+    4. Visualizar por cada empregado do documento empleados.xml o seu apelido, o seu número de departamento e o nome do departamento que se atopa no documento departamentos.xml.
+    5. Utilizando os documentos departamentos.xml e empleados.xml, obter por cada departamento, o nome de departamento, o número de empregados e o salario total.
+    6. Transformar a saída da consulta anterior, de maneira que o salario total, e o número de empregados sexan atributos de cada departamento.
+    7. Utilizando os documentos departamentos.xml e empleados.xml, obter por cada departamento, o nome de empleado que máis gaña.
+       (varios for)
+    8. Visualiza por cada departamento do documento universidad.xml, o número de empregados que hai en cada posto de traballo.
+    9. Visualiza por cada departamento do documento universidad.xml, o salario máximo e o empregado que ten ese salario. Usar un primeiro for que obtén os nodos departamento e un segundo for os empregados de cada departamento.
+       
+
+
+(altas, baixas e borrado de nodos en documentos XML)
+    10. 
+           

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="@string/identificacion"
+        android:id="@+id/identificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <ScrollView
+        android:layout_below="@+id/identificar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableLayout
+            android:id="@+id/taboa_dinamica"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*" >
+        </TableLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

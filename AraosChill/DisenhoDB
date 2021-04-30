@@ -1,0 +1,42 @@
+
+    
+			Fotos { pk, individuo, urlFoto
+				1      1          /foto1
+				2	1	  /foto2
+			}
+			
+			Audios {pk, individuo, urlAudio
+				1      1          /audio1
+				2	1	  /audio2
+			}
+
+	"CREATE TABLE AVISTAMENTOS (" +
+            "ID_AVISTAMENTO INTEGER PRIMARY KEY," +
+             clave_gps
+            "CONCELLO	TEXT NOT NULL," +
+            "NOME_SITIO	TEXT NOT NULL," +
+            "HORA	TEXT NOT NULL," +
+            "DATA TEXT NOT NULL)";
+
+	"CREATE TABLE INDIVIDUOS (" +
+            "ID_INDIVIDUO	INTEGER PRIMARY KEY," +
+            "TIPO_PLUMAXE	VARCHAR(30)," +
+            "IDADE VARCHAR(30)," +
+            "ESPECIE INT," +
+            "SEXO VACRHAR(20)," +
+            "FOREIGN KEY(ESPECIE) REFERENCES TIPO_AVE(ID_AVE) ON DELETE SET NULL ON UPDATE CASCADE)";
+
+
+	"CREATE TABLE TIPO_AVE ( " +
+            "ID_AVE INTEGER PRIMARY KEY NOT NULL UNIQUE," +
+
+            "ESPECIE VARCHAR(120) NOT NULL," +
+            "XENERO INT NOT NULL, " +
+
+            "FOREIGN KEY(XENERO) REFERENCES XENERO_TAXON(ID_XENERO) ON DELETE SET NULL ON UPDATE CASCADE)";
+            
+
+	"CREATE TABLE XENERO_TAXON (" +
+            "ID_XENERO INTEGER PRIMARY KEY, " +
+            "XENERO VARCHAR(120) UNIQUE NOT NULL)";
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="minSize">0dp </dimen>
+    <dimen name="padBut">12dp </dimen>
+    <dimen name="minSizeET">60dp </dimen>
+    <dimen name="iconSize">35dp </dimen>
+    <dimen name="sizeSpinner">55dp </dimen>
+    <dimen name="imageMin"> 180dp </dimen>
+    <dimen name="iamgeMax"> 200dp </dimen>
+    <dimen name="imageWidMin"> 200dp </dimen>
+    <dimen name="imageWidthMax"> 200dp </dimen>
+    <dimen name="marginDp"> 12dp </dimen>
+    <dimen name="sizeLv"> 120dp </dimen>
+    <dimen name="sizeLet"> 20dp </dimen>
+
+
+
+
+
+
+</resources>

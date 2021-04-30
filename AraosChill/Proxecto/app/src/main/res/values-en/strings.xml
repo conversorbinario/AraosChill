@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Araos de Chill</string>
+    <string name="app_explanation">Learning about birds</string>
+
+    <string name="todasAves">Birds info</string>
+
+    <string name="avistamentos">All sightings</string>
+
+    <string name="outros">More actions </string>
+    <string name="hintSitio">Mass Lake, Tamesis River, Anapurna...</string>
+    <string name="hintCocello">Town\'s name</string>
+
+    <string name="novoRexistro">New register</string>
+    <string name="foto">Photo</string>
+
+    <string name="escoitar">Birdsong</string>
+    <string name="audioNonTopado">No audio for this species</string>
+    <string name="erroDescargando">Error downloading</string>
+    <string name="erroDatos">Error downloading data</string>
+    <string name="inicio">Start again</string>
+    <string name="aveRece">Individual </string>
+    <string name="aveRex">just registered </string>
+    <string name="audio">Audio</string>
+    <string name="lugarAvistamento">Where did you see the bird?</string>
+    <string name="velloAvistamento">Select a previous sighting</string>
+    <string name="seguinte">Next</string>
+    <string name="tomarFoto">Uploading a picture is needed!</string>
+    <string name="nonTP">Species not recognized. Try again. Check format</string>
+
+    <string name="dataAvistamento">When did you see the bird?</string>
+    <string name="contidoMultimedia">Multimedia contents</string>
+    <string name="hintcm">Wingspan, cm</string>
+    <string name="hintgramos">Weight, grames</string>
+    <string name="hinEspecie">Species name</string>
+    <string name="hinXenero">Genre</string>
+
+    <string name="permission">Permission neded. Try again</string>
+    <string name="aceptar">Insert</string>
+    <string name="identificacion">Identify preivous sightings</string>
+    <string name="deter">Stop Audio</string>
+    <string name="cantoDe">Birdsing of </string>
+    <string name="concelloBaleiro">Town is empty </string>
+    <string name="campobaleiro">Field is empty </string>
+
+    <string name="next">Next </string>
+    <string name="ir">Go </string>
+    <string name="paxina">1/ </string>
+    <string name="concelloBal">Town field empty</string>
+    <string name="lugarBaleiro">Place field empty</string>
+    <string name="nonSeTop">No registers for the specified criteria</string>
+    <string name="cero">Total </string>
+    <string name="nonseSubiu">No audio found for this invididual </string>
+    <string name="repro">Play </string>
+
+    <string name="canto">Listening to birdsong of </string>
+    <string name="sexoSp">Selec. sex </string>
+    <string name="plumaxeSp">Selec. plumage </string>
+
+    <string name="previous">Previous</string>
+    <string name="xenEsp">Introduce genre AND specie or leave empty both fields</string>
+    <string name="nonXen">Genre not found </string>
+    <string name="nonSp">Specie not founda </string>
+    <string name="tipoPlum">Plumage type </string>
+    <string name="iden">Identify</string>
+    <string name="pDom">Passer Domesticus </string>
+    <string name="act">Actualize </string>
+
+    <string name="amosar">Show </string>
+    <string name="todosAv">All sightings</string>
+    <string name="fot">Photo</string>
+
+    <string name="tituloprocura">Search</string>
+    <string name="buscarCon">Search for town </string>
+    <string name="buscarXen">Search for genre </string>
+    <string name="buscarTipoPlumaxe">Search for pluamge type </string>
+    <string name="gravaAudio">Uplodad a record before </string>
+    <string name="close">Close </string>
+    <string name="sacaFoto">Take a picture before </string>
+    <string name="desc">Unknown </string>
+    <string name="indivAvis">This register already exists! </string>
+
+    <string name="seleccione">Choose one </string>
+    <string name="inRex">Previously sighted individual </string>
+    <string name="criterioXen">Search for gender</string>
+    <string name="criterioEsp">and species</string>
+
+
+    <string-array name="sexo">
+        <item>""</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="pluma">
+        <item>""</item>
+
+        <item>Winter</item>
+        <item>Summer</item>
+        <item>Breeding</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue">
+
+    <TextView
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/black"
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/app_explanation"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/imaxeInicio"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/araopapagaio" />
+
+    <Button
+        android:id="@+id/novoRex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/imaxeInicio"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/red"
+        android:minWidth="250dp"
+        android:text="@string/novoRexistro" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imaxeInicio"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/todosAvistamentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/avistamentos" />
+
+        <Button
+            android:id="@+id/todsAves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/todasAves" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/outros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/outros" />
+</RelativeLayout>

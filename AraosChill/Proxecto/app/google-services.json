@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "524177279306",
+    "firebase_url": "https://araoschilldb-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "araoschilldb",
+    "storage_bucket": "araoschilldb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524177279306:android:5eb1ac82ad684d929b19b3",
+        "android_client_info": {
+          "package_name": "com.example.proxecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524177279306-5kpuo72o5dhhlgvtq9bn16co09j9qi8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proxecto",
+            "certificate_hash": "27c57e23032c191881809ee0de879b84065fe2f9"
+          }
+        },
+        {
+          "client_id": "524177279306-pngrsv4qft8lpv7furfesq4comvgkcdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe_4P9qIEGawh_P9ANfAtcEp6jVsJzLkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524177279306-pngrsv4qft8lpv7furfesq4comvgkcdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

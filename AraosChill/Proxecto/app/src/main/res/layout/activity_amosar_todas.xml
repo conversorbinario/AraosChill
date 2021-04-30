@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+        android:minWidth="@dimen/minSizeET"
+        android:hint="@string/paxina"
+        android:id="@+id/numVista"
+        android:inputType="number"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+
+        android:minHeight="@dimen/minSize"
+        android:minWidth="@dimen/minSize"
+        android:layout_toRightOf="@+id/numVista"
+        android:backgroundTint="@color/lightGrey"
+        android:id="@+id/ir"
+        android:src="@drawable/icon"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"/>
+    <Button
+
+        android:minWidth="@dimen/minSize"
+        android:id="@+id/previa"
+        android:drawableLeft="@android:drawable/ic_media_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:minWidth="@dimen/minSize"
+        android:layout_alignParentRight="true"
+        android:id="@+id/seguinte"
+        android:drawableRight="@android:drawable/ic_media_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_below="@+id/seguinte"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableLayout
+            android:id="@+id/taboa_nova"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*" >
+        </TableLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ioclist version="11.1" year="2021">
+<list>
+<order>
+	<latin_name>STRUTHIONIFORMES</latin_name><code>PHY</code><note>The ratites (paleognaths) are the sister group to the rest of living birds (neognaths).</note>
+	<family>
+		<latin_name>Struthionidae</latin_name><english_name>Ostriches</english_name><url>Family/Struthionidae</url>
+		<genus>
+			<latin_name>Struthio</latin_name><authority>Linnaeus, 1758</authority>
+			<species>
+				<latin_name>camelus</latin_name><authority>Linnaeus, 1758</authority><english_name>Common Ostrich</english_name><breeding_regions>AF</breeding_regions><breeding_subregions>w, c, e, sw</breeding_subregions>
+				<subspecies extinct="yes">
+					<latin_name>syriacus</latin_name><authority>Rothschild, 1919</authority><breeding_subregions>Syrian and Arabian deserts</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>camelus</latin_name><authority>Linnaeus, 1758</authority><breeding_subregions>s Morocco and Mauritania to s Egypt, Eritrea and n, w Ethiopia, s to Cameroon and n Uganda</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>massaicus</latin_name><authority>Neumann, 1898</authority><breeding_subregions>s Kenya and c Tanzania</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>australis</latin_name><authority>Gurney Sr, 1868</authority><breeding_subregions>s Africa</breeding_subregions>
+				</subspecies>
+			</species>
+			<species>
+				<latin_name>molybdophanes</latin_name><authority>Reichenow, 1883</authority><english_name>Somali Ostrich</english_name><breeding_regions>AF</breeding_regions><breeding_subregions>Somalia and n Kenya</breeding_subregions>
+			</species>
+		</genus>
+	</family>
+</order>
+<order>
+	<latin_name>RHEIFORMES</latin_name>
+	<family>
+		<latin_name>Rheidae</latin_name><english_name>Rheas</english_name><url>Family/Rheidae</url>
+		<genus>
+			<latin_name>Rhea</latin_name><authority>Brisson, 1760</authority>
+			<species>
+				<latin_name>americana</latin_name><authority>(Linnaeus, 1758)</authority><english_name>Greater Rhea</english_name><breeding_regions>SA</breeding_regions><breeding_subregions>se</breeding_subregions>
+				<subspecies>
+					<latin_name>americana</latin_name><authority>(Linnaeus, 1758)</authority><breeding_subregions>n, e Brazil</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>intermedia</latin_name><authority><![CDATA[Rothschild & Chubb, C, 1914]]></authority><breeding_subregions>se Brazil and Uruguay</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>nobilis</latin_name><authority>Brodkorb, 1939</authority><breeding_subregions>e Paraguay</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>araneipes</latin_name><authority>Brodkorb, 1938</authority><breeding_subregions>sw Brazil, e Bolivia and w Paraguay</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>albescens</latin_name><authority><![CDATA[Lynch & Holmberg, 1878]]></authority><breeding_subregions>ne, e Argentina</breeding_subregions>
+				</subspecies>
+			</species>
+			<species>
+				<latin_name>pennata</latin_name><authority>d'Orbigny, 1837</authority><english_name>Lesser Rhea</english_name><breeding_regions>SA</breeding_regions><breeding_subregions>Southern Cone</breeding_subregions>
+				<subspecies>
+					<latin_name>garleppi</latin_name><authority>(Chubb, C, 1913)</authority><breeding_subregions>se Peru, sw Bolivia and nw Argentina</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>tarapacensis</latin_name><authority>(Chubb, C, 1913)</authority><breeding_subregions>n Chile</breeding_subregions>
+				</subspecies>
+				<subspecies>
+					<latin_name>pennata</latin_name><authority>d'Orbigny, 1837</authority><breeding_subregions>s Chile and wc, s Argentina</breeding_subregions>
+				</subspecies>
+			</species>
+		</genus>
+	</family>
+</order>
+</list>
+</ioclist>

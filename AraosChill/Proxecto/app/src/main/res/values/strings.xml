@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Araos de Chill</string>
+    <string name="app_explanation">Coñecer e compartir</string>
+
+    <string name="todasAves">Información aves</string>
+
+    <string name="avistamentos">Todos os avistamentos</string>
+
+    <string name="outros">Outras accións</string>
+    <string name="hintSitio">Lagoa de Massó, Ría de Pontevedra, O Courel...</string>
+    <string name="hintCocello">Nome do concello</string>
+
+    <string name="novoRexistro">Novo rexistro</string>
+    <string name="foto">Foto</string>
+
+    <string name="escoitar">Canto</string>
+    <string name="audioNonTopado">Non se topou un audio para esta especie</string>
+    <string name="erroDescargando">Erro descargando o arquivo</string>
+    <string name="erroDatos">Erro na descarga de datos</string>
+    <string name="inicio">Inicio</string>
+
+    <string name="audio">Audio</string>
+    <string name="lugarAvistamento">Onde avistaches a ave?</string>
+    <string name="velloAvistamento">Escoller avistamentos xa existentes</string>
+    <string name="seguinte">Seguinte</string>
+    <string name="tomarFoto">Tes que subir unha foto!</string>
+
+    <string name="dataAvistamento">Cando avistaches a ave?</string>
+    <string name="contidoMultimedia">Contido multimedia</string>
+    <string name="hintcm">Envergadura, cm</string>
+    <string name="hintgramos">Peso, gramos</string>
+    <string name="hinEspecie">Nome da especie</string>
+    <string name="hinXenero">Xénero</string>
+
+    <string name="permission">Precísase permiso, téntao de novo</string>
+    <string name="aceptar">Insertar</string>
+    <string name="identificacion">Identificar aves rexistradas</string>
+    <string name="deter">Deter Audio</string>
+    <string name="cantoDe">Canto de </string>
+    <string name="concelloBaleiro">Concello baleiro </string>
+    <string name="campobaleiro">Campo baleiro </string>
+
+    <string name="next">Seguinte </string>
+    <string name="ir">Ir </string>
+    <string name="paxina">1/ </string>
+    <string name="concelloBal">Campo concello baleiro</string>
+    <string name="lugarBaleiro">Campo concello baleiro</string>
+    <string name="nonSeTop">Non se topou polo criterio seleccionado</string>
+    <string name="cero">Total </string>
+    <string name="nonseSubiu">Non se topou audio para este individuo </string>
+    <string name="repro">Reproducir </string>
+
+    <string name="canto">Escoitando canto de </string>
+    <string name="sexoSp">Selec. sexo </string>
+    <string name="plumaxeSp">Selec. plumaxe </string>
+    <string name="nonTP">Non se topou a especie indicada. Téntao de novo. Revisa o formato</string>
+
+    <string name="previous">Anterior</string>
+    <string name="xenEsp">Introduce xénero E especie ou deixa ambos campos baleiros</string>
+    <string name="nonXen">Non se topou o xénero indicado </string>
+    <string name="nonSp">Non se topou a especie indicada </string>
+    <string name="tipoPlum">Tipo de plumaxe </string>
+    <string name="iden">Formato: \'Xenero especie\'</string>
+    <string name="pDom">Passer Domesticus </string>
+    <string name="act">Actualizar </string>
+    <string name="aveRece">Individuo </string>
+    <string name="aveRex">recén rexistrado </string>
+
+    <string name="amosar">Ver </string>
+    <string name="todosAv">Todos os avistamentos</string>
+    <string name="fot">Foto </string>
+
+    <string name="tituloprocura">Realizar Procura</string>
+    <string name="buscarCon">Buscar por concello </string>
+    <string name="buscarXen">Buscar por xénero taxonómico </string>
+    <string name="buscarTipoPlumaxe">Buscar por tipo de plumaxe </string>
+    <string name="gravaAudio">Grava audio primeiro </string>
+    <string name="close">Pechar </string>
+    <string name="sacaFoto">Saca unha foto primeiro </string>
+    <string name="desc">Descoñecida </string>
+    <string name="seleccione">Seleccione un </string>
+    <string name="indivAvis">Individuo xa rexistrado apra ese avistamento! </string>
+
+    <string name="inRex">Individuo xa avistado </string>
+
+    <string name="criterioXen">Buscar por xenero </string>
+    <string name="criterioEsp">e especie</string>
+
+    <string-array name="sexo">
+        <item>""</item>
+        <item>Macho</item>
+        <item>Femia</item>
+    </string-array>
+
+    <string-array name="pluma">
+        <item>""</item>
+
+        <item>Invernal</item>
+        <item>Estival</item>
+        <item>Xuvenil</item>
+    </string-array>
+
+
+</resources>
