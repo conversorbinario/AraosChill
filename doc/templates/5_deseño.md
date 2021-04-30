@@ -6,6 +6,12 @@
 
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
-## Diagrama de Base de Datos
+## Base de Datos
+
+La "implementación beta" consta de una base de datos SQL. Este fue el diseño de la misma:
+
+Posteriormente, sustituí esta base de datos SQL por una no SQL -a través de Firebase. 
 
 ## Diagrama de compoñentes software que constitúen o produto e de despregue
+
+La aplicación está realizada principalmente 

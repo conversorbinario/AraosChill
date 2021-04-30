@@ -1,17 +1,15 @@
 # Proyecto fin de ciclo
 
-> *TODO*: Este documento será la "*página de aterrizaje*" de tu proyecto. Será lo primero que vean los que se interesen por él. Cúida su redacción con todo tu mimo. Elimina posteriormente todas las lineas "*TODO*" cuando creas finalizada su redacción.
-> Puedes acompañar a la redacción de este fichero con imágenes o gifs, pero no abuses de ellos.
 
 ## Descripción
 
-> *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
+Araos es una aplicación pensada para los aficionados a la ornitología.
+Su funcionamiento es sencillo. Los usuarios pueden registrar los avistamientos de diferentes aves y su localización. La aplicación permite mostrar en un mapa dónde se ha producido el avistamiento y de qué especie es la ave. Si no sabes identificarla, puedes consultar material que te ayudará a ello: contamos con información sobre todas las especies y puedes escuchar el canto de cada una. También puedes apoyarte en el resto de usuarios, que pueden ayudarte a identificar la ave o, si quieres, identificar tu las aves de otros usuarios.
 
 ## Instalación / Puesta en marcha
 
-> *TODO*: En este apartado describe con toda precisión y a poder ser con la mayor simplicidad/facilidad posible, cómo poner en marcha tu aplicación para probarla (en un ambiente local). Se valorará muy positivamente que este proceso sea lo más fácil posible, con una simple instrucción (p. e. un script de instalación).
-> Si tu proyecto es documental, realiza una especificación de cómo va a ser este proceso. En otras palabras, realiza este apartado independientemente que no haya implementación.
-
+En un emulador Android: Simplemente, descarga el .apk de este repositorio y arrástralo con el ratón en tu emulador encendido. 
+En un dispositivo real: conecta tu dispositivo a tu equipo a través de un cable USB y sitúalo en la carpeta que desees (típicamente, Mis archivos/My files). Luego, instálala pulsando en ella en tu dispositivo.
 ## Uso
 
 > *TODO*: Es este apartado describe brevemente cómo se usará el software que proyectas. Si tiene una interfaz de terminal, describe aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
