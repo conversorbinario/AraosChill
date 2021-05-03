@@ -12,18 +12,16 @@ En un emulador Android: Simplemente, descarga el .apk de este repositorio y arr�
 En un dispositivo real: conecta tu dispositivo a tu equipo a través de un cable USB y sitúalo en la carpeta que desees (típicamente, Mis archivos/My files). Luego, instálala pulsando en ella en tu dispositivo.
 ## Uso
 
-> *TODO*: Es este apartado describe brevemente cómo se usará el software que proyectas. Si tiene una interfaz de terminal, describe aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
-> Si tu proyecto es documental, realiza una especificación de cómo planteas estas interfaces, con ejemplos incluso o esquemas de diseño. En otras palabras, realiza este apartado independientemente que no haya implementación.
+Primero, regístrate en la misma para poder subir tus avistamientos, o identificar los de otros.
+Si solo quieres consultar información, clica en Ver más. Tendrás acceso a enlaces con información de todas las especies registradas y a sus cantos. También puedes hacer click en Nuevo Avistamiento. Sólo tienes que seguir los pasos que se te indicarán. 
+Alternativamente, haz click en Ver Todos para examinar los avistamientos realizados por otros usuarios y su ubicación
 
 ## Sobre el autor
 
 Mi nombre es Manuel. Acabo de titularme en el CS de Aplicaciones Multiplataforma en el IES San Clemente. 
 Me interesa todo lo relacionado con el desarrollo backend y mi objetivo es seguir formándome en este campo. Actualmente, tengo experiencia en Java y SQL, conozco los fundamentos de Python, y estoy realizando las prácticas en una empresa que se dedica sobre todo al desarrollo Web, con lo que tengo cierta agilidad con HTML/CSS.
 Este proyecto surge de mezclar una afición -la ornitología- con el objetivo de aprender a manejarme en algunas tecnologías que no conocía hasta el momento.
-
-## Licencia
-
-
+Puedes contactarme en mgposes@gmail.com
 
 
 ## Índice
@@ -41,8 +39,5 @@ Este proyecto surge de mezclar una afición -la ornitología- con el objetivo de
 
 ## Guía de contribución
 
-> *TODO*: Tratándose de un proyecto de software libre, es muy importante que expongas cómo se puede contribuir con tu proyecto. Algunos ejemplos de esto son realizar nuevas funcionalidades, corrección y/u optimización del código, realización de tests automatizados, nuevas interfaces de integración, desarrollo de plugins, etc. etc. Sé lo más conciso que puedas.
 
-## Links
-
-> *TODO*: Enlaces externos y descipciones de estos enlaces que creas conveniente indicar aquí. Generalmente ya van a estar integrados con tu documentación, pero si requieres realizar un listado de ellos, este es el lugar.
+Todas las ideas de mejora son bienvenidas. Actualmente, una mejora interesante sería mostrar fotos de cada especie cuando se reproduce su canto, en el apartado Ver Más de la aplicación. Contáctame para cualquier otra mejora.
