@@ -17,12 +17,13 @@ En un dispositivo real: conecta tu dispositivo a tu equipo a través de un cable
 
 ## Sobre el autor
 
-> *TODO*: Realiza una breve descripción de quien eres (perfil profesional), tus puntos fuertes, o tecnologías que más dominas... y porqué te has decantado por este proyecto. **No más de 200 palabras**. Indica la forma fiable de contactar contigo en el presente y en el futuro.
+Mi nombre es Manuel. Acabo de titularme en el CS de Aplicaciones Multiplataforma en el IES San Clemente. 
+Me interesa todo lo relacionado con el desarrollo backend y mi objetivo es seguir formándome en este campo. Actualmente, tengo experiencia en Java y SQL, conozco los fundamentos de Python, y estoy realizando las prácticas en una empresa que se dedica sobre todo al desarrollo Web, con lo que tengo cierta agilidad con HTML/CSS.
+Este proyecto surge de mezclar una afición -la ornitología- con el objetivo de aprender a manejarme en algunas tecnologías que no conocía hasta el momento.
 
 ## Licencia
 
-> *TODO*: Es requisito INDISPENSABLE el licenciar explícitamente el proyecto software. Se recomienda licenciar con *GNU Free Documentation License Version 1.3*. Crear un fichero `LICENSE` en la raiz del repo, con tu fichero de licencia. Recuerda que si empleas una licencia de software libre estás autorizando la derivación de tu obra bajo la misma licencia que elijas, pudiendo dar continuidad, p. e. otro alumno, para continuar tu proyecto en otro curso.
-> Si tu proyecto es documental, recomendamos los términos de *GNU Free Documentation License Version 1.3*, crea igualmente el fichero `LICENSE`. Será especialmente valorado en este caso, la claridad de la especificación para que el proyecto pueda ser ejecutado partiendo de lo proyectado.
+
 
 
 ## Índice
