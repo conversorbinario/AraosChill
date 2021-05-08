@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <FrameLayout
+        android:id="@+id/layoutSketch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:background="@color/black"
+        android:backgroundTint="@color/lightGrey"
+        android:id="@+id/rexistrarse"
+        android:layout_centerInParent="true"
+        android:text="@string/rex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:background="@color/black"
+        android:layout_marginTop="20px"
+        android:layout_below="@id/rexistrarse"
+        android:backgroundTint="@color/lightGrey"
+        android:id="@+id/iniciarSes"
+        android:layout_centerHorizontal="true"
+        android:text="@string/iniciarSes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:backgroundTint="@color/lightGrey"
+
+        android:textColor="@color/black"
+        android:visibility="gone"
+
+        android:layout_below="@+id/iniciarSes"
+        android:id="@+id/usuario"
+        android:hint="@string/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <EditText
+        android:backgroundTint="@color/lightGrey"
+
+        android:textColor="@color/black"
+        android:visibility="gone"
+
+        android:inputType="textPassword"
+        android:layout_below="@id/usuario"
+        android:id="@+id/password"
+        android:hint="@string/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:background="@color/black"
+
+        android:id="@+id/aceptar"
+        android:visibility="gone"
+        android:backgroundTint="@color/lightGrey"
+
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/password"
+        android:text="@string/aceptado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

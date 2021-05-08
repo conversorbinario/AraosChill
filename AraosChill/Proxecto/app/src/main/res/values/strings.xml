@@ -24,6 +24,11 @@
     <string name="velloAvistamento">Escoller avistamentos xa existentes</string>
     <string name="seguinte">Seguinte</string>
     <string name="tomarFoto">Tes que subir unha foto!</string>
+    <string name="iniciarSes">Iniciar Sesión</string>
+    <string name="rex">Rexistrarse</string>
+    <string name="usuario">Introduce usuario</string>
+    <string name="password">Introduce contrasinal</string>
+    <string name="aceptado">Continue</string>
 
     <string name="dataAvistamento">Cando avistaches a ave?</string>
     <string name="contidoMultimedia">Contido multimedia</string>

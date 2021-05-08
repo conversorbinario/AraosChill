@@ -16,7 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proxecto">
-        <activity android:name=".IndividuosVellos"></activity>
+        <activity android:name=".inicioProcessing" android:noHistory="true"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".IndividuosVellos" />
         <activity android:name=".AmosarAvistadas" />
         <activity android:name=".VellosAvistamento" />
         <activity android:name=".Avistamentos" />
@@ -24,11 +30,7 @@
         <activity android:name=".AxudaIdentificacion" />
         <activity android:name=".Rexistro" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider

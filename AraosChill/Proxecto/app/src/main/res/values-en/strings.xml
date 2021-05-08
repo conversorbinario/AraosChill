@@ -26,14 +26,17 @@
     <string name="seguinte">Next</string>
     <string name="tomarFoto">Uploading a picture is needed!</string>
     <string name="nonTP">Species not recognized. Try again. Check format</string>
-
+    <string name="iniciarSes">Sign in</string>
+    <string name="rex">Sign up</string>
     <string name="dataAvistamento">When did you see the bird?</string>
     <string name="contidoMultimedia">Multimedia contents</string>
     <string name="hintcm">Wingspan, cm</string>
     <string name="hintgramos">Weight, grames</string>
     <string name="hinEspecie">Species name</string>
     <string name="hinXenero">Genre</string>
-
+    <string name="usuario">Introduce usuer</string>
+    <string name="password">Introduce password</string>
+<string name="aceptado">Aceptar</string>
     <string name="permission">Permission neded. Try again</string>
     <string name="aceptar">Insert</string>
     <string name="identificacion">Identify preivous sightings</string>
