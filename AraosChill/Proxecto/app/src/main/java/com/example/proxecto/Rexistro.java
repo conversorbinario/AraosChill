@@ -51,7 +51,6 @@ public class Rexistro extends AppCompatActivity {
 
 
     Button comeAgain;
-    Button xaAvis;
     Button foto;
     Button audio;
     EditText xenero;
@@ -77,7 +76,6 @@ public class Rexistro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rexistro);
         foto = findViewById(R.id.foto);
-        xaAvis = findViewById(R.id.indXaAvis);
         xenero = findViewById(R.id.xeneroEd);
         tamanho = findViewById(R.id.tamanho);
         especie = findViewById(R.id.especie);
@@ -108,7 +106,9 @@ public class Rexistro extends AppCompatActivity {
         avis = (Avistamento) inte.getSerializableExtra("idAvis");
         avistamentoVello = inte.getBooleanExtra("existente", false);
         //-3 se o individuo é un novo
-        id_individuo =inte.getIntExtra("idIndiv", -3);
+
+
+        //id_individuo =inte.getIntExtra("idIndiv", -3);
         if (savedInstanceState != null) {
             xenero.setText(savedInstanceState.getString("Xenero"));
             especie.setText(savedInstanceState.getString("Especie"));
@@ -120,17 +120,7 @@ public class Rexistro extends AppCompatActivity {
 
         }
 
-        xaAvis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intento = new Intent(getApplicationContext(), IndividuosVellos.class);
-                intento.putExtra("idAvis", (Serializable) avis);
-                intento.putExtra("existente", avistamentoVello);
-                startActivity(intento);
 
-
-            }
-        });
 
 
         amosarFoto.setOnClickListener(new View.OnClickListener() {
@@ -214,7 +204,7 @@ public class Rexistro extends AppCompatActivity {
                         }
                         String plumaxe = (String) sp_plumaxe.getSelectedItem();
                         Individuo in = null;
-                        if (id_individuo<0) {
+                       // if (id_individuo<0) {
                             if (sexAv.equalsIgnoreCase("")) {
                                 in = new Individuo();
                                 id_individuo = MainActivity.bb_dd.addIndividuo(in);
@@ -222,7 +212,7 @@ public class Rexistro extends AppCompatActivity {
                                 in = new Individuo(sexAv);
                                 id_individuo = MainActivity.bb_dd.addIndividuo(in);
                             }
-                        }
+                      //  }
                         if (id_Avist == -2) {
                             id_Avist=avis.getPkAv();
 
@@ -234,9 +224,9 @@ public class Rexistro extends AppCompatActivity {
                         String dirAudio = copiarAudio(id_Avist, id_individuo);
 
                         String dir_foto = copiarFoto(id_Avist, id_individuo);
-                        try {
+                      //  try {
                             MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
-                        }catch(Exception e){
+                       /* }catch(Exception e){
 
                             Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
                             id_individuo=-3;
@@ -249,9 +239,9 @@ public class Rexistro extends AppCompatActivity {
                             fotoTomada = false;
                             return;
 
-                        }
+                        } */
                         String xen_esp = MainActivity.bb_dd.getXeneroEspecie(id_individuo);
-                        id_individuo=-3;
+                       // id_individuo=-3;
 
                         if (xen_esp.equalsIgnoreCase("")) {
                             xen_esp = getString(R.string.desc);
@@ -288,10 +278,10 @@ public class Rexistro extends AppCompatActivity {
                                 Spinner sspSX = findViewById(R.id.sexo);
                                 String sexo = (String) sspSX.getSelectedItem();
                                 int especie = MainActivity.bb_dd.getIdEspecie(xen, specie);
-                                if (id_individuo<0) {
+                                //if (id_individuo<0) {
 
-                                    id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
-                                }
+                                id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
+                            //}
                                 if (id_Avist == -2) {
                                     id_Avist=avis.getPkAv();
                                     if (avistamentoVello == false) {
@@ -310,9 +300,9 @@ public class Rexistro extends AppCompatActivity {
                                 String dirAudio = copiarAudio(id_Avist, id_individuo);
 
                                 String dir_foto = copiarFoto(id_Avist, id_individuo);
-                                try {
+                            //    try {
                                     MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
-                                }catch(Exception e){
+                               /* }catch(Exception e){
 
                                     Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
                                     id_individuo=-3;
@@ -326,9 +316,9 @@ public class Rexistro extends AppCompatActivity {
                                     fotoTomada = false;
                                     return;
 
-                                }
+                                } */
                                 String xen_esp = MainActivity.bb_dd.getXeneroEspecie(id_individuo);
-                                id_individuo=-3;
+                              //  id_individuo=-3;
 
                                 if (xen_esp.equalsIgnoreCase("")) {
                                     xen_esp = getString(R.string.desc);

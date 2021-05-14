@@ -27,12 +27,11 @@
         android:text="@string/iniciarSes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <EditText
         android:backgroundTint="@color/lightGrey"
-
         android:textColor="@color/black"
         android:visibility="gone"
-
         android:layout_below="@+id/iniciarSes"
         android:id="@+id/usuario"
         android:hint="@string/usuario"
@@ -53,6 +52,8 @@
         android:hint="@string/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
     <TextView
         android:background="@color/black"
 
@@ -65,5 +66,57 @@
         android:text="@string/aceptado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+
+
+
+    <EditText
+        android:backgroundTint="@color/lightGrey"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:layout_below="@+id/iniciarSes"
+        android:id="@+id/novoUsuario"
+        android:hint="@string/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:backgroundTint="@color/lightGrey"
+
+        android:textColor="@color/black"
+        android:visibility="gone"
+
+        android:inputType="textPassword"
+        android:layout_below="@id/novoUsuario"
+        android:id="@+id/novoPassword"
+        android:hint="@string/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:backgroundTint="@color/lightGrey"
+
+        android:textColor="@color/black"
+        android:visibility="gone"
+
+        android:inputType="textPassword"
+        android:layout_below="@id/novoPassword"
+        android:id="@+id/novoPasswordComp"
+        android:hint="@string/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:background="@color/black"
+
+        android:id="@+id/novoAceptar"
+        android:visibility="gone"
+        android:backgroundTint="@color/lightGrey"
+
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/novoPasswordComp"
+        android:text="@string/aceptado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

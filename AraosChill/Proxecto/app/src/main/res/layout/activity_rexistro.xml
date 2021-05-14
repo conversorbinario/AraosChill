@@ -152,12 +152,7 @@
             android:layout_gravity="right"
             android:backgroundTint="@color/black"
             android:text="@string/aceptar" />
-        <Button
-            android:id="@+id/indXaAvis"
-            android:backgroundTint="@color/lightGrey"
-            android:text="@string/inRex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/comeAgain"
             android:text="@string/inicio"

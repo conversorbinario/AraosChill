@@ -36,6 +36,9 @@
     <string name="hintgramos">Peso, gramos</string>
     <string name="hinEspecie">Nome da especie</string>
     <string name="hinXenero">Xénero</string>
+    <string name="avisoUsuarioContra">Falta o usuario ou o contrasinal</string>
+    <string name="passwordNonCoincide">O contrasinal non coincide</string>
+    <string name="rexistradoExito">Rexistrado con éxito</string>
 
     <string name="permission">Precísase permiso, téntao de novo</string>
     <string name="aceptar">Insertar</string>

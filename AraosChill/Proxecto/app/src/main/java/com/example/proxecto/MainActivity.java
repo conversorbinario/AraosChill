@@ -136,31 +136,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("BD creada", "BD creada manualmente");
     }
 
-    public void probaDBFirebase(){
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message2");
-
-        myRef.push().setValue("ola");
-        myRef.push().setValue("ola");
-        myRef.push().setValue("ola");
-
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-             //   String value = dataSnapshot.getValue(String.class);
-               // Log.d("cambioData", "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("erro", "Failed to read value.", error.toException());
-            }
-        });
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {

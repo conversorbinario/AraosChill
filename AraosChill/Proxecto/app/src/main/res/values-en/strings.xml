@@ -37,13 +37,16 @@
     <string name="usuario">Introduce usuer</string>
     <string name="password">Introduce password</string>
 <string name="aceptado">Aceptar</string>
-    <string name="permission">Permission neded. Try again</string>
+    <string name="permission">Permission needed. Try again</string>
     <string name="aceptar">Insert</string>
     <string name="identificacion">Identify preivous sightings</string>
     <string name="deter">Stop Audio</string>
     <string name="cantoDe">Birdsing of </string>
     <string name="concelloBaleiro">Town is empty </string>
     <string name="campobaleiro">Field is empty </string>
+    <string name="avisoUsuarioContra">Password or user name is missing </string>
+    <string name="passwordNonCoincide">Passwords don not match</string>
+    <string name="rexistradoExito">You were succesfully registered</string>
 
     <string name="next">Next </string>
     <string name="ir">Go </string>
