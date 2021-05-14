@@ -1,10 +1,14 @@
 package com.example.proxecto;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.widgets.Snapshot;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -99,17 +104,37 @@ public class inicioProcessing extends AppCompatActivity {
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (usuario.getText()==null || password.getText()==null) {
+                String nomeUsuario = usuario.getText().toString();
+                String passw = password.getText().toString();
+                if (nomeUsuario==null || passw==null) {
                     Toast.makeText(getApplicationContext(), R.string.avisoUsuarioContra, Toast.LENGTH_LONG).show();
                 }else{
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-                    DatabaseReference myRef = database.getReference("usuarios_contrasinais");
+                    DatabaseReference myRef = database.getReference("usuarios");
+                    myRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot sp : snapshot.getChildren() ){
+                                if (sp.getKey().equals(nomeUsuario) && sp.getValue().equals(passw)){
+                                    Intent activityPrincipal = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(activityPrincipal);
+                                    return;
+                                }
+                                
+                            }
+                            Toast.makeText(getApplicationContext(), R.string.usuarioContra, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
 
                 }
-                Intent activityPrincipal = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(activityPrincipal);
+
 
             }
         });
@@ -117,7 +142,9 @@ public class inicioProcessing extends AppCompatActivity {
         novoAcpetar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (novoUsuario.getText()==null || novoPassword.getText()==null) {
+                String nomeUsuario = String.valueOf(novoUsuario.getText());
+                String password = String.valueOf(novoPassword.getText());
+                if (nomeUsuario==null || password==null) {
                     Toast.makeText(getApplicationContext(), R.string.avisoUsuarioContra, Toast.LENGTH_LONG).show();
                 }
 
@@ -127,9 +154,53 @@ public class inicioProcessing extends AppCompatActivity {
 
                 }
                 else{
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    final boolean[] repetido = {false};
+                    DatabaseReference myRef = database.getReference("usuarios");
 
-                    Toast.makeText(getApplicationContext(), R.string.rexistradoExito, Toast.LENGTH_LONG).show();
-                    iniciarSes.performClick();
+                    final boolean[] amosarAviso = {true};
+
+
+                    myRef.orderByKey().addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()){
+                                for (DataSnapshot usuario :snapshot.getChildren()){
+                                    Log.i("ola", usuario.getKey().toString());
+                                    if (usuario.getKey().equals(nomeUsuario)) {
+                                        repetido[0] =true;
+                                        break;
+                                    }
+
+                                }
+                                if (!repetido[0]) {
+                                    myRef.child(nomeUsuario).setValue(password);
+                                    Toast.makeText(getApplicationContext(), R.string.rexistradoExito, Toast.LENGTH_LONG).show();
+                                    novoUsuario.setText("");
+                                    novoPassword.setText("");
+                                    novoPasswordCompro.setText("");
+                                    iniciarSes.performClick();
+                                    amosarAviso[0] =false;
+
+
+                                }else if (amosarAviso[0]){
+                                    Toast.makeText(getApplicationContext(), R.string.nomeUsuarioRepetido, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            Log.i("ola", snapshot.getKey());
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    //myRef.child(nomeUsuario).setValue(password);
+
+
+                      //  myRef.push().setValue(new User(nomeUsuario, password));
+
 
                 }
             }

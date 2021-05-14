@@ -47,6 +47,8 @@
     <string name="avisoUsuarioContra">Password or user name is missing </string>
     <string name="passwordNonCoincide">Passwords don not match</string>
     <string name="rexistradoExito">You were succesfully registered</string>
+    <string name="nomeUsuarioRepetido">Username is already in use</string>
+    <string name="usuarioContra">Incorrect password or username</string>
 
     <string name="next">Next </string>
     <string name="ir">Go </string>

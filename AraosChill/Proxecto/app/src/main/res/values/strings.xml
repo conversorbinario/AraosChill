@@ -39,6 +39,8 @@
     <string name="avisoUsuarioContra">Falta o usuario ou o contrasinal</string>
     <string name="passwordNonCoincide">O contrasinal non coincide</string>
     <string name="rexistradoExito">Rexistrado con éxito</string>
+    <string name="nomeUsuarioRepetido">O nome de usuario xa está en uso</string>
+    <string name="usuarioContra">Usuario ou contrasinal incorrectos</string>
 
     <string name="permission">Precísase permiso, téntao de novo</string>
     <string name="aceptar">Insertar</string>
