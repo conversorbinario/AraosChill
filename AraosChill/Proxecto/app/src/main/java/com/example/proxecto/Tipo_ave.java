@@ -12,13 +12,13 @@ public class Tipo_ave {
         this.xenero = xenero;
         this.especie = especie;
     }
+    public Tipo_ave(String especie) {
 
-
-    public Tipo_ave(int id_ave, String xeneroString, String especie) {
-        this.id_ave = id_ave;
-        this.xeneroString = xeneroString;
         this.especie = especie;
     }
+
+
+
 
     public String getXeneroString() {
         return xeneroString;
@@ -28,9 +28,6 @@ public class Tipo_ave {
         this.xeneroString = xeneroString;
     }
 
-    public Tipo_ave(String especie) {
-        this.especie = especie;
-    }
 
     public Tipo_ave(int xenero) {
         this.xenero = xenero;

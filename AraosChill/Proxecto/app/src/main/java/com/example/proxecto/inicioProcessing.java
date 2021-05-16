@@ -101,6 +101,7 @@ public class inicioProcessing extends AppCompatActivity {
             }
         });
 
+
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,13 +175,14 @@ public class inicioProcessing extends AppCompatActivity {
 
                                 }
                                 if (!repetido[0]) {
+                                    amosarAviso[0] =false;
+
                                     myRef.child(nomeUsuario).setValue(password);
                                     Toast.makeText(getApplicationContext(), R.string.rexistradoExito, Toast.LENGTH_LONG).show();
                                     novoUsuario.setText("");
                                     novoPassword.setText("");
                                     novoPasswordCompro.setText("");
                                     iniciarSes.performClick();
-                                    amosarAviso[0] =false;
 
 
                                 }else if (amosarAviso[0]){
@@ -199,7 +201,7 @@ public class inicioProcessing extends AppCompatActivity {
                     //myRef.child(nomeUsuario).setValue(password);
 
 
-                      //  myRef.push().setValue(new User(nomeUsuario, password));
+                      // myRef.push().setValue(new User(nomeUsuario, password));
 
 
                 }
@@ -221,9 +223,6 @@ public class inicioProcessing extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("usuarios_contrasinais");
 
-        myRef.push().setValue("ola");
-        myRef.push().setValue("ola");
-        myRef.push().setValue("ola");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

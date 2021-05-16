@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -34,8 +35,10 @@ import java.util.ArrayList;
 
 public class AmosarTodas extends AppCompatActivity {
 
+    ImageView iv ;
     TableLayout taboa;
-    ArrayList<Tipo_ave> todasEspecies;
+    //ArrayList<Tipo_ave> todasEspecies;
+    ArrayList<Xenero_Especie> todasEspecies;
     int dende = 0;
     int ata = 10;
     Button next;
@@ -49,8 +52,11 @@ public class AmosarTodas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amosar_todas);
-        todasEspecies = new ArrayList<Tipo_ave>();
-        todasEspecies = MainActivity.bb_dd.getTodasEspecies();
+        iv = findViewById(R.id.ir);
+        todasEspecies = new ArrayList<Xenero_Especie>();
+        todasEspecies=MainActivity.bb_dd.getTodoXeneroEspecie();
+      /*  todasEspecies = new ArrayList<Tipo_ave>();
+        todasEspecies = MainActivity.bb_dd.getTodasEspecies(); */
         int numEspecies = todasEspecies.size();
         et=findViewById(R.id.numVista);
         if (numEspecies%10!=0){
@@ -88,7 +94,7 @@ public class AmosarTodas extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((ata+10)<=numViews){
+                if ((ata+10)<=numViews*10){
                     ata+=10;
                     dende+=10;
                     taboa.removeAllViews();
@@ -101,6 +107,27 @@ public class AmosarTodas extends AppCompatActivity {
             }
         });
 
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int numero = Integer.parseInt(String.valueOf(et.getText()));
+                if (numero>numViews  || numero<=0){
+                    Toast.makeText(getApplicationContext(), R.string.foraRango, Toast.LENGTH_LONG).show();
+
+                    return;
+                }else{
+                    numVista=numero;
+                    dende=(numero-1)*10;
+                    ata = numero*10;
+                    taboa.removeAllViews();
+                    cargarFilas(dende, ata);
+                    et.setText("");
+                    et.setHint(numVista + "/"+numViews);
+
+                }
+            }
+        });
+
     }
 
     public void cargarFilas(int dende, int ata){
@@ -108,9 +135,11 @@ public class AmosarTodas extends AppCompatActivity {
             TableRow fila = new TableRow(getApplicationContext());
             taboa.addView(fila);
             String especie = todasEspecies.get(i).getEspecie();
-            int pkXenero =todasEspecies.get(i).getXenero();
-            String xenero = MainActivity.bb_dd.getXeneropk(pkXenero);
+            //int pkXenero =todasEspecies.get(i).getXenero();
+            //String xenero = MainActivity.bb_dd.getXeneropk(pkXenero);
             //amosamos nome
+
+            String xenero = todasEspecies.get(i).getXenero();
             TextView tv = new TextView(getApplicationContext());
             tv.setText(xenero + " " + especie);
             tv.setTextColor(getResources().getColor(R.color.darkBlue));

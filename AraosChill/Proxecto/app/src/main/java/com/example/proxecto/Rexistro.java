@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PersistableBundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -26,6 +27,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -67,7 +73,7 @@ public class Rexistro extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        id_Avist=-2;
+        id_Avist = -2;
 
     }
 
@@ -91,14 +97,10 @@ public class Rexistro extends AppCompatActivity {
         comeAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                id_Avist=-2;
-               finish();
+                id_Avist = -2;
+                finish();
             }
         });
-
-
-
-
 
 
         amosarFoto = findViewById(R.id.fotoAmos);
@@ -112,15 +114,13 @@ public class Rexistro extends AppCompatActivity {
         if (savedInstanceState != null) {
             xenero.setText(savedInstanceState.getString("Xenero"));
             especie.setText(savedInstanceState.getString("Especie"));
-          //  avistamentoVello = savedInstanceState.getBoolean("existente");
-             // avis = (Avistamento)  savedInstanceState.getSerializable("obxAvis");
+            //  avistamentoVello = savedInstanceState.getBoolean("existente");
+            // avis = (Avistamento)  savedInstanceState.getSerializable("obxAvis");
             peso.setText(savedInstanceState.getString("peso"));
             tamanho.setText(savedInstanceState.getString("tamanho"));
 
 
         }
-
-
 
 
         amosarFoto.setOnClickListener(new View.OnClickListener() {
@@ -187,7 +187,7 @@ public class Rexistro extends AppCompatActivity {
                 }
 
                 //obvio SO para ver se a cousa esta funcionando
-                subirFoto();
+                subirFoto(2, 3);
                 String specie = String.valueOf(especie.getText());
                 String xen = String.valueOf(xenero.getText());
                 // e dicir, se se deixa o campo sen valor, todo ok
@@ -204,28 +204,28 @@ public class Rexistro extends AppCompatActivity {
                         }
                         String plumaxe = (String) sp_plumaxe.getSelectedItem();
                         Individuo in = null;
-                       // if (id_individuo<0) {
-                            if (sexAv.equalsIgnoreCase("")) {
-                                in = new Individuo();
-                                id_individuo = MainActivity.bb_dd.addIndividuo(in);
-                            } else {
-                                in = new Individuo(sexAv);
-                                id_individuo = MainActivity.bb_dd.addIndividuo(in);
-                            }
-                      //  }
+                        // if (id_individuo<0) {
+                        if (sexAv.equalsIgnoreCase("")) {
+                            in = new Individuo();
+                            id_individuo = MainActivity.bb_dd.addIndividuo(in);
+                        } else {
+                            in = new Individuo(sexAv);
+                            id_individuo = MainActivity.bb_dd.addIndividuo(in);
+                        }
+                        //  }
                         if (id_Avist == -2) {
-                            id_Avist=avis.getPkAv();
+                            id_Avist = avis.getPkAv();
 
                             if (avistamentoVello == false) {
                                 id_Avist = MainActivity.bb_dd.addAvistamento(avis);
-                                avistamentoVello=true;
+                                avistamentoVello = true;
                             }
                         }
                         String dirAudio = copiarAudio(id_Avist, id_individuo);
 
                         String dir_foto = copiarFoto(id_Avist, id_individuo);
-                      //  try {
-                            MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
+                        //  try {
+                        MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
                        /* }catch(Exception e){
 
                             Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
@@ -241,7 +241,7 @@ public class Rexistro extends AppCompatActivity {
 
                         } */
                         String xen_esp = MainActivity.bb_dd.getXeneroEspecie(id_individuo);
-                       // id_individuo=-3;
+                        // id_individuo=-3;
 
                         if (xen_esp.equalsIgnoreCase("")) {
                             xen_esp = getString(R.string.desc);
@@ -249,7 +249,7 @@ public class Rexistro extends AppCompatActivity {
                         }
                         try {
                             Toast.makeText(getApplicationContext(), avis.getConcello() + " " + avis.getNome_sitio() + " - " + xen_esp, Toast.LENGTH_LONG).show();
-                        }catch(Exception e){
+                        } catch (Exception e) {
 
 
                         }
@@ -267,6 +267,7 @@ public class Rexistro extends AppCompatActivity {
 
                 } else if ((!(specie.equalsIgnoreCase(""))) && (!(xen.equalsIgnoreCase("")))) {
                     try {
+                        //existeXeneroFB("Corvus");
                         if (!MainActivity.bb_dd.existeXenero(xen)) {
                             Toast.makeText(getApplicationContext(), R.string.nonXen, Toast.LENGTH_LONG).show();
 
@@ -281,13 +282,13 @@ public class Rexistro extends AppCompatActivity {
                                 //if (id_individuo<0) {
 
                                 id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
-                            //}
+                                //}
                                 if (id_Avist == -2) {
-                                    id_Avist=avis.getPkAv();
+                                    id_Avist = avis.getPkAv();
                                     if (avistamentoVello == false) {
 
                                         id_Avist = MainActivity.bb_dd.addAvistamento(avis);
-                                        avistamentoVello=true;
+                                        avistamentoVello = true;
                                     }
                                 }
                                 int gramos = 0;
@@ -299,9 +300,10 @@ public class Rexistro extends AppCompatActivity {
                                 String plumaxe = (String) sp_plumaxe.getSelectedItem();
                                 String dirAudio = copiarAudio(id_Avist, id_individuo);
 
+                                subirFoto(1, 2);
                                 String dir_foto = copiarFoto(id_Avist, id_individuo);
-                            //    try {
-                                    MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
+                                //    try {
+                                MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
                                /* }catch(Exception e){
 
                                     Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
@@ -318,7 +320,7 @@ public class Rexistro extends AppCompatActivity {
 
                                 } */
                                 String xen_esp = MainActivity.bb_dd.getXeneroEspecie(id_individuo);
-                              //  id_individuo=-3;
+                                //  id_individuo=-3;
 
                                 if (xen_esp.equalsIgnoreCase("")) {
                                     xen_esp = getString(R.string.desc);
@@ -326,8 +328,8 @@ public class Rexistro extends AppCompatActivity {
                                 }
                                 try {
                                     Toast.makeText(getApplicationContext(), avis.getConcello() + " " + avis.getNome_sitio() + " - " + xen_esp, Toast.LENGTH_LONG).show();
-                                }catch(Exception e){
-                                    
+                                } catch (Exception e) {
+
                                 }
                                 xenero.setText("");
                                 Rexistro.this.especie.setText("");
@@ -489,7 +491,7 @@ public class Rexistro extends AppCompatActivity {
         }
     }
 
-    public void subirFoto(){
+    public void subirFoto(int idAv, int Indiv) {
 
         File rutaFoto = new File(Environment.getExternalStorageDirectory() + "/ImaxeTemporal" + "/imaxe");
 
@@ -535,15 +537,14 @@ public class Rexistro extends AppCompatActivity {
 
         outState.putString("Xenero", xenS);
         outState.putString("Especie", espS);
-     //   outState.putBoolean("existente", avistamentoVello);
-       //  outState.putSerializable("obxAvis", (Serializable) avis);
+        //   outState.putBoolean("existente", avistamentoVello);
+        //  outState.putSerializable("obxAvis", (Serializable) avis);
 
         outState.putString("peso", pes);
         outState.putString("tamanho", pes);
 
 
     }
-
 
 
     @Override
@@ -578,8 +579,36 @@ public class Rexistro extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-       // id_Avist = -2;
+        // id_Avist = -2;
     }
+
+
+    public void existeXeneroFB(String xenero) {
+        xenero = xenero.substring(0, 1).toUpperCase() + xenero.substring(1);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Xenero_Taxon");
+        //DataSnapshot ds = myRef.child("xenero").
+        //  DatabaseReference myRef2 = myRef.child("xenero");
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot sp : snapshot.getChildren()) {
+                    Log.i("Xenero", sp.child("xenero").getValue().toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
 
     /* @Override
     protected void onStop() {

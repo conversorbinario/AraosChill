@@ -59,6 +59,7 @@
     <string name="cero">Total </string>
     <string name="nonseSubiu">No audio found for this invididual </string>
     <string name="repro">Play </string>
+    <string name="foraRango">Value out of range</string>
 
     <string name="canto">Listening to birdsong of </string>
     <string name="sexoSp">Selec. sex </string>

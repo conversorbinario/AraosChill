@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (!procesado) {
             Log.i("procesado", "SI");
             copiarXml();
-            procesarXML2();
+             procesarXML2();
         }
         else{
             Log.i("procesado", "NON");
@@ -111,6 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(activityOutras);
             }
         });
+
+        try {
+            MainActivity.bb_dd.existeXeneroFB("Corvus");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         //probaDBFirebase();
     }
@@ -211,12 +217,16 @@ public class MainActivity extends AppCompatActivity {
                             xenero = genus.getElementsByTagName("latin_name").item(0).getTextContent();
                             long id_xenero = bb_dd.add_xen_taxon(new Xenero_taxon(xenero));
 
+
+                          //  String xeneroFB = bb_dd.add_xen_taxonFB(new Xenero_taxonFB(xenero));
+
                             NodeList especies = genus.getElementsByTagName("species");
                             for (int l =0; l<especies.getLength();l++){
                                 Element specie = (Element) especies.item(l);
                                 especie = specie.getElementsByTagName("latin_name").item(0).getTextContent();
                                 try {
                                     bb_dd.addTipo_ave(new Tipo_ave(especie), id_xenero);
+                                //    String espFB = bb_dd.addTipo_aveFB(new Tipo_AveFB(xeneroFB, especie));
                                 } catch (Exception e){
                                     Log.w("ERRO", e.getMessage());
                                     Log.i("INSERCION", xenero + " " + especie);

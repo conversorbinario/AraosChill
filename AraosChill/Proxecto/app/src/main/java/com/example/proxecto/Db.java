@@ -2,12 +2,25 @@ package com.example.proxecto;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class Db extends SQLiteOpenHelper {
 
@@ -76,12 +89,77 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
+
+    public String addTipo_aveFB(Tipo_AveFB esp) throws Exception {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("Tipo_Ave");
+
+        DatabaseReference myRef2= myRef.push();
+        String pk = myRef.getKey();
+        myRef2.setValue(esp);
+        return pk;
+
+    }
+
+    public long addTipo_ave(Tipo_ave esp, long xenero) throws Exception {
+        ContentValues valores = new ContentValues();
+        //pares nome_campo - valor_campo
+
+        valores.put("ESPECIE", esp.getEspecie());
+        valores.put("XENERO", xenero);
+
+
+        //para que lance excepcións de ser preciso (p ex, against PK)
+        long id = db.insertOrThrow("TIPO_AVE", null, valores);
+        valores.clear();
+        return id;
+
+    }
+
+    public String add_xen_taxonFB(Xenero_taxonFB xen){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("Xenero_Taxon");
+
+        DatabaseReference myRef2= myRef.push();
+
+        myRef2.setValue(xen);
+        String pk = myRef2.getKey();
+
+        return pk;
+
+
+    }
+
     public long add_xen_taxon(Xenero_taxon xenTax) {
         ContentValues valores = new ContentValues();
         valores.put("XENERO", xenTax.getXenero());
         long id = db.insertOrThrow("XENERO_TAXON", null, valores);
         valores.clear();
         return id;
+    }
+
+    public void existeXeneroFB(String xenero) throws Exception {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("usuarios");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot sp : snapshot.getChildren() ){
+                    if (sp.getKey().equals("manuel") && sp.getValue().equals("passw")){
+                        return;
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     public boolean existeXenero(String xenero) throws Exception {
@@ -318,7 +396,7 @@ public class Db extends SQLiteOpenHelper {
     }
 
 
-    public long addTipo_ave(Tipo_ave esp, long xenero) throws Exception {
+    public long addTipo_aveFB(Tipo_ave esp, long xenero) throws Exception {
         ContentValues valores = new ContentValues();
         //pares nome_campo - valor_campo
 
@@ -332,6 +410,8 @@ public class Db extends SQLiteOpenHelper {
         return id;
 
     }
+
+
 
 
     public long addAvistamento(Avistamento av) throws Exception {
@@ -447,6 +527,26 @@ public class Db extends SQLiteOpenHelper {
 
 
         return especies;
+    }
+
+    public ArrayList<Xenero_Especie> getTodoXeneroEspecie(){
+        ArrayList<Xenero_Especie> especies = new ArrayList<Xenero_Especie>();
+        Cursor cursor = db.rawQuery("select  xa.xenero, tipo_ave.ESPECIE from xenero_taxon as xa  inner join tipo_ave on xa.ID_XENERO=tipo_ave.XENERO order by xa.xenero, tipo_ave.ESPECIE", null);
+
+        if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
+            while (!cursor.isAfterLast()) {     // Quédase no bucle ata que remata de percorrer o cursor.
+                String xenero = cursor.getString(0);
+                String especie = cursor.getString(1);
+                Xenero_Especie esp = new Xenero_Especie(xenero, especie);
+                especies.add(esp);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+
+
+        return especies;
+
     }
 
     public ArrayList<Tipo_ave> getTodasEspeciesAlf() {
