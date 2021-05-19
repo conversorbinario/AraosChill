@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         try {
-            MainActivity.bb_dd.existeXeneroFB("Corvus");
+           // MainActivity.bb_dd.existeXeneroFB("Corvus");
         }catch(Exception e){
             e.printStackTrace();
         }

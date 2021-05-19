@@ -66,6 +66,8 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
                        // id_avistamento = MainActivity.bb_dd.addAvistamento(new Avistamento(conce, lug, data, momento));
                         Intent individuo = new Intent(getApplicationContext(), Rexistro.class);
                         individuo.putExtra("idAvis", (Serializable) new Avistamento(conce, lug, data, momento));
+                        individuo.putExtra("idAvisFB", (Serializable) new AvistamentoFB(conce, lug, data, momento));
+
                         individuo.putExtra("existente", false);
 
                         startActivity(individuo);

@@ -26,6 +26,8 @@ public class Db extends SQLiteOpenHelper {
 
     public SQLiteDatabase db;
     public Context ctxt;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
     //En foto e audio, van as rutas onde están os ficheiros
     private final String AVISTAMENTO_INDIVIDUOS = "CREATE TABLE AVISTAMENTO_INDIVIDUOS(" +
@@ -91,7 +93,6 @@ public class Db extends SQLiteOpenHelper {
 
 
     public String addTipo_aveFB(Tipo_AveFB esp) throws Exception {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference myRef = database.getReference("Tipo_Ave");
 
@@ -101,6 +102,8 @@ public class Db extends SQLiteOpenHelper {
         return pk;
 
     }
+
+
 
     public long addTipo_ave(Tipo_ave esp, long xenero) throws Exception {
         ContentValues valores = new ContentValues();
@@ -118,7 +121,6 @@ public class Db extends SQLiteOpenHelper {
     }
 
     public String add_xen_taxonFB(Xenero_taxonFB xen){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference myRef = database.getReference("Xenero_Taxon");
 
@@ -141,7 +143,6 @@ public class Db extends SQLiteOpenHelper {
     }
 
     public void existeXeneroFB(String xenero) throws Exception {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference myRef = database.getReference("usuarios");
         myRef.addValueEventListener(new ValueEventListener() {
@@ -425,6 +426,46 @@ public class Db extends SQLiteOpenHelper {
         return id;
     }
 
+    public String addAvistamentoFB(AvistamentoFB av) throws Exception {
+
+        DatabaseReference myRef = database.getReference("Avistamento");
+
+        DatabaseReference myRef2= myRef.push();
+        String pk = myRef2.getKey();
+        myRef2.setValue(av);
+        return pk;
+    }
+
+
+
+
+
+
+
+    /*public String addTipo_aveFB(Tipo_AveFB esp) throws Exception {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("Tipo_Ave");
+
+        DatabaseReference myRef2= myRef.push();
+        String pk = myRef.getKey();
+        myRef2.setValue(esp);
+        return pk;
+
+    } */
+
+
+
+    public String addAvisIndividuoFB(String pkIndividuo, String pkAvistamento) {
+
+        DatabaseReference myRef = database.getReference("Individuos_Avistamentos/"+pkIndividuo+"/Lugar");
+        myRef.setValue(pkAvistamento);
+
+        return "";
+    }
+
+
+
     public long addAvisIndividuio(long pk_avis, long pk_indiv, String rutaAudio, String rutfoto, int peso, String plumaxe) {
         ContentValues valores = new ContentValues();
         valores.put("AVISTAMENTO", pk_avis);
@@ -453,6 +494,22 @@ public class Db extends SQLiteOpenHelper {
         return id;
 
     }
+
+
+
+    //se a especie e -1, é que NON se coñece
+    public String addIndividuoFB(IndividuoFB pax) throws Exception {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("Individuo");
+
+        DatabaseReference myRef2= myRef.push();
+        String pk = myRef2.getKey();
+        myRef2.setValue(pax);
+        return pk;
+    }
+
 
     public long addIndividuo(Individuo pax) throws Exception {
         ContentValues valores = new ContentValues();

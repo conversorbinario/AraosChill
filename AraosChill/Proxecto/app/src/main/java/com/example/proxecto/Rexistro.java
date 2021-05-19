@@ -68,6 +68,7 @@ public class Rexistro extends AppCompatActivity {
     Button reprAudio;
     Button amosarFoto;
     Avistamento avis;
+    AvistamentoFB avisFB;
     Boolean avistamentoVello = false;
 
     @Override
@@ -106,6 +107,7 @@ public class Rexistro extends AppCompatActivity {
         amosarFoto = findViewById(R.id.fotoAmos);
         Intent inte = getIntent();
         avis = (Avistamento) inte.getSerializableExtra("idAvis");
+        avisFB = (AvistamentoFB) inte.getSerializableExtra("idAvisFB");
         avistamentoVello = inte.getBooleanExtra("existente", false);
         //-3 se o individuo é un novo
 
@@ -187,7 +189,6 @@ public class Rexistro extends AppCompatActivity {
                 }
 
                 //obvio SO para ver se a cousa esta funcionando
-                subirFoto(2, 3);
                 String specie = String.valueOf(especie.getText());
                 String xen = String.valueOf(xenero.getText());
                 // e dicir, se se deixa o campo sen valor, todo ok
@@ -213,18 +214,34 @@ public class Rexistro extends AppCompatActivity {
                             id_individuo = MainActivity.bb_dd.addIndividuo(in);
                         }
                         //  }
+                        String pkAvisFB="";
                         if (id_Avist == -2) {
                             id_Avist = avis.getPkAv();
 
                             if (avistamentoVello == false) {
+                                pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
+
                                 id_Avist = MainActivity.bb_dd.addAvistamento(avis);
                                 avistamentoVello = true;
                             }
                         }
+
+                        String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(rutaFoto, rutaAudio, plumaxe, gramos));
+
+                        subirAudio(pkAvisFB, id_indviduoFB);
+                        subirFoto(pkAvisFB, id_indviduoFB);
+
                         String dirAudio = copiarAudio(id_Avist, id_individuo);
 
                         String dir_foto = copiarFoto(id_Avist, id_individuo);
+
+
                         //  try {
+
+
+
+                        MainActivity.bb_dd.addAvisIndividuoFB(id_indviduoFB, pkAvisFB);
+
                         MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
                        /* }catch(Exception e){
 
@@ -280,12 +297,15 @@ public class Rexistro extends AppCompatActivity {
                                 String sexo = (String) sspSX.getSelectedItem();
                                 int especie = MainActivity.bb_dd.getIdEspecie(xen, specie);
                                 //if (id_individuo<0) {
-
                                 id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
                                 //}
+
+                                ///para a FB
+                                String pkAvisFB="";
                                 if (id_Avist == -2) {
                                     id_Avist = avis.getPkAv();
                                     if (avistamentoVello == false) {
+                                        pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
 
                                         id_Avist = MainActivity.bb_dd.addAvistamento(avis);
                                         avistamentoVello = true;
@@ -298,12 +318,23 @@ public class Rexistro extends AppCompatActivity {
                                     gramos = 0;
                                 }
                                 String plumaxe = (String) sp_plumaxe.getSelectedItem();
+
+                                String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(especie, sexo, rutaFoto, rutaAudio, plumaxe, gramos));
+                                subirAudio(pkAvisFB, id_indviduoFB);
+
+                                subirFoto(pkAvisFB, id_indviduoFB);
+
                                 String dirAudio = copiarAudio(id_Avist, id_individuo);
 
-                                subirFoto(1, 2);
                                 String dir_foto = copiarFoto(id_Avist, id_individuo);
                                 //    try {
+                    // public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {}
+
+
+
+                                MainActivity.bb_dd.addAvisIndividuoFB(id_indviduoFB, pkAvisFB);
                                 MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
+
                                /* }catch(Exception e){
 
                                     Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
@@ -491,22 +522,60 @@ public class Rexistro extends AppCompatActivity {
         }
     }
 
-    public void subirFoto(int idAv, int Indiv) {
 
-        File rutaFoto = new File(Environment.getExternalStorageDirectory() + "/ImaxeTemporal" + "/imaxe");
+    public void subirAudio(String pkAvis, String  pkIndiv) {
+
+        File directorioGravacion = new File(Environment.getExternalStorageDirectory() + "/AudioTemporal" + "/audio.mp3");
+        if (!directorioGravacion.exists()){
+
+            return;}
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
+        StorageReference imagenes  = storageRef.child("audios");
 
-        Uri file = Uri.fromFile(rutaFoto);
-        StorageReference riversRef = storageRef.child(file.getLastPathSegment());
+        Uri file = Uri.fromFile(directorioGravacion);
+        // StorageReference riversRef = storageRef.child(file.getLastPathSegment());
+        StorageReference riversRef = imagenes.child(pkAvis + "_"+ pkIndiv+".mp3");
+
         UploadTask uploadTask = riversRef.putFile(file);
 
 // Register observers to listen for when the download is done or if it fails
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
+                Log.i("IMXE ", exception.getMessage());
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                // ...
+            }
+        });
+
+    }
+
+
+    public void subirFoto(String pkAvis, String  pkIndiv) {
+
+        File rutaFoto = new File(Environment.getExternalStorageDirectory() + "/ImaxeTemporal" + "/imaxe");
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        StorageReference imagenes  = storageRef.child("imagenes");
+
+        Uri file = Uri.fromFile(rutaFoto);
+       // StorageReference riversRef = storageRef.child(file.getLastPathSegment());
+         StorageReference riversRef = imagenes.child(pkAvis + "_"+ pkIndiv);
+
+        UploadTask uploadTask = riversRef.putFile(file);
+
+// Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+Log.i("IMXE ", exception.getMessage());
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override

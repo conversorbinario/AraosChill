@@ -1,5 +1,6 @@
 package com.example.proxecto;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -13,6 +14,14 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class AmosarAvistadas extends AppCompatActivity {
@@ -132,7 +141,7 @@ public class AmosarAvistadas extends AppCompatActivity {
 
                 if (dende < totalAmos) {
                     ata += 5;
-                    dende += 5;
+                    dende += 4;
                     if (ata > totalAmos) {
                         cargarFilas(dende, totalAmos);
                     } else {
@@ -189,12 +198,13 @@ public class AmosarAvistadas extends AppCompatActivity {
                     public void onClick(View v) {
                         String dirAudio = (String) canto.getTag();
                         if (dirAudio!=null){
-                            FragmentManager fm = getSupportFragmentManager();
+                         /*   FragmentManager fm = getSupportFragmentManager();
                             ReproducirAudio ra = new ReproducirAudio();
                             ra.setElementoReproducir(dirAudio);
                             ra.setCancelable(false);
 
-                            ra.show(fm, "Reproducindo");
+                            ra.show(fm, "Reproducindo"); */
+                            descargarAudioFireBase();
                         }else{
 
                             Toast.makeText(getApplicationContext(), R.string.audioNonTopado, Toast.LENGTH_SHORT).show();
@@ -214,13 +224,15 @@ public class AmosarAvistadas extends AppCompatActivity {
                     public void onClick(View view) {
                         String dirFoto = (String) foto.getTag();
                             if (dirFoto!=null){
-                                FragmentManager fm = getSupportFragmentManager();
-                                FotoFrag ff = new FotoFrag();
-                                ff.setPathAmosar(dirFoto);
-                                ff.setCancelable(false);
-                                ff.show(fm, "Imaxe");
+                                descargarFotoFirebase();
 
                             }
+
+                      /*  FragmentManager fm = getSupportFragmentManager();
+                        FotoFrag ff = new FotoFrag();
+                        ff.setPathAmosar(finalLocalFile.getAbsolutePath());
+                        ff.setCancelable(false);
+                        ff.show(fm, "Imaxe"); */
                     }
                 });
 
@@ -229,5 +241,75 @@ public class AmosarAvistadas extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+
+    public void descargarAudioFireBase(){
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+
+
+        StorageReference storageRef = storage.getReference();
+
+        StorageReference islandRef = storageRef.child("imagenes/-Ma4X_45TwgfeOJ3tPwv_-Ma4X_4amY0p-TOFx9wF");
+
+        File localFile = null;
+        try {
+            localFile = File.createTempFile("audio", "jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        File finalLocalFile = localFile;
+        File finalLocalFile1 = localFile;
+        islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                FragmentManager fm = getSupportFragmentManager();
+                ReproducirAudio ra = new ReproducirAudio();
+                ra.setElementoReproducir(finalLocalFile1.getAbsolutePath());
+                ra.setCancelable(false);
+
+                ra.show(fm, "Reproducindo");}
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+    }
+
+    public void descargarFotoFirebase(){
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+
+
+        StorageReference storageRef = storage.getReference();
+
+        StorageReference islandRef = storageRef.child("imagenes/-Ma4X_45TwgfeOJ3tPwv_-Ma4X_4amY0p-TOFx9wF");
+
+        File localFile = null;
+        try {
+            localFile = File.createTempFile("images", "jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        File finalLocalFile = localFile;
+        islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                FragmentManager fm = getSupportFragmentManager();
+                FotoFrag ff = new FotoFrag();
+                ff.setPathAmosar(finalLocalFile.getAbsolutePath());
+                ff.setCancelable(false);
+                ff.show(fm, "Imaxe");            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
     }
 }
