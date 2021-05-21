@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +38,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private final int PERMISOINTERNET=5;
     private final int PERMISOD = 10;
     public static Db bb_dd;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,13 +122,9 @@ public class MainActivity extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
-
-        //probaDBFirebase();
+        getAvis_indivCTodFB();
     }
 
-    public void getStorage(){
-
-    }
 
     public void usarSD() {
         if (Build.VERSION.SDK_INT >= 23) {
@@ -261,6 +262,78 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedpref.edit();
         editor.putBoolean("BBDD", true);
         editor.commit();
+    }
+
+
+    public ArrayList<Avis_Esp> getAvis_indivCTodFB() {
+
+        ArrayList<Avis_Esp> avis_esp = new ArrayList<Avis_Esp>();
+        int id_xenero = -1;
+        //  Cursor cursor = db.rawQuery("select  AV.CONCELLO, AV.NOME_SITIO, AV.DATA, I.ID_INDIVIDUO, AI.FOTO, AI.AUDIO from AVISTAMENTO_INDIVIDUOS as AI inner join INDIVIDUOS as I on AI.INDIVIDUO=I.ID_INDIVIDUO inner join AVISTAMENTOS as AV on AV.ID_AVISTAMENTO=AI.AVISTAMENTO", null);
+
+        DatabaseReference myRef = database.getReference("Individuo");
+        DatabaseReference myRefIndivAv = database.getReference("Individuos_Avistamentos");
+        final DatabaseReference[] lugarNodo = new DatabaseReference[1];
+
+        Task<DataSnapshot> individuos = myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot indiv: dataSnapshot.getChildren()){
+                    String pkFBIndiv = indiv.getKey();
+                    lugarNodo[0] =  myRefIndivAv.child(pkFBIndiv).child("Lugar");
+                      lugarNodo[0].get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                        @Override
+                        public void onSuccess(DataSnapshot dataSnapshot) {
+                            final String[] lugarValue = new String[1];
+
+                            //lugarValue sale a null, debugea y veras
+                            lugarValue[0]= (String) dataSnapshot.getValue();
+                            String v = indiv.child("especie").getValue().toString();
+                            int numero_especie = Integer.parseInt(indiv.child("especie").getValue().toString());
+                            Xenero_Especie xe = bb_dd.getXeneroEspecieFB(numero_especie);
+                            Log.i("RESULTADO", lugarValue[0] + "|||" + xe.getXenero() + xe.getEspecie());
+                        }
+                    });
+
+
+                }
+
+            }
+        });
+
+
+        /*        int numero_especie = (int) indiv.child("especie").getValue();
+                    String xenero_esp = bb_dd.getXeneroEspecie(numero_especie);
+                    Log.i("RESULTADO", lugarValue[0] + " " + xenero_esp);
+*/
+
+      /*  for (DataSnapshot indiv : individuos.getChildren()){
+            String pkFBIndiv = indiv.getKey();
+            lugarNodo=  myRefIndivAv.child(pkFBIndiv).child("Lugar");
+            lugarValue= (String) lugarNodo.get().getResult().getValue();
+
+            int numero_especie = (int) indiv.child("especie").getValue();
+            String xenero_esp = getXeneroEspecie(numero_especie);
+            Log.i("RESULTADO", lugarValue + " " + xenero_esp);
+        }
+ */
+        /*if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
+            while (!cursor.isAfterLast()) {
+                String conce = cursor.getString(0);
+                String nomeSitio = cursor.getString(1);
+                String data = cursor.getString(2);
+                int idINdiv = cursor.getInt(3);
+                String xen_esp = getXeneroEspecie(idINdiv);
+                String dir_foto = cursor.getString(4);
+                String dir_audio = cursor.getString(5);
+                avis_esp.add(new Avis_Esp(conce, nomeSitio, data, xen_esp, dir_foto, dir_audio));
+                cursor.moveToNext();
+            }
+
+        }
+        cursor.close();*/
+        return avis_esp;
     }
 
 }

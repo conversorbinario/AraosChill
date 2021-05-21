@@ -36,6 +36,8 @@ public class AmosarAvistadas extends AppCompatActivity {
     Button seguinte;
     int dende = 0;
     int ata = 5;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
 
     ArrayList<Avis_Esp> avis = new ArrayList<Avis_Esp>();
 
@@ -56,12 +58,13 @@ public class AmosarAvistadas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 avis = MainActivity.bb_dd.getAvis_indivCTod();
+                int totalAmos = avis.size();
+                totalAmos = MainActivity.bb_dd.getNumeroAvesAvistadasFB();
                 if (avis.size() == 0) {
 
                     Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
 
                 } else {
-                    int totalAmos = avis.size();
                     if (totalAmos % 5 != 0) {
                         numViews = (totalAmos / 5) + 1;
 
@@ -245,12 +248,10 @@ public class AmosarAvistadas extends AppCompatActivity {
 
 
 
+
+
     public void descargarAudioFireBase(){
 
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-
-
-        StorageReference storageRef = storage.getReference();
 
         StorageReference islandRef = storageRef.child("audios/-Ma4Xx8YvodQUWL_J9s8_-Ma4Xx9-X7QLy0ZL8GQv.mp3");
 
@@ -282,10 +283,6 @@ public class AmosarAvistadas extends AppCompatActivity {
 
     public void descargarFotoFirebase(){
 
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-
-
-        StorageReference storageRef = storage.getReference();
 
         StorageReference islandRef = storageRef.child("imagenes/-Ma4X_45TwgfeOJ3tPwv_-Ma4X_4amY0p-TOFx9wF");
 

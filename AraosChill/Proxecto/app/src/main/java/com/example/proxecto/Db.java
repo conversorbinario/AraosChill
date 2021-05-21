@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -103,9 +105,45 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
+   /* FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    DatabaseReference myRef = database.getReference("usuarios");
+                    myRef.addValueEventListener(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            for (DataSnapshot sp : snapshot.getChildren() ){
+                if (sp.getKey().equals(nomeUsuario) && sp.getValue().equals(passw)){
+                    Intent activityPrincipal = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(activityPrincipal);
+                    return;
+                }
+
+            }
+            Toast.makeText(getApplicationContext(), R.string.usuarioContra, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    }); */
+
+    public int getNumeroAvesAvistadasFB(){
+
+        DatabaseReference myRef = database.getReference("Individuo");
+       DataSnapshot individuos =  myRef.get().getResult();
+       int total = (int) individuos.getChildrenCount();
+       return total;
+
+    }
 
 
-    public long addTipo_ave(Tipo_ave esp, long xenero) throws Exception {
+
+
+
+
+
+    public long addTipo_ave(Tipo_ave esp, long xenero) {
         ContentValues valores = new ContentValues();
         //pares nome_campo - valor_campo
 
@@ -296,7 +334,11 @@ public class Db extends SQLiteOpenHelper {
         return infoINdivs;
     }
 
-    public String getXeneroEspecie(long idIndiv) {
+    //dada unha especie, saca o seu xenero
+
+
+
+        public String getXeneroEspecie(long idIndiv) {
 
         String xenero_esp = "";
         //select TA.ESPECIE, XA.XENERO from tipo_ave AS TA INNER JOIN INDIVIDUOS as I on I.ESPECIE=TA.ID_AVE INNER JOIN XENERO_TAXON AS XA ON TA.XENERO=XA.ID_XENERO
@@ -338,6 +380,8 @@ public class Db extends SQLiteOpenHelper {
         cursor.close();
         return avis_esp;
     }
+
+
 
     public ArrayList<Avis_Esp> getAvis_indivCTod() {
 
@@ -540,6 +584,26 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
+    public Xenero_Especie getXeneroEspecieFB(long claveIndiv){
+
+        Cursor cursor = db.rawQuery("select xt.xenero, ta.ESPECIE from xenero_taxon as xt left join tipo_ave as ta on xt.ID_XENERO=ta.XENERO where ta.ID_AVE =?",  new String[]{String.valueOf(claveIndiv)});
+
+
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+               String xenero = cursor.getString(0);
+               String especie = cursor.getString(1);
+               Xenero_Especie esp = new Xenero_Especie(xenero, especie);
+                return esp;
+            }
+        }
+        cursor.close();
+        return  null;
+
+    }
+
+
+    //select xt.xenero, ta.ESPECIE from xenero_taxon as xt left join tipo_ave as ta on xt.ID_XENERO=ta.XENERO where ta.ID_AVE =1;
     public String getXeneropk(int pk) {
         String xenero = "";
         Cursor cursor = db.rawQuery("select XENERO from XENERO_TAXON where ID_XENERO=? ORDER BY XENERO DESC", new String[]{String.valueOf(pk)});
@@ -550,20 +614,6 @@ public class Db extends SQLiteOpenHelper {
         return xenero;
     }
 
-    public ArrayList<String> getXeneroAbc() {
-        ArrayList<String> especies = new ArrayList<String>();
-
-        String xenero = "";
-        Cursor cursor = db.rawQuery("select XENERO from XENERO_TAXON ORDER BY XENERO DESC", null);
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                xenero = cursor.getString(0);
-                especies.add(xenero);
-            }
-        }
-        cursor.close();
-        return especies;
-    }
 
 
     public ArrayList<Tipo_ave> getTodasEspecies() {

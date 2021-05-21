@@ -120,6 +120,7 @@ public class inicioProcessing extends AppCompatActivity {
                                 if (sp.getKey().equals(nomeUsuario) && sp.getValue().equals(passw)){
                                     Intent activityPrincipal = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(activityPrincipal);
+
                                     return;
                                 }
                                 
