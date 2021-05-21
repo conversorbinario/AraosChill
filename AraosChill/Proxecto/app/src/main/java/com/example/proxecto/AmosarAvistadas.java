@@ -252,11 +252,11 @@ public class AmosarAvistadas extends AppCompatActivity {
 
         StorageReference storageRef = storage.getReference();
 
-        StorageReference islandRef = storageRef.child("imagenes/-Ma4X_45TwgfeOJ3tPwv_-Ma4X_4amY0p-TOFx9wF");
+        StorageReference islandRef = storageRef.child("audios/-Ma4Xx8YvodQUWL_J9s8_-Ma4Xx9-X7QLy0ZL8GQv.mp3");
 
         File localFile = null;
         try {
-            localFile = File.createTempFile("audio", "jpg");
+            localFile = File.createTempFile("audio", "mp3");
         } catch (IOException e) {
             e.printStackTrace();
         }

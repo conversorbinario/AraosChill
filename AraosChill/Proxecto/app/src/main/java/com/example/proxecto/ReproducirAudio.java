@@ -33,7 +33,7 @@ public class ReproducirAudio extends DialogFragment {
             mediaPla.prepare();
             mediaPla.start();
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
                     .setTitle("")
                     .setMessage(getResources().getString(R.string.cantoDe) + " " + xenero + " " + especie)
                     .setPositiveButton(R.string.deter, new DialogInterface.OnClickListener() {
@@ -42,9 +42,13 @@ public class ReproducirAudio extends DialogFragment {
                             deterRep();
                         }
                     });
-            return builder.create();
+
+            Dialog d = builder.create();
+            return d;
 
         } catch (Exception e) {
+
+            e.getMessage();
 
         }
         return null;
