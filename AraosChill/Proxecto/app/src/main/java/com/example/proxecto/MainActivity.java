@@ -292,7 +292,10 @@ public class MainActivity extends AppCompatActivity {
                             String v = indiv.child("especie").getValue().toString();
                             int numero_especie = Integer.parseInt(indiv.child("especie").getValue().toString());
                             Xenero_Especie xe = bb_dd.getXeneroEspecieFB(numero_especie);
-                            Log.i("RESULTADO", lugarValue[0] + "|||" + xe.getXenero() + xe.getEspecie());
+                            if (xe!=null)
+                                Log.i("RESULTADO", lugarValue[0] + "|||" + xe.getXenero() + xe.getEspecie());
+                            else
+                                Log.w("ResultadoAnomalo", indiv.toString());
                         }
                     });
 

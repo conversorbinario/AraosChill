@@ -128,14 +128,7 @@ public class Db extends SQLiteOpenHelper {
         }
     }); */
 
-    public int getNumeroAvesAvistadasFB(){
 
-        DatabaseReference myRef = database.getReference("Individuo");
-       DataSnapshot individuos =  myRef.get().getResult();
-       int total = (int) individuos.getChildrenCount();
-       return total;
-
-    }
 
 
 
@@ -542,7 +535,7 @@ public class Db extends SQLiteOpenHelper {
 
 
     //se a especie e -1, é que NON se coñece
-    public String addIndividuoFB(IndividuoFB pax) throws Exception {
+    public String addIndividuoFB(IndividuoFB pax, String pkAvis) throws Exception {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -550,6 +543,7 @@ public class Db extends SQLiteOpenHelper {
 
         DatabaseReference myRef2= myRef.push();
         String pk = myRef2.getKey();
+        pax.setRutaFoto(pkAvis+"_"+pk);
         myRef2.setValue(pax);
         return pk;
     }

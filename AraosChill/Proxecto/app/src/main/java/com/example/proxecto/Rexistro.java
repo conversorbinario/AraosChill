@@ -226,7 +226,9 @@ public class Rexistro extends AppCompatActivity {
                             }
                         }
 
-                        String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(rutaFoto, rutaAudio, plumaxe, gramos));
+
+
+                        String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB("", rutaAudio, plumaxe, gramos), pkAvisFB);
 
                         subirAudio(pkAvisFB, id_indviduoFB);
                         subirFoto(pkAvisFB, id_indviduoFB);
@@ -319,7 +321,7 @@ public class Rexistro extends AppCompatActivity {
                                 }
                                 String plumaxe = (String) sp_plumaxe.getSelectedItem();
 
-                                String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(especie, sexo, rutaFoto, rutaAudio, plumaxe, gramos));
+                                String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(especie, sexo, rutaFoto, rutaAudio, plumaxe, gramos), pkAvisFB);
                                 subirAudio(pkAvisFB, id_indviduoFB);
 
                                 subirFoto(pkAvisFB, id_indviduoFB);
