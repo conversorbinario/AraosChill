@@ -2121,10 +2121,11 @@ int string tituloprocura 0x7f0f00b5
 int string todasAves 0x7f0f00b6
 int string todosAv 0x7f0f00b7
 int string tomarFoto 0x7f0f00b8
-int string usuario 0x7f0f00b9
-int string usuarioContra 0x7f0f00ba
-int string velloAvistamento 0x7f0f00bb
-int string xenEsp 0x7f0f00bc
+int string ufo 0x7f0f00b9
+int string usuario 0x7f0f00ba
+int string usuarioContra 0x7f0f00bb
+int string velloAvistamento 0x7f0f00bc
+int string xenEsp 0x7f0f00bd
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style Animation_AppCompat_Dialog 0x7f100002

@@ -20,16 +20,28 @@ com/example/proxecto/BuildConfig.java
  com.example.proxecto.BuildConfig
 com/example/proxecto/IndividuoFB.java
  com.example.proxecto.IndividuoFB
-com/example/proxecto/AmosarTodas.java
- com.example.proxecto.AmosarTodas
- com.example.proxecto.AmosarTodas$1
- com.example.proxecto.AmosarTodas$2
- com.example.proxecto.AmosarTodas$3
- com.example.proxecto.AmosarTodas$4
- com.example.proxecto.AmosarTodas$5
- com.example.proxecto.AmosarTodas$6
-com/example/proxecto/AvistamentoFB.java
- com.example.proxecto.AvistamentoFB
+com/example/proxecto/AmosarAvistadas.java
+ com.example.proxecto.AmosarAvistadas
+ com.example.proxecto.AmosarAvistadas$1
+ com.example.proxecto.AmosarAvistadas$1$1
+ com.example.proxecto.AmosarAvistadas$10
+ com.example.proxecto.AmosarAvistadas$11
+ com.example.proxecto.AmosarAvistadas$2
+ com.example.proxecto.AmosarAvistadas$3
+ com.example.proxecto.AmosarAvistadas$4
+ com.example.proxecto.AmosarAvistadas$5
+ com.example.proxecto.AmosarAvistadas$6
+ com.example.proxecto.AmosarAvistadas$7
+ com.example.proxecto.AmosarAvistadas$8
+ com.example.proxecto.AmosarAvistadas$9
+com/example/proxecto/MainActivity.java
+ com.example.proxecto.MainActivity
+ com.example.proxecto.MainActivity$1
+ com.example.proxecto.MainActivity$2
+ com.example.proxecto.MainActivity$3
+ com.example.proxecto.MainActivity$4
+ com.example.proxecto.MainActivity$5
+ com.example.proxecto.MainActivity$5$1
 com/example/proxecto/Tipo_AveFB.java
  com.example.proxecto.Tipo_AveFB
 com/example/proxecto/Avistamento.java
@@ -79,6 +91,7 @@ com/example/proxecto/Rexistro.java
  com.example.proxecto.Rexistro$5
  com.example.proxecto.Rexistro$6
  com.example.proxecto.Rexistro$7
+ com.example.proxecto.Rexistro$7$1
  com.example.proxecto.Rexistro$8
  com.example.proxecto.Rexistro$9
 com/example/proxecto/Xenero_taxon.java
@@ -86,27 +99,13 @@ com/example/proxecto/Xenero_taxon.java
 com/example/proxecto/Db.java
  com.example.proxecto.Db
  com.example.proxecto.Db$1
-com/example/proxecto/AmosarAvistadas.java
- com.example.proxecto.AmosarAvistadas
- com.example.proxecto.AmosarAvistadas$1
- com.example.proxecto.AmosarAvistadas$1$1
- com.example.proxecto.AmosarAvistadas$10
- com.example.proxecto.AmosarAvistadas$11
- com.example.proxecto.AmosarAvistadas$12
- com.example.proxecto.AmosarAvistadas$12$1
- com.example.proxecto.AmosarAvistadas$2
- com.example.proxecto.AmosarAvistadas$3
- com.example.proxecto.AmosarAvistadas$4
- com.example.proxecto.AmosarAvistadas$5
- com.example.proxecto.AmosarAvistadas$6
- com.example.proxecto.AmosarAvistadas$7
- com.example.proxecto.AmosarAvistadas$8
- com.example.proxecto.AmosarAvistadas$9
-com/example/proxecto/MainActivity.java
- com.example.proxecto.MainActivity
- com.example.proxecto.MainActivity$1
- com.example.proxecto.MainActivity$2
- com.example.proxecto.MainActivity$3
- com.example.proxecto.MainActivity$4
- com.example.proxecto.MainActivity$5
- com.example.proxecto.MainActivity$5$1
+com/example/proxecto/AvistamentoFB.java
+ com.example.proxecto.AvistamentoFB
+com/example/proxecto/AmosarTodas.java
+ com.example.proxecto.AmosarTodas
+ com.example.proxecto.AmosarTodas$1
+ com.example.proxecto.AmosarTodas$2
+ com.example.proxecto.AmosarTodas$3
+ com.example.proxecto.AmosarTodas$4
+ com.example.proxecto.AmosarTodas$5
+ com.example.proxecto.AmosarTodas$6

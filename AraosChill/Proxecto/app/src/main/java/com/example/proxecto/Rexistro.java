@@ -353,7 +353,6 @@ public class Rexistro extends AppCompatActivity {
 
                                 } */
                                 String xen_esp = MainActivity.bb_dd.getXeneroEspecie(id_individuo);
-                                //  id_individuo=-3;
 
                                 if (xen_esp.equalsIgnoreCase("")) {
                                     xen_esp = getString(R.string.desc);
@@ -551,8 +550,14 @@ public class Rexistro extends AppCompatActivity {
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                // ...
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Individuo/"+pkIndiv+"/rutaAudio");
+                myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                    @Override
+                    public void onSuccess(DataSnapshot dataSnapshot) {
+                        myRef.setValue(pkAvis + "_"+ pkIndiv);
+                    }
+                });
             }
         });
 
@@ -590,10 +595,6 @@ Log.i("IMXE ", exception.getMessage());
 
     }
 
-    public void amosar() {
-
-
-    }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {

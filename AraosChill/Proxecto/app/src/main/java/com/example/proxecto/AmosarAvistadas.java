@@ -29,6 +29,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.example.proxecto.MainActivity.bb_dd;
+
 public class AmosarAvistadas extends AppCompatActivity {
 
     ImageView cocnello;
@@ -45,7 +47,7 @@ public class AmosarAvistadas extends AppCompatActivity {
     StorageReference storageRef = storage.getReference();
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-
+    ArrayList<IndividuoFB> avistadasFB;
     ArrayList<Avis_Esp> avis = new ArrayList<Avis_Esp>();
 
     @Override
@@ -63,45 +65,46 @@ public class AmosarAvistadas extends AppCompatActivity {
         todas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                avis = MainActivity.bb_dd.getAvis_indivCTod();
-            ArrayList<IndividuoFB> avistadas = new ArrayList<>();
+                avis = bb_dd.getAvis_indivCTod();
+                avistadasFB = new ArrayList<>();
                 DatabaseReference myRef = database.getReference("Individuo");
                 myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
                     @Override
                     public void onSuccess(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot individuo : dataSnapshot.getChildren()){
-                                //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
-                                int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
-
+                        for (DataSnapshot individuo : dataSnapshot.getChildren()) {
+                            //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
+                            int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
+                            String sexo = "";
+                            String plumaxe = individuo.child("plumaxe").getValue().toString();
+                            String rutaFoto = individuo.child("rutaFoto").getValue().toString();
+                            String rutaAudio = individuo.child("rutaAudio").getValue().toString();
+                            int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
                             //falta meter todo en una rray
-                                avistadas.add(new IndividuoFB(esp, ));
+                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso));
                         }
                         long totalAmos = dataSnapshot.getChildrenCount();
                         if (totalAmos == 0) {
-
                             Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
 
                         } else {
 
                             if (totalAmos % 5 != 0) {
-                                numViews = ((int)totalAmos / 5) + 1;
+                                numViews = ((int) totalAmos / 5) + 1;
 
                             } else {
-                                numViews = ((int)totalAmos / 5);
+                                numViews = ((int) totalAmos / 5);
                             }
 
                             totAv.setText(getResources().getString(R.string.cero) + totalAmos);
                             if (ata > totalAmos) {
-                                cargarFilas(dende, (int)totalAmos);
+                                cargarFilas(dende, (int) totalAmos);
                             } else {
                                 cargarFilas(dende, ata);
                             }
 
-
                         }
                     }
                 });
-
 
             }
         });
@@ -114,7 +117,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), R.string.campobaleiro, Toast.LENGTH_LONG).show();
 
                 } else {
-                    avis = MainActivity.bb_dd.getAvis_indivCon(concS);
+                    avis = bb_dd.getAvis_indivCon(concS);
                     if (avis.size() == 0) {
 
                         Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
@@ -161,11 +164,11 @@ public class AmosarAvistadas extends AppCompatActivity {
         seguinte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int totalAmos = avis.size();
+                int totalAmos = avistadasFB.size();
 
                 if (dende < totalAmos) {
                     ata += 5;
-                    dende += 4;
+                    dende += 5;
                     if (ata > totalAmos) {
                         cargarFilas(dende, totalAmos);
                     } else {
@@ -185,27 +188,21 @@ public class AmosarAvistadas extends AppCompatActivity {
         try {
             taboa.removeAllViews();
 
-            DatabaseReference myRef = database.getReference("Individuo");
-            myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                @Override
-                public void onSuccess(DataSnapshot dataSnapshot) {
 
-
-                }
-            });
             for (int i = dende; i < ata; i++) {
                 Button foto = new Button(getApplicationContext());
                 TableRow fila = new TableRow(getApplicationContext());
                 taboa.addView(fila);
                 TextView tv = new TextView(getApplicationContext());
                 try {
-                    String xen_esp = avis.get(i).getXen_esp();
-                    String xenSenEsp = xen_esp.substring(0, xen_esp.indexOf(" "));
-                    xenSenEsp = xenSenEsp.substring(0, 1).toUpperCase() + xenSenEsp.substring(1);
-                    int trimer = xen_esp.indexOf(" ") + 1;
-                    String espSenXen = xen_esp.substring(trimer).toLowerCase();
-                    tv.setText(xenSenEsp + " " + espSenXen);
-
+                    int numEsp = avistadasFB.get(i).getEspecie();
+                    ;
+                    Xenero_Especie xe = bb_dd.getXeneroEspecieFB(numEsp);
+                    if (xe!=null)
+                    tv.setText(xe.getXenero() + " " + xe.getEspecie());
+                    else{
+                        tv.setText(R.string.ufo);
+                    }
                 } catch (StringIndexOutOfBoundsException e) {
                     tv.setText(R.string.desc);
 
@@ -222,7 +219,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                 Button canto = new Button(getApplicationContext());
                 // b.setTag(xenero + " " + especie);
                 canto.setText(R.string.escoitar);
-                String localizacionAudio = avis.get(i).getDir_audio();
+                String localizacionAudio = avistadasFB.get(i).getRutaAudio();
                 canto.setTag(localizacionAudio);
 
                 fila.addView(canto);
@@ -230,14 +227,9 @@ public class AmosarAvistadas extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         String dirAudio = (String) canto.getTag();
-                        if (dirAudio != null) {
-                         /*   FragmentManager fm = getSupportFragmentManager();
-                            ReproducirAudio ra = new ReproducirAudio();
-                            ra.setElementoReproducir(dirAudio);
-                            ra.setCancelable(false);
+                        if (!dirAudio.equalsIgnoreCase("")) {
 
-                            ra.show(fm, "Reproducindo"); */
-                            descargarAudioFireBase("");
+                            descargarAudioFireBase(dirAudio);
                         } else {
 
                             Toast.makeText(getApplicationContext(), R.string.audioNonTopado, Toast.LENGTH_SHORT).show();
@@ -246,26 +238,18 @@ public class AmosarAvistadas extends AppCompatActivity {
                     }
                 });
                 fila.addView(foto);
-                //  foto.setCompoundDrawablesWithIntrinsicBounds(R.drawable.camic,  0, 0, 0);
-                String direFoto = avis.get(i).getDir_foto();
+                String direFoto = avistadasFB.get(i).getRutaFoto();
                 foto.setTag(direFoto);
                 foto.setText(R.string.fot);
-                //  foto.setWidth(R.dimen.iconSize);
-                // foto.setHeight(R.dimen.iconSize);
                 foto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String dirFoto = (String) foto.getTag();
                         if (dirFoto != null) {
-                            descargarFotoFirebase("");
+                            descargarFotoFirebase(direFoto);
 
                         }
 
-                      /*  FragmentManager fm = getSupportFragmentManager();
-                        FotoFrag ff = new FotoFrag();
-                        ff.setPathAmosar(finalLocalFile.getAbsolutePath());
-                        ff.setCancelable(false);
-                        ff.show(fm, "Imaxe"); */
                     }
                 });
 
@@ -280,7 +264,7 @@ public class AmosarAvistadas extends AppCompatActivity {
     public void descargarAudioFireBase(String ruta) {
 
 
-        StorageReference islandRef = storageRef.child("audios/-Ma4Xx8YvodQUWL_J9s8_-Ma4Xx9-X7QLy0ZL8GQv.mp3");
+        StorageReference islandRef = storageRef.child("audios/"+ruta+".mp3");
 
         File localFile = null;
         try {
@@ -289,7 +273,6 @@ public class AmosarAvistadas extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        File finalLocalFile = localFile;
         File finalLocalFile1 = localFile;
         islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
             @Override
@@ -312,7 +295,7 @@ public class AmosarAvistadas extends AppCompatActivity {
     public void descargarFotoFirebase(String ruta) {
 
 
-        StorageReference islandRef = storageRef.child("imagenes/-Ma4X_45TwgfeOJ3tPwv_-Ma4X_4amY0p-TOFx9wF");
+        StorageReference islandRef = storageRef.child("imagenes/"+ruta);
 
         File localFile = null;
         try {
@@ -337,46 +320,6 @@ public class AmosarAvistadas extends AppCompatActivity {
                 // Handle any errors
             }
         });
-    }
-
-    public void cargarIndividuos(TextView tv, Button b1, Button b2) {
-
-        //  Cursor cursor = db.rawQuery("select  AV.CONCELLO, AV.NOME_SITIO, AV.DATA, I.ID_INDIVIDUO, AI.FOTO, AI.AUDIO from AVISTAMENTO_INDIVIDUOS as AI inner join INDIVIDUOS as I on AI.INDIVIDUO=I.ID_INDIVIDUO inner join AVISTAMENTOS as AV on AV.ID_AVISTAMENTO=AI.AVISTAMENTO", null);
-
-        DatabaseReference myRef = database.getReference("Individuo");
-        DatabaseReference myRefIndivAv = database.getReference("Individuos_Avistamentos");
-        final DatabaseReference[] lugarNodo = new DatabaseReference[1];
-
-        Task<DataSnapshot> individuos = myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-            @Override
-            public void onSuccess(DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot indiv : dataSnapshot.getChildren()) {
-                    String pkFBIndiv = indiv.getKey();
-                    lugarNodo[0] = myRefIndivAv.child(pkFBIndiv).child("Lugar");
-                    lugarNodo[0].get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                        @Override
-                        public void onSuccess(DataSnapshot dataSnapshot) {
-                            final String[] lugarValue = new String[1];
-
-                            //lugarValue sale a null, debugea y veras
-                            lugarValue[0] = (String) dataSnapshot.getValue();
-                            String v = indiv.child("especie").getValue().toString();
-                            int numero_especie = Integer.parseInt(indiv.child("especie").getValue().toString());
-                            Xenero_Especie xe = MainActivity.bb_dd.getXeneroEspecieFB(numero_especie);
-                            if (xe != null)
-                                Log.i("RESULTADO", lugarValue[0] + "|||" + xe.getXenero() + xe.getEspecie());
-                            else
-                                Log.w("ResultadoAnomalo", indiv.toString());
-                        }
-                    });
-
-
-                }
-
-            }
-        });
-
     }
 
 
