@@ -8,8 +8,26 @@ Su funcionamiento es sencillo. Los usuarios pueden registrar los avistamientos d
 
 ## Instalación / Puesta en marcha
 
-En un emulador Android: Simplemente, descarga el .apk de este repositorio y arrástralo con el ratón en tu emulador encendido. 
-En un dispositivo real: conecta tu dispositivo a tu equipo a través de un cable USB y sitúalo en la carpeta que desees (típicamente, Mis archivos/My files). Luego, instálala pulsando en ella en tu dispositivo.
+En un emulador Android: Con Android Studio encendido y el amulador creado, selecciona al lado de botón de Play (Run) tu dispositivo emulado.
+
+En un dispositivo real:
+Primero, en tu móvil Android, activa las opciones de desarrollador. El modo de hacer esto varía entre dispositivos; generalmente, desde de Configuración/AcercaDelDispositivo/InformacionDelSofware se puede activar clicando repetidas veces en Numero de Compilacion. Acto seguido, en Configuracion aparecerá una nueva opción que es Opciones de desarrollador. En este apartado, activamos la Depuración USB. Más información en: 
+https://developer.android.com/studio/debug/dev-options
+
+Segundo, debemos efectuar algunos pasos desde nuestro ordenador. Estos pasos dependen a su vez del Sistema Operativo empleado. En Ubuntu Linux, desde la terminal.
+    1. Ejecutamos sudo usermod -aG plugdev $LOGNAME. Cerramos sesión (Log out) y nos volvemos a loguear.
+    2. Ejecutamos sudo apt-get install android-sdk-platform-tools-common
+
+Más información en: https://developer.android.com/studio/run/
+
+En este punto, si nos situamos en el directorio android_sdk/platform-tools/ y ejecutamos el comando "adb devices" deberíamos ver nuestro dispositivo real conectado (comprobar que hemos permitido tal conexión en nuestro ordenador).
+
+Finalmente, con el Android Studio encendido, seleccionamos el dispositivo y ejecutamos la aplicación. En este punto, deberíamos poder probar ya nuestra app.
+
+
+
+
+
 ## Uso
 
 Primero, regístrate en la misma para poder subir tus avistamientos, o identificar los de otros.
