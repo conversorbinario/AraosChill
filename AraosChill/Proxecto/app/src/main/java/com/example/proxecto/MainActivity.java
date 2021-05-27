@@ -146,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 + "BaseDatosPaxaros.db";
         File file = new File(bddestino);
         if (file.exists()) {
-            Toast.makeText(getApplicationContext(), "A BD NON SE VAI COPIAR. XA EXISTE", Toast.LENGTH_LONG).show();
+            bb_dd = new Db(getApplicationContext());
+            bb_dd.getReadableDatabase();
             return; // XA EXISTE A BASE DE DATOS
         }
 
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             outputstream.close();
             Toast.makeText(getApplicationContext(), "BASE DE DATOS COPIADA", Toast.LENGTH_LONG).show();
             bb_dd = new Db(getApplicationContext());
-            bb_dd.getWritableDatabase();
+            bb_dd.getReadableDatabase();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

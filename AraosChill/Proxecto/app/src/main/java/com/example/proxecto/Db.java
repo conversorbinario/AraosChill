@@ -580,7 +580,7 @@ public class Db extends SQLiteOpenHelper {
     }
 
     public Xenero_Especie getXeneroEspecieFB(long claveIndiv){
-
+        db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select xt.xenero, ta.ESPECIE from xenero_taxon as xt left join tipo_ave as ta on xt.ID_XENERO=ta.XENERO where ta.ID_AVE =?",  new String[]{String.valueOf(claveIndiv)});
 
 
