@@ -10,7 +10,7 @@ En este directorio templates, véase <a href="../../CasosdeUso.pdf" target="_bla
  
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
-<a href="../../img/Views" target="_blank">Aquí </a> puedes encontrar algunas vistas beta de la aplicación
+<a href="./../img/Views" target="_blank">Aquí </a> puedes encontrar algunas vistas beta de la aplicación
 
 
 ## Base de Datos
