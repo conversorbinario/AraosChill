@@ -2,17 +2,13 @@ package com.example.proxecto;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,9 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class Db extends SQLiteOpenHelper {
 
@@ -70,13 +63,13 @@ public class Db extends SQLiteOpenHelper {
             "XENERO VARCHAR(120) UNIQUE NOT NULL)";
 
     public Db(Context ct) {
-        super(ct, "BaseDatosPaxaros", null, 1);
+      super(ct, "BaseDatosPaxaros.db", null, 1);
         this.ctxt = ct;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        try {
+       /* try {
             db.execSQL(AVISTAMENTO_INDIVIDUOS);
             db.execSQL(AVISTAMENTOS);
             db.execSQL(INDIVIDUOS);
@@ -85,7 +78,9 @@ public class Db extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.w("Erros creacion DB", e.getMessage());
-        }
+        } */
+
+        db = getReadableDatabase();
     }
 
     @Override
@@ -93,6 +88,12 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
+
+    @Override
+    public SQLiteDatabase getWritableDatabase() {
+
+        return super.getWritableDatabase();
+    }
 
     public String addTipo_aveFB(Tipo_AveFB esp) throws Exception {
 

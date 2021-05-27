@@ -3,9 +3,11 @@ package com.example.proxecto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +36,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -56,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         usarSD();
-        crearBD();
+        crearBD2();
         SharedPreferences sharedpref = getPreferences(MODE_PRIVATE);
         Boolean procesado = sharedpref.getBoolean("BBDD", false);
         if (!procesado) {
             Log.i("procesado", "SI");
-            copiarXml();
-             procesarXML2();
+           // copiarXml();
+            // procesarXML2();
         }
         else{
             Log.i("procesado", "NON");
@@ -137,8 +140,53 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    public void crearBD2(){
+        String bddestino = "/data/data/" + getPackageName() + "/databases/"
+                + "BaseDatosPaxaros.db";
+        File file = new File(bddestino);
+        if (file.exists()) {
+            Toast.makeText(getApplicationContext(), "A BD NON SE VAI COPIAR. XA EXISTE", Toast.LENGTH_LONG).show();
+            return; // XA EXISTE A BASE DE DATOS
+        }
+
+        String pathbd = "/data/data/" + getPackageName()
+                + "/databases/";
+        File filepathdb = new File(pathbd);
+        filepathdb.mkdirs();
+
+        InputStream inputstream;
+        try {
+            inputstream = getAssets().open("BaseDatosPaxaros.db");
+            OutputStream outputstream = new FileOutputStream(bddestino);
+
+            int tamread;
+            byte[] buffer = new byte[2048];
+
+            while ((tamread = inputstream.read(buffer)) > 0) {
+                outputstream.write(buffer, 0, tamread);
+            }
+
+            inputstream.close();
+            outputstream.flush();
+            outputstream.close();
+            Toast.makeText(getApplicationContext(), "BASE DE DATOS COPIADA", Toast.LENGTH_LONG).show();
+            bb_dd = new Db(getApplicationContext());
+            bb_dd.getWritableDatabase();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+
+
     public void crearBD(){
-        bb_dd=new Db(getApplicationContext());
+       // bb_dd=new Db(getApplicationContext());
+
+               // bb_dd=new Db(getApplicationContext(), "BaseDatosPaxaros.db", null, 1);
+
         bb_dd.db = bb_dd.getWritableDatabase();
         Log.i("BD creada", "BD creada manualmente");
     }

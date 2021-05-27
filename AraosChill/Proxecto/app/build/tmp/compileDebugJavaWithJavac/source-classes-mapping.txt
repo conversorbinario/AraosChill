@@ -7,10 +7,8 @@ com/example/proxecto/Tipo_ave.java
  com.example.proxecto.Tipo_ave
 com/example/proxecto/Avis_Esp.java
  com.example.proxecto.Avis_Esp
-com/example/proxecto/EditarXenEsp.java
- com.example.proxecto.EditarXenEsp
- com.example.proxecto.EditarXenEsp$1
- com.example.proxecto.EditarXenEsp$2
+com/example/proxecto/AvistamentoFB.java
+ com.example.proxecto.AvistamentoFB
 com/example/proxecto/Sketch.java
  com.example.proxecto.Sketch
 com/example/proxecto/FotoFrag.java
@@ -20,6 +18,67 @@ com/example/proxecto/BuildConfig.java
  com.example.proxecto.BuildConfig
 com/example/proxecto/IndividuoFB.java
  com.example.proxecto.IndividuoFB
+com/example/proxecto/GravarAudio.java
+ com.example.proxecto.GravarAudio
+ com.example.proxecto.GravarAudio$1
+com/example/proxecto/IndoIndiv.java
+ com.example.proxecto.IndoIndiv
+com/example/proxecto/Tipo_AveFB.java
+ com.example.proxecto.Tipo_AveFB
+com/example/proxecto/Avistamento.java
+ com.example.proxecto.Avistamento
+com/example/proxecto/Individuo.java
+ com.example.proxecto.Individuo
+com/example/proxecto/Xenero_Especie.java
+ com.example.proxecto.Xenero_Especie
+com/example/proxecto/inicioProcessing.java
+ com.example.proxecto.inicioProcessing
+ com.example.proxecto.inicioProcessing$1
+ com.example.proxecto.inicioProcessing$2
+ com.example.proxecto.inicioProcessing$3
+ com.example.proxecto.inicioProcessing$3$1
+ com.example.proxecto.inicioProcessing$4
+ com.example.proxecto.inicioProcessing$4$1
+ com.example.proxecto.inicioProcessing$5
+com/example/proxecto/Xenero_taxon.java
+ com.example.proxecto.Xenero_taxon
+com/example/proxecto/User.java
+ com.example.proxecto.User
+com/example/proxecto/Avistamentos.java
+ com.example.proxecto.Avistamentos
+ com.example.proxecto.Avistamentos$1
+ com.example.proxecto.Avistamentos$2
+com/example/proxecto/Rexistro.java
+ com.example.proxecto.Rexistro
+ com.example.proxecto.Rexistro$1
+ com.example.proxecto.Rexistro$10
+ com.example.proxecto.Rexistro$11
+ com.example.proxecto.Rexistro$2
+ com.example.proxecto.Rexistro$3
+ com.example.proxecto.Rexistro$4
+ com.example.proxecto.Rexistro$5
+ com.example.proxecto.Rexistro$6
+ com.example.proxecto.Rexistro$7
+ com.example.proxecto.Rexistro$7$1
+ com.example.proxecto.Rexistro$8
+ com.example.proxecto.Rexistro$9
+com/example/proxecto/AxudaIdentificacion.java
+ com.example.proxecto.AxudaIdentificacion
+ com.example.proxecto.AxudaIdentificacion$1
+ com.example.proxecto.AxudaIdentificacion$1$1
+ com.example.proxecto.AxudaIdentificacion$1$2
+ com.example.proxecto.AxudaIdentificacion$1$3
+com/example/proxecto/Db.java
+ com.example.proxecto.Db
+ com.example.proxecto.Db$1
+com/example/proxecto/VellosAvistamento.java
+ com.example.proxecto.VellosAvistamento
+ com.example.proxecto.VellosAvistamento$1
+ com.example.proxecto.VellosAvistamento$2
+com/example/proxecto/EditarXenEsp.java
+ com.example.proxecto.EditarXenEsp
+ com.example.proxecto.EditarXenEsp$1
+ com.example.proxecto.EditarXenEsp$2
 com/example/proxecto/AmosarAvistadas.java
  com.example.proxecto.AmosarAvistadas
  com.example.proxecto.AmosarAvistadas$1
@@ -42,65 +101,6 @@ com/example/proxecto/MainActivity.java
  com.example.proxecto.MainActivity$4
  com.example.proxecto.MainActivity$5
  com.example.proxecto.MainActivity$5$1
-com/example/proxecto/Tipo_AveFB.java
- com.example.proxecto.Tipo_AveFB
-com/example/proxecto/Avistamento.java
- com.example.proxecto.Avistamento
-com/example/proxecto/Individuo.java
- com.example.proxecto.Individuo
-com/example/proxecto/Xenero_Especie.java
- com.example.proxecto.Xenero_Especie
-com/example/proxecto/AxudaIdentificacion.java
- com.example.proxecto.AxudaIdentificacion
- com.example.proxecto.AxudaIdentificacion$1
- com.example.proxecto.AxudaIdentificacion$1$1
- com.example.proxecto.AxudaIdentificacion$1$2
- com.example.proxecto.AxudaIdentificacion$1$3
-com/example/proxecto/VellosAvistamento.java
- com.example.proxecto.VellosAvistamento
- com.example.proxecto.VellosAvistamento$1
- com.example.proxecto.VellosAvistamento$2
-com/example/proxecto/User.java
- com.example.proxecto.User
-com/example/proxecto/Avistamentos.java
- com.example.proxecto.Avistamentos
- com.example.proxecto.Avistamentos$1
- com.example.proxecto.Avistamentos$2
-com/example/proxecto/GravarAudio.java
- com.example.proxecto.GravarAudio
- com.example.proxecto.GravarAudio$1
-com/example/proxecto/IndoIndiv.java
- com.example.proxecto.IndoIndiv
-com/example/proxecto/inicioProcessing.java
- com.example.proxecto.inicioProcessing
- com.example.proxecto.inicioProcessing$1
- com.example.proxecto.inicioProcessing$2
- com.example.proxecto.inicioProcessing$3
- com.example.proxecto.inicioProcessing$3$1
- com.example.proxecto.inicioProcessing$4
- com.example.proxecto.inicioProcessing$4$1
- com.example.proxecto.inicioProcessing$5
-com/example/proxecto/Rexistro.java
- com.example.proxecto.Rexistro
- com.example.proxecto.Rexistro$1
- com.example.proxecto.Rexistro$10
- com.example.proxecto.Rexistro$11
- com.example.proxecto.Rexistro$2
- com.example.proxecto.Rexistro$3
- com.example.proxecto.Rexistro$4
- com.example.proxecto.Rexistro$5
- com.example.proxecto.Rexistro$6
- com.example.proxecto.Rexistro$7
- com.example.proxecto.Rexistro$7$1
- com.example.proxecto.Rexistro$8
- com.example.proxecto.Rexistro$9
-com/example/proxecto/Xenero_taxon.java
- com.example.proxecto.Xenero_taxon
-com/example/proxecto/Db.java
- com.example.proxecto.Db
- com.example.proxecto.Db$1
-com/example/proxecto/AvistamentoFB.java
- com.example.proxecto.AvistamentoFB
 com/example/proxecto/AmosarTodas.java
  com.example.proxecto.AmosarTodas
  com.example.proxecto.AmosarTodas$1
