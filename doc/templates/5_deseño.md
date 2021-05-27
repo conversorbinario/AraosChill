@@ -6,7 +6,7 @@ En el directorio superior (/doc), accede a ./img/UML.png para ver el Diagrama de
 
 ## Casos de uso [descritos en fichas e/ou mediante esquemas; deben incluír o(s) tipo(s) de usuario implicados en cada caso de uso]
 
-En este directorio templates, véase <a href="./CasosdeUso.pdf" target="_blank">Casos de uso </a>
+En este directorio templates, véase <a href="../../CasosdeUso.pdf" target="_blank">Casos de uso </a>
  
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
