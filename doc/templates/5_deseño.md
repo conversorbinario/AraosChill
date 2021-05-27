@@ -10,15 +10,15 @@ En este directorio templates, véase <a href="../../CasosdeUso.pdf" target="_bla
  
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
-<a href="./../img/Views" target="_blank">Aquí </a> puedes encontrar algunas vistas beta de la aplicación
+<a href="../../img/Views" target="_blank">Aquí </a> puedes encontrar algunas vistas beta de la aplicación
 
 
 ## Base de Datos
 
-La "implementación beta" consta de una base de datos SQL. El diseño de la misma puede encontrarse<a href="./../img/BaseDatos.png" target="_blank"> aquí</a>. 
+La "implementación beta" consta de una base de datos SQL. El diseño de la misma puede encontrarse<a href="../../img/BaseDatos.png" target="_blank"> aquí</a>. 
 
 Posteriormente, sustituí esta base de datos SQL por una no SQL -a través de Firebase. 
 
 ## Diagrama de compoñentes software que constitúen o produto e de despregue
 
-<a href="./../img/DiagramaComponent.png" target="_blank">Aquí</a> puedes acceder al Diagrama de componentes.
+<a href="../../img/DiagramaComponent.png" target="_blank">Aquí</a> puedes acceder al Diagrama de componentes.
