@@ -62,6 +62,10 @@
     <string name="foraRango">Value out of range</string>
     <string name="ufo">Unadentified </string>
 
+    <string name="sexoP">Sex: </string>
+    <string name="tamanhoP">Size: </string>
+    <string name="pesoP">Weight: </string>
+
     <string name="canto">Listening to birdsong of </string>
     <string name="sexoSp">Selec. sex </string>
     <string name="plumaxeSp">Selec. plumage </string>

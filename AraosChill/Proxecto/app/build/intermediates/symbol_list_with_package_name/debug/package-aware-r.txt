@@ -1369,6 +1369,7 @@ drawable abc_vector_test
 drawable araopapagaio
 drawable avd_hide_password
 drawable avd_show_password
+drawable border
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1600,6 +1601,7 @@ id icon_only
 id identificar
 id ifRoom
 id image
+id imaxeFB
 id imaxeInicio
 id info
 id iniciarSes
@@ -1680,6 +1682,8 @@ id percent
 id peso
 id pin
 id plumaxe
+id plumaxeI
+id plumaxeP
 id plumaxeTV
 id previa
 id progress_circular
@@ -1716,6 +1720,8 @@ id seleccionadoAvis
 id select_dialog_listview
 id selected
 id sexo
+id sexoI
+id sexoP
 id sexoTV
 id shortcut
 id showCustom
@@ -1755,6 +1761,8 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tamanho
+id tamanhoI
+id tamanhoP
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -1883,6 +1891,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialogo_info
 layout inicioprocessing
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2105,6 +2114,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string paxina
 string permission
+string pesoP
 string plumaxeSp
 string previous
 string project_id
@@ -2115,8 +2125,10 @@ string sacaFoto
 string search_menu_title
 string seguinte
 string seleccione
+string sexoP
 string sexoSp
 string status_bar_notification_info_overflow
+string tamanhoP
 string tipoPlum
 string tituloprocura
 string todasAves

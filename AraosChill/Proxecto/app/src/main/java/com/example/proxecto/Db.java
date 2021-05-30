@@ -198,7 +198,6 @@ public class Db extends SQLiteOpenHelper {
     public boolean existeXenero(String xenero) throws Exception {
         xenero = xenero.toLowerCase();
         xenero = xenero.substring(0, 1).toUpperCase() + xenero.substring(1);
-        int id_xenero = -1;
         Cursor cursor = db.rawQuery("select ID_XENERO from XENERO_TAXON WHERE XENERO=?", new String[]{xenero});
 
         if (cursor.moveToFirst()) {                // Se non ten datos xa non entra

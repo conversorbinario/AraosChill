@@ -74,7 +74,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                         for (DataSnapshot individuo : dataSnapshot.getChildren()) {
                             //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
                             int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
-                            String sexo = "";
+                            String sexo = individuo.child("sexo").getValue().toString();
                             String plumaxe = individuo.child("plumaxe").getValue().toString();
                             String rutaFoto = individuo.child("rutaFoto").getValue().toString();
                             String rutaAudio = individuo.child("rutaAudio").getValue().toString();
@@ -239,14 +239,16 @@ public class AmosarAvistadas extends AppCompatActivity {
                 });
                 fila.addView(foto);
                 String direFoto = avistadasFB.get(i).getRutaFoto();
-                foto.setTag(direFoto);
+                //foto.setTag(direFoto);
+                foto.setTag(avistadasFB.get(i));
                 foto.setText(R.string.fot);
                 foto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String dirFoto = (String) foto.getTag();
+                       // String dirFoto = (String) foto.getTag();
+                        IndividuoFB dirFoto = (IndividuoFB) foto.getTag();
                         if (dirFoto != null) {
-                            descargarFotoFirebase(direFoto);
+                            descargarFotoFirebase(dirFoto);
 
                         }
 
@@ -292,10 +294,12 @@ public class AmosarAvistadas extends AppCompatActivity {
         });
     }
 
-    public void descargarFotoFirebase(String ruta) {
+   // public void descargarFotoFirebase(String ruta) {
+     public void descargarFotoFirebase(IndividuoFB individuo) {
 
 
-        StorageReference islandRef = storageRef.child("imagenes/"+ruta);
+       // StorageReference islandRef = storageRef.child("imagenes/"+ruta);
+         StorageReference islandRef = storageRef.child("imagenes/"+individuo.getRutaFoto());
 
         File localFile = null;
         try {
@@ -310,6 +314,7 @@ public class AmosarAvistadas extends AppCompatActivity {
             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                 FragmentManager fm = getSupportFragmentManager();
                 FotoFrag ff = new FotoFrag();
+                ff.setIndividuo(individuo);
                 ff.setPathAmosar(finalLocalFile.getAbsolutePath());
                 ff.setCancelable(false);
                 ff.show(fm, "Imaxe");

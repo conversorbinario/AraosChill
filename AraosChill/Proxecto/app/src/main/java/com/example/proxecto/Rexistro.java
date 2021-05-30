@@ -208,10 +208,10 @@ public class Rexistro extends AppCompatActivity {
                         // if (id_individuo<0) {
                         if (sexAv.equalsIgnoreCase("")) {
                             in = new Individuo();
-                            id_individuo = MainActivity.bb_dd.addIndividuo(in);
+                           // id_individuo = MainActivity.bb_dd.addIndividuo(in);
                         } else {
                             in = new Individuo(sexAv);
-                            id_individuo = MainActivity.bb_dd.addIndividuo(in);
+                            //id_individuo = MainActivity.bb_dd.addIndividuo(in);
                         }
                         //  }
                         String pkAvisFB="";
@@ -221,19 +221,21 @@ public class Rexistro extends AppCompatActivity {
                             if (avistamentoVello == false) {
                                 pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
 
-                                id_Avist = MainActivity.bb_dd.addAvistamento(avis);
+                               // id_Avist = MainActivity.bb_dd.addAvistamento(avis);
                                 avistamentoVello = true;
                             }
                         }
 
 
-
-                        String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB("", rutaAudio, plumaxe, gramos), pkAvisFB);
+                        String sexo = sexoAv.getSelectedItem().toString();
+                        String id_indviduoFB = MainActivity.bb_dd.addIndividuoFB(new IndividuoFB(sexo,"", rutaAudio, plumaxe, gramos), pkAvisFB);
 
                         subirAudio(pkAvisFB, id_indviduoFB);
                         subirFoto(pkAvisFB, id_indviduoFB);
+                        MainActivity.bb_dd.addAvisIndividuoFB(id_indviduoFB, pkAvisFB);
 
-                        String dirAudio = copiarAudio(id_Avist, id_individuo);
+
+                       /* String dirAudio = copiarAudio(id_Avist, id_individuo);
 
                         String dir_foto = copiarFoto(id_Avist, id_individuo);
 
@@ -244,7 +246,7 @@ public class Rexistro extends AppCompatActivity {
 
                         MainActivity.bb_dd.addAvisIndividuoFB(id_indviduoFB, pkAvisFB);
 
-                        MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
+                        //MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
                        /* }catch(Exception e){
 
                             Toast.makeText(getApplicationContext(), R.string.indivAvis, Toast.LENGTH_LONG).show();
@@ -299,7 +301,7 @@ public class Rexistro extends AppCompatActivity {
                                 String sexo = (String) sspSX.getSelectedItem();
                                 int especie = MainActivity.bb_dd.getIdEspecie(xen, specie);
                                 //if (id_individuo<0) {
-                                id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
+                              //  id_individuo = MainActivity.bb_dd.addIndividuo(new Individuo(sexo), especie);
                                 //}
 
                                 ///para a FB
@@ -309,7 +311,7 @@ public class Rexistro extends AppCompatActivity {
                                     if (avistamentoVello == false) {
                                         pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
 
-                                        id_Avist = MainActivity.bb_dd.addAvistamento(avis);
+                                      //  id_Avist = MainActivity.bb_dd.addAvistamento(avis);
                                         avistamentoVello = true;
                                     }
                                 }
@@ -335,7 +337,7 @@ public class Rexistro extends AppCompatActivity {
 
 
                                 MainActivity.bb_dd.addAvisIndividuoFB(id_indviduoFB, pkAvisFB);
-                                MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
+                              //  MainActivity.bb_dd.addAvisIndividuio(id_Avist, id_individuo, dirAudio, dir_foto, gramos, plumaxe);
 
                                /* }catch(Exception e){
 
@@ -655,7 +657,7 @@ Log.i("IMXE ", exception.getMessage());
     }
 
 
-    public void existeXeneroFB(String xenero) {
+  /*  public void existeXeneroFB(String xenero) {
         xenero = xenero.substring(0, 1).toUpperCase() + xenero.substring(1);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
