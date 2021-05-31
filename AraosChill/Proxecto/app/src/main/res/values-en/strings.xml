@@ -78,6 +78,8 @@
     <string name="iden">Identify</string>
     <string name="pDom">Passer Domesticus </string>
     <string name="act">Actualize </string>
+    <string name="introNum">Enter a number</string>
+    <string name="nomesComuns">How are bird species called in your area? </string>
 
     <string name="amosar">Show </string>
     <string name="todosAv">All sightings</string>

@@ -53,9 +53,10 @@ com/example/proxecto/Xenero_Especie.java
 com/example/proxecto/AxudaIdentificacion.java
  com.example.proxecto.AxudaIdentificacion
  com.example.proxecto.AxudaIdentificacion$1
- com.example.proxecto.AxudaIdentificacion$1$1
- com.example.proxecto.AxudaIdentificacion$1$2
- com.example.proxecto.AxudaIdentificacion$1$3
+ com.example.proxecto.AxudaIdentificacion$2
+ com.example.proxecto.AxudaIdentificacion$2$1
+ com.example.proxecto.AxudaIdentificacion$2$2
+ com.example.proxecto.AxudaIdentificacion$2$3
 com/example/proxecto/VellosAvistamento.java
  com.example.proxecto.VellosAvistamento
  com.example.proxecto.VellosAvistamento$1
@@ -108,3 +109,4 @@ com/example/proxecto/AmosarTodas.java
  com.example.proxecto.AmosarTodas$4
  com.example.proxecto.AmosarTodas$5
  com.example.proxecto.AmosarTodas$6
+ com.example.proxecto.AmosarTodas$7

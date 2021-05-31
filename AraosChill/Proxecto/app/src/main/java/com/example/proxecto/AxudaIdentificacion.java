@@ -1,29 +1,41 @@
 package com.example.proxecto;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
 public class AxudaIdentificacion extends AppCompatActivity {
 
     Button identificar;
-    Button actualizar;
+    Button nomesVulgares;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_axuda_identificacion);
         identificar = findViewById(R.id.identificar);
+        nomesVulgares = findViewById(R.id.nomeVulg);
 
+        nomesVulgares.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent inte = new Intent(getApplicationContext(), AmosarTodas.class);
+                inte.putExtra("", true);
+                startActivity(inte);
+
+            }
+        });
 
         identificar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +43,7 @@ public class AxudaIdentificacion extends AppCompatActivity {
                 ArrayList<Avis_Esp> avis = new ArrayList<Avis_Esp>();
                 avis = MainActivity.bb_dd.getAvis_indivCTodID();
 
-                int nuemFilas=avis.size();
+                int nuemFilas = avis.size();
                 TableLayout taboa = (TableLayout) findViewById(R.id.taboa_dinamica);
                 try {
                     taboa.removeAllViews();
@@ -48,12 +60,12 @@ public class AxudaIdentificacion extends AppCompatActivity {
                             String espSenXen = xen_esp.substring(trimer).toLowerCase();
                             tv.setText(xenSenEsp + " " + espSenXen);
 
-                        }catch (StringIndexOutOfBoundsException e){
+                        } catch (StringIndexOutOfBoundsException e) {
                             tv.setText(R.string.desc);
 
                         }
                         //amosamos nome
-                       tv.setTag(avis.get(i).getIdIndiv());
+                        tv.setTag(avis.get(i).getIdIndiv());
 
                         tv.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -78,14 +90,14 @@ public class AxudaIdentificacion extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 String dirAudio = (String) canto.getTag();
-                                if (dirAudio!=null){
+                                if (dirAudio != null) {
                                     FragmentManager fm = getSupportFragmentManager();
                                     ReproducirAudio ra = new ReproducirAudio();
                                     ra.setElementoReproducir(dirAudio);
                                     ra.setCancelable(false);
 
                                     ra.show(fm, "Reproducindo");
-                                }else{
+                                } else {
 
                                     Toast.makeText(getApplicationContext(), R.string.audioNonTopado, Toast.LENGTH_SHORT).show();
                                 }
@@ -103,7 +115,7 @@ public class AxudaIdentificacion extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 String dirFoto = (String) foto.getTag();
-                                if (dirFoto!=null){
+                                if (dirFoto != null) {
                                     FragmentManager fm = getSupportFragmentManager();
                                     FotoFrag ff = new FotoFrag();
                                     ff.setPathAmosar(dirFoto);

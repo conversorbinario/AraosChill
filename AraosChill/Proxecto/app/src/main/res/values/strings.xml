@@ -97,6 +97,8 @@
     <string name="pesoP">Peso: </string>
 
     <string name="inRex">Individuo xa avistado </string>
+    <string name="introNum">Introduce un numero</string>
+    <string name="nomesComuns">Como chamas a cada especie de ave na túa zona? </string>
 
     <string name="criterioXen">Buscar por xenero </string>
     <string name="criterioEsp">e especie</string>

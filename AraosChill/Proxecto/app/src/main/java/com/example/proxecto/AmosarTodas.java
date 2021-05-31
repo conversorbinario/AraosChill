@@ -110,20 +110,24 @@ public class AmosarTodas extends AppCompatActivity {
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int numero = Integer.parseInt(String.valueOf(et.getText()));
-                if (numero>numViews  || numero<=0){
-                    Toast.makeText(getApplicationContext(), R.string.foraRango, Toast.LENGTH_LONG).show();
+                try {
+                    int numero = Integer.parseInt(String.valueOf(et.getText()));
+                    if (numero > numViews || numero <= 0) {
+                        Toast.makeText(getApplicationContext(), R.string.foraRango, Toast.LENGTH_LONG).show();
 
-                    return;
-                }else{
-                    numVista=numero;
-                    dende=(numero-1)*10;
-                    ata = numero*10;
-                    taboa.removeAllViews();
-                    cargarFilas(dende, ata);
-                    et.setText("");
-                    et.setHint(numVista + "/"+numViews);
+                        return;
+                    } else {
+                        numVista = numero;
+                        dende = (numero - 1) * 10;
+                        ata = numero * 10;
+                        taboa.removeAllViews();
+                        cargarFilas(dende, ata);
+                        et.setText("");
+                        et.setHint(numVista + "/" + numViews);
 
+                    }
+                }catch(Exception e){
+                    Toast.makeText(getApplicationContext(), R.string.introNum, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,6 +148,22 @@ public class AmosarTodas extends AppCompatActivity {
             tv.setText(xenero + " " + especie);
             tv.setTextColor(getResources().getColor(R.color.darkBlue));
             tv.setPaintFlags(tv.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+
+            Intent inte = getIntent();
+
+            boolean subir_nome_esp=inte.getBooleanExtra("actividade", false);
+
+            if (subir_nome_esp) {
+
+                tv.setBackground(getDrawable(R.drawable.border_text_view));
+                tv.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        Toast.makeText(getApplicationContext(), "LONGO", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+            }
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

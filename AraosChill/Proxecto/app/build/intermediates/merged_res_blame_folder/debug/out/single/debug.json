@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_amosar_todas.xml.flat",
-        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_amosar_todas.xml"
-    },
-    {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_vellos_avistamento.xml.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_vellos_avistamento.xml"
+    },
+    {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_amosar_todas.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_amosar_todas.xml"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -18,6 +18,10 @@
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/drawable_araopapagaio.jpg.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable/araopapagaio.jpg"
+    },
+    {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/drawable_border_text_view.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable/border_text_view.xml"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",

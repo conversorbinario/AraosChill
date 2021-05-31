@@ -10,6 +10,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:layout_centerInParent="true"
+
+        android:layout_below="@+id/identificar"
+        android:text="@string/nomesComuns"
+        android:id="@+id/nomeVulg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
 
     <ScrollView
         android:layout_below="@+id/identificar"

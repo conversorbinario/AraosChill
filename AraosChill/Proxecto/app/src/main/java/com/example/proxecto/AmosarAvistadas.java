@@ -220,16 +220,24 @@ public class AmosarAvistadas extends AppCompatActivity {
                 // b.setTag(xenero + " " + especie);
                 canto.setText(R.string.escoitar);
                 String localizacionAudio = avistadasFB.get(i).getRutaAudio();
-                canto.setTag(localizacionAudio);
+                canto.setTag(avistadasFB.get(i));
 
                 fila.addView(canto);
                 canto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String dirAudio = (String) canto.getTag();
+                        IndividuoFB indi = (IndividuoFB)canto.getTag();
+                        String dirAudio = indi.getRutaAudio();
+                Xenero_Especie xep = bb_dd.getXeneroEspecieFB(indi.getEspecie());
                         if (!dirAudio.equalsIgnoreCase("")) {
+                            if (xep!=null){
+                                descargarAudioFireBase(dirAudio, xep.getXenero(), xep.getEspecie());
 
-                            descargarAudioFireBase(dirAudio);
+
+                            }
+                                else {
+                                descargarAudioFireBase(dirAudio, "", "");
+                            }
                         } else {
 
                             Toast.makeText(getApplicationContext(), R.string.audioNonTopado, Toast.LENGTH_SHORT).show();
@@ -263,7 +271,7 @@ public class AmosarAvistadas extends AppCompatActivity {
     }
 
 
-    public void descargarAudioFireBase(String ruta) {
+    public void descargarAudioFireBase(String ruta, String xenero, String especie) {
 
 
         StorageReference islandRef = storageRef.child("audios/"+ruta+".mp3");
@@ -282,6 +290,8 @@ public class AmosarAvistadas extends AppCompatActivity {
                 FragmentManager fm = getSupportFragmentManager();
                 ReproducirAudio ra = new ReproducirAudio();
                 ra.setElementoReproducir(finalLocalFile1.getAbsolutePath());
+                ra.setXenero(xenero);
+                ra.setEspecie(especie);
                 ra.setCancelable(false);
 
                 ra.show(fm, "Reproducindo");
