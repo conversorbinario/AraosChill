@@ -44,6 +44,9 @@
 
     <string name="permission">Precísase permiso, téntao de novo</string>
     <string name="aceptar">Insertar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="guardar">Gardar</string>
+
     <string name="identificacion">Identificar aves rexistradas</string>
     <string name="deter">Deter Audio</string>
     <string name="cantoDe">Canto de </string>
@@ -95,6 +98,8 @@
     <string name="sexoP"> Sexo: </string>
     <string name="tamanhoP">Tamaño: </string>
     <string name="pesoP">Peso: </string>
+    <string name="especieZoa">Como chamas a especie? </string>
+    <string name="zoaEspecie">Onde é chamada así? Canto máis precisa a localización, mellor!</string>
 
     <string name="inRex">Individuo xa avistado </string>
     <string name="introNum">Introduce un numero</string>

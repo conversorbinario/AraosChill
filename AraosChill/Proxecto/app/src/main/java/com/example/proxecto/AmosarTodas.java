@@ -145,6 +145,7 @@ public class AmosarTodas extends AppCompatActivity {
 
             String xenero = todasEspecies.get(i).getXenero();
             TextView tv = new TextView(getApplicationContext());
+            tv.setHeight(25);
             tv.setText(xenero + " " + especie);
             tv.setTextColor(getResources().getColor(R.color.darkBlue));
             tv.setPaintFlags(tv.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -154,11 +155,18 @@ public class AmosarTodas extends AppCompatActivity {
             boolean subir_nome_esp=inte.getBooleanExtra("actividade", false);
 
             if (subir_nome_esp) {
-
+                tv.setTag( xenero + " " + especie);
                 tv.setBackground(getDrawable(R.drawable.border_text_view));
+
                 tv.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
+                        FragmentManager fm = getSupportFragmentManager();
+                        NomeVulgar nv = new NomeVulgar();
+                        nv.setCancelable(false);
+                        String xen_esp=(String)tv.getTag();
+                        nv.setEspecieRenomear(xen_esp);
+                        nv.show(fm, "nomeEspecie");
                         Toast.makeText(getApplicationContext(), "LONGO", Toast.LENGTH_SHORT).show();
                         return true;
                     }

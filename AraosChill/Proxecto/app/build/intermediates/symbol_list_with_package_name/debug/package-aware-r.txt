@@ -1657,6 +1657,7 @@ id navigation_header_container
 id never
 id noScroll
 id nomeVulg
+id nomeVulgar
 id none
 id normal
 id notification_background
@@ -1779,6 +1780,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id titNomeEsp
 id title
 id titleDividerNoCustom
 id title_template
@@ -1809,6 +1811,7 @@ id withText
 id wrap
 id wrap_content
 id xeneroEd
+id zoaNomeVulgar
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1894,6 +1897,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialogo_info
+layout info_especie
 layout inicioprocessing
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -1993,6 +1997,7 @@ string buscarCon
 string buscarTipoPlumaxe
 string buscarXen
 string campobaleiro
+string cancelar
 string canto
 string cantoDe
 string cero
@@ -2033,6 +2038,7 @@ string erroDatos
 string erroDescargando
 string error_icon_content_description
 string escoitar
+string especieZoa
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -2046,6 +2052,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string gravaAudio
+string guardar
 string hide_bottom_view_on_scroll_behavior
 string hinEspecie
 string hinXenero
@@ -2143,6 +2150,7 @@ string usuario
 string usuarioContra
 string velloAvistamento
 string xenEsp
+string zoaEspecie
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

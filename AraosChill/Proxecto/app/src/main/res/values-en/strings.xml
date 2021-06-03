@@ -80,6 +80,10 @@
     <string name="act">Actualize </string>
     <string name="introNum">Enter a number</string>
     <string name="nomesComuns">How are bird species called in your area? </string>
+    <string name="especieZoa">How is this specie called in your area?</string>
+    <string name="zoaEspecie">Where is it called like that? - the more concrete, the better</string>
+    <string name="cancelar">Cancel</string>
+    <string name="guardar">Save</string>
 
     <string name="amosar">Show </string>
     <string name="todosAv">All sightings</string>

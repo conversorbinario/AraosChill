@@ -52,6 +52,10 @@
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_axuda_identificacion.xml"
     },
     {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_info_especie.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/info_especie.xml"
+    },
+    {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },

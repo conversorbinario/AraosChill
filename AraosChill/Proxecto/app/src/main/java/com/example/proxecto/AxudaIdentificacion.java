@@ -31,7 +31,7 @@ public class AxudaIdentificacion extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent inte = new Intent(getApplicationContext(), AmosarTodas.class);
-                inte.putExtra("", true);
+                inte.putExtra("actividade", true);
                 startActivity(inte);
 
             }
