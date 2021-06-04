@@ -10,223 +10,255 @@
 9        android:targetSdkVersion="30" />
 9-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:5:5-67
-11-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.CAMERA" />
-12-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:5-65
-12-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:22-62
-13    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-13-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:7:5-71
-13-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:7:22-68
-14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:8:5-80
-14-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:8:22-77
-15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:9:5-81
-15-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:9:22-78
-16    <uses-permission android:name="android.permission.INTERNET" />
-16-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:5:5-67
-16-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:5:22-64
-17
-18    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-19    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:4:5-78
+11-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:4:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:5-67
+12-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:7:5-65
+13-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:7:22-62
+14    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+14-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:8:5-71
+14-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:8:22-68
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:9:5-80
+15-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:9:22-77
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:10:5-81
+16-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:10:22-78
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:5-67
+17-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:6:22-64
+18
+19    <!-- Include required permissions for Google Maps API to run. -->
 20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-20-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:26:5-79
-20-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:26:22-76
-21    <uses-permission android:name="android.permission.WAKE_LOCK" />
-21-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:24:5-68
-21-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:24:22-65
-22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-22-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:26:5-110
-22-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:26:22-107
-23
-24    <application
-24-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:12:5-46:19
-25        android:allowBackup="true"
-25-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:13:9-35
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.1.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/acf285bdb061b554b0b237a51cb64393/core-1.1.0/AndroidManifest.xml:24:18-86
-27        android:debuggable="true"
-28        android:extractNativeLibs="false"
-29        android:icon="@mipmap/ic_launcher"
-29-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:14:9-43
-30        android:label="@string/app_name"
-30-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:15:9-41
-31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:16:9-54
-32        android:supportsRtl="true"
-32-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:17:9-35
-33        android:testOnly="true"
-34        android:theme="@style/Theme.Proxecto" >
-34-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:18:9-46
-35        <activity
-35-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:9-24:20
-36            android:name="com.example.proxecto.inicioProcessing"
-36-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:19-51
-37            android:noHistory="true" >
-37-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:52-76
-38            <intent-filter>
-38-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:78-23:25
-39                <action android:name="android.intent.action.MAIN" />
-39-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:13-65
-39-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:21-62
-40
-41                <category android:name="android.intent.category.LAUNCHER" />
-41-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:22:13-73
-41-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:22:23-70
-42            </intent-filter>
-43        </activity>
-44        <activity android:name="com.example.proxecto.AmosarAvistadas" />
-44-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:25:9-53
-44-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:25:19-50
-45        <activity
-45-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:9-79
-46            android:name="com.example.proxecto.VellosAvistamento"
-46-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:19-52
-47            android:noHistory="true" />
-47-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:53-77
-48        <activity
-48-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:9-75
-49            android:name="com.example.proxecto.Avistamentos"
-49-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:19-47
-50            android:noHistory="true" />
-50-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:48-72
-51        <activity android:name="com.example.proxecto.AmosarTodas" />
-51-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:9-49
-51-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:19-46
-52        <activity android:name="com.example.proxecto.AxudaIdentificacion" />
-52-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:29:9-57
-52-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:29:19-54
-53        <activity android:name="com.example.proxecto.Rexistro" />
-53-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:9-45
-53-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:19-43
-54        <activity android:name="com.example.proxecto.MainActivity" >
-54-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:9-33:20
-54-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:19-47
-55        </activity>
-56
-57        <provider
-57-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:9-45:20
-58            android:name="androidx.core.content.FileProvider"
-58-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:13-62
-59            android:authorities="com.example.proxecto.provider"
-59-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:13-64
-60            android:exported="false"
-60-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:13-37
-61            android:grantUriPermissions="true" >
-61-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:13-47
-62
-63            <!-- ressource file to create -->
-64            <meta-data
-64-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:42:13-44:54
-65                android:name="android.support.FILE_PROVIDER_PATHS"
-65-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:43:17-67
-66                android:resource="@xml/file_paths" />
-66-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:44:17-51
-67        </provider>
-68
-69        <service
-69-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:30:9-36:19
-70            android:name="com.google.firebase.components.ComponentDiscoveryService"
-70-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:31:13-84
-71            android:directBootAware="true"
-71-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
-72            android:exported="false" >
-72-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:32:13-37
-73            <meta-data
-73-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:33:13-35:85
-74                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-74-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:34:17-107
-75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:35:17-82
-76            <meta-data
-76-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:32:13-34:85
-77                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-77-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:33:17-109
-78                android:value="com.google.firebase.components.ComponentRegistrar" />
-78-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:34:17-82
-79            <meta-data
-79-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:30:13-32:85
-80                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-80-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:31:17-139
-81                android:value="com.google.firebase.components.ComponentRegistrar" />
-81-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:32:17-82
+20-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:23:5-79
+20-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:23:22-76
+21
+22    <uses-feature
+22-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:26:5-28:35
+23        android:glEsVersion="0x00020000"
+23-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:27:9-41
+24        android:required="true" />
+24-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:28:9-32
+25
+26    <queries>
+26-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:30:5-34:15
+27
+28        <!-- Needs to be explicitly declared on Android R+ -->
+29        <package android:name="com.google.android.apps.maps" />
+29-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:33:9-64
+29-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:33:18-61
+30    </queries>
+31
+32    <uses-permission android:name="android.permission.WAKE_LOCK" />
+32-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:24:5-68
+32-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:24:22-65
+33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+33-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:26:5-110
+33-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:26:22-107
+34
+35    <application
+35-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:13:5-54:19
+36        android:allowBackup="true"
+36-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:14:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.2.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/08db15c93db6fbb24dd5bb571fbed04a/core-1.2.0/AndroidManifest.xml:24:18-86
+38        android:debuggable="true"
+39        android:extractNativeLibs="false"
+40        android:icon="@mipmap/ic_launcher"
+40-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:15:9-43
+41        android:label="@string/app_name"
+41-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:16:9-41
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:17:9-54
+43        android:supportsRtl="true"
+43-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:18:9-35
+44        android:testOnly="true"
+45        android:theme="@style/Theme.Proxecto" >
+45-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:9-46
+46        <activity
+46-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:9-25:20
+47            android:name="com.example.proxecto.inicioProcessing"
+47-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:19-51
+48            android:noHistory="true" >
+48-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:52-76
+49            <intent-filter>
+49-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:78-24:25
+50                <action android:name="android.intent.action.MAIN" />
+50-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:21:13-65
+50-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:21:21-62
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:23:13-73
+52-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:23:23-70
+53            </intent-filter>
+54        </activity>
+55        <activity android:name="com.example.proxecto.AmosarAvistadas" />
+55-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:9-53
+55-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:19-50
+56        <activity
+56-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:9-79
+57            android:name="com.example.proxecto.VellosAvistamento"
+57-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:19-52
+58            android:noHistory="true" />
+58-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:53-77
+59        <activity
+59-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:9-75
+60            android:name="com.example.proxecto.Avistamentos"
+60-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:19-47
+61            android:noHistory="true" />
+61-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:48-72
+62        <activity android:name="com.example.proxecto.AmosarTodas" />
+62-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:29:9-49
+62-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:29:19-46
+63        <activity android:name="com.example.proxecto.AxudaIdentificacion" />
+63-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:9-57
+63-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:19-54
+64        <activity android:name="com.example.proxecto.Rexistro" />
+64-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:9-45
+64-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:19-43
+65        <activity android:name="com.example.proxecto.MainActivity" >
+65-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:9-34:20
+65-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:19-47
+66        </activity>
+67
+68        <meta-data
+68-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:9-37:71
+69            android:name="com.google.android.geo.API_KEY"
+69-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:13-58
+70            android:value="AIzaSyBe_4P9qIEGawh_P9ANfAtcEp6jVsJzLkk" />
+70-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:13-68
+71        <meta-data
+71-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-40:69
+72            android:name="com.google.android.gms.version"
+72-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:13-58
+73            android:value="@integer/google_play_services_version" />
+73-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:40:13-66
+74
+75        <provider
+75-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:43:9-53:20
+76            android:name="androidx.core.content.FileProvider"
+76-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:44:13-62
+77            android:authorities="com.example.proxecto.provider"
+77-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:45:13-64
+78            android:exported="false"
+78-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:46:13-37
+79            android:grantUriPermissions="true" >
+79-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:47:13-47
+80
+81            <!-- ressource file to create -->
 82            <meta-data
-82-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
-83                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-83-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
-84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
-85            <!--
-86                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-87                clients to use it as well, by defining this registrar in their own core/common library.
-88            -->
-89            <meta-data
-89-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
-90                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-90-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
-92        </service>
-93
-94        <provider
-94-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
-95            android:name="com.google.firebase.provider.FirebaseInitProvider"
-95-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
-96            android:authorities="com.example.proxecto.firebaseinitprovider"
-96-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
-97            android:directBootAware="true"
-97-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
-98            android:exported="false"
-98-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
-99            android:initOrder="100" />
-99-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
-100
-101        <activity
-101-->[com.google.android.gms:play-services-base:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/8de479e3923cdb06e513556595304162/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-102            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-102-->[com.google.android.gms:play-services-base:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/8de479e3923cdb06e513556595304162/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-103            android:exported="false"
-103-->[com.google.android.gms:play-services-base:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/8de479e3923cdb06e513556595304162/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-104            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-104-->[com.google.android.gms:play-services-base:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/8de479e3923cdb06e513556595304162/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-105
-106        <receiver
-106-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:29:9-33:20
-107            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-107-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:30:13-85
-108            android:enabled="true"
-108-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:31:13-35
-109            android:exported="false" >
-109-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:32:13-37
-110        </receiver>
-111
-112        <service
-112-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:35:9-38:40
-113            android:name="com.google.android.gms.measurement.AppMeasurementService"
-113-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:36:13-84
-114            android:enabled="true"
-114-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:37:13-35
-115            android:exported="false" />
-115-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:38:13-37
-116        <service
-116-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:39:9-43:72
-117            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-117-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:40:13-87
-118            android:enabled="true"
-118-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:41:13-35
-119            android:exported="false"
-119-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:42:13-37
-120            android:permission="android.permission.BIND_JOB_SERVICE" />
-120-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:43:13-69
-121
-122        <meta-data
-122-->[com.google.android.gms:play-services-basement:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-123            android:name="com.google.android.gms.version"
-123-->[com.google.android.gms:play-services-basement:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-124            android:value="@integer/google_play_services_version" />
-124-->[com.google.android.gms:play-services-basement:17.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-125    </application>
-126
-127</manifest>
+82-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:50:13-52:54
+83                android:name="android.support.FILE_PROVIDER_PATHS"
+83-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:51:17-67
+84                android:resource="@xml/file_paths" />
+84-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:52:17-51
+85        </provider>
+86        <!-- Needs to be explicitly declared on P+ -->
+87        <uses-library
+87-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:39:9-41:40
+88            android:name="org.apache.http.legacy"
+88-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:40:13-50
+89            android:required="false" />
+89-->[com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:41:13-37
+90
+91        <service
+91-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:30:9-36:19
+92            android:name="com.google.firebase.components.ComponentDiscoveryService"
+92-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:31:13-84
+93            android:directBootAware="true"
+93-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+94            android:exported="false" >
+94-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:32:13-37
+95            <meta-data
+95-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:33:13-35:85
+96                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+96-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:34:17-107
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-storage:19.2.2] /home/manuel/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:35:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:32:13-34:85
+99                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+99-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:33:17-109
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-database:19.7.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/64586309a9c174e8202610efe122327c/jetified-firebase-database-19.7.0/AndroidManifest.xml:34:17-82
+101            <meta-data
+101-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:30:13-32:85
+102                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+102-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:31:17-139
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.android.gms:play-services-measurement-api:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/64be769a4812fd27bbba533c60fe5b7b/jetified-play-services-measurement-api-18.0.3/AndroidManifest.xml:32:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+105                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+105-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-installations:16.3.5] /home/manuel/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+107            <!--
+108                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+109                clients to use it as well, by defining this registrar in their own core/common library.
+110            -->
+111            <meta-data
+111-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+112                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+112-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+114        </service>
+115
+116        <provider
+116-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+117            android:name="com.google.firebase.provider.FirebaseInitProvider"
+117-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+118            android:authorities="com.example.proxecto.firebaseinitprovider"
+118-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+119            android:directBootAware="true"
+119-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+120            android:exported="false"
+120-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+121            android:initOrder="100" />
+121-->[com.google.firebase:firebase-common:19.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+122
+123        <activity
+123-->[com.google.android.gms:play-services-base:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/41bf2c211e81e11ecbbbc445edfb0f9a/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
+124            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+124-->[com.google.android.gms:play-services-base:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/41bf2c211e81e11ecbbbc445edfb0f9a/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
+125            android:exported="false"
+125-->[com.google.android.gms:play-services-base:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/41bf2c211e81e11ecbbbc445edfb0f9a/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
+126            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+126-->[com.google.android.gms:play-services-base:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/41bf2c211e81e11ecbbbc445edfb0f9a/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
+127
+128        <receiver
+128-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:29:9-33:20
+129            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+129-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:30:13-85
+130            android:enabled="true"
+130-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:31:13-35
+131            android:exported="false" >
+131-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:32:13-37
+132        </receiver>
+133
+134        <service
+134-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:35:9-38:40
+135            android:name="com.google.android.gms.measurement.AppMeasurementService"
+135-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:36:13-84
+136            android:enabled="true"
+136-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:37:13-35
+137            android:exported="false" />
+137-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:38:13-37
+138        <service
+138-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:39:9-43:72
+139            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+139-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:40:13-87
+140            android:enabled="true"
+140-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:41:13-35
+141            android:exported="false"
+141-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:42:13-37
+142            android:permission="android.permission.BIND_JOB_SERVICE" />
+142-->[com.google.android.gms:play-services-measurement:18.0.3] /home/manuel/.gradle/caches/transforms-2/files-2.1/e95842a214534440edcef5cce8409b37/jetified-play-services-measurement-18.0.3/AndroidManifest.xml:43:13-69
+143    </application>
+144
+145</manifest>

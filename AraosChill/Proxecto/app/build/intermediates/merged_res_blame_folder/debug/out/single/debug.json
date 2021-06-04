@@ -24,12 +24,12 @@
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable/border_text_view.xml"
     },
     {
-        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/drawable_border.xml.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable/border.xml"
+    },
+    {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -70,6 +70,10 @@
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_mapa.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/mapa.xml"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_inicioprocessing.xml.flat",

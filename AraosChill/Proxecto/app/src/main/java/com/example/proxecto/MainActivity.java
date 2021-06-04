@@ -81,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button map = findViewById(R.id.mapa);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.mapa);
+
+            }
+        });
+
         Button avistadas =findViewById(R.id.todosAvistamentos);
 
         avistadas.setOnClickListener(new View.OnClickListener() {

@@ -14,14 +14,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class NomeVulgar extends DialogFragment {
     String especieRenomear;
     IndividuoFB individuo;
     public Dialog onCreateDialog(Bundle savedInstanceState){
 
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -34,7 +43,7 @@ public class NomeVulgar extends DialogFragment {
         EditText nomeEsp = (EditText) alertView.findViewById(R.id.nomeVulgar);
         EditText nomeZoa = (EditText) alertView.findViewById(R.id.zoaNomeVulgar);
 
-
+        xenEsp.setText(especieRenomear);
 
         builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
             @Override
@@ -47,7 +56,26 @@ public class NomeVulgar extends DialogFragment {
         builder.setPositiveButton(R.string.guardar, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dismiss();
+
+
+                    DatabaseReference myRef = database.getReference("Especie_nome");
+            String xen = String.valueOf(xenEsp.getText());
+                    DatabaseReference fillo = myRef.child(String.valueOf(xen));
+                    fillo.setValue(nomeEsp + " " + xenEsp);
+                    fillo.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Toast.makeText(getContext(), R.string.gardado, Toast.LENGTH_LONG).show();
+                            dismiss();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
             }
         });
 

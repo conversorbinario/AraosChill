@@ -4,7 +4,7 @@
             "outputFile": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/res/values-sw/values.xml",
+                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/b55b9a229f2f09f47cd1fcb0cfdb02a7/jetified-play-services-basement-17.5.0/res/values-sw/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/acf285bdb061b554b0b237a51cb64393/core-1.1.0/res/values-sw/values-sw.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5633",
-                        "endColumns": "100",
-                        "endOffsets": "5729"
-                    }
-                },
-                {
-                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/8de479e3923cdb06e513556595304162/jetified-play-services-base-17.0.0/res/values-sw/values.xml",
+                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/41bf2c211e81e11ecbbbc445edfb0f9a/jetified-play-services-base-17.5.0/res/values-sw/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +35,23 @@
                         "startOffsets": "2801,2907,3095,3222,3333,3555,3682,3831,4179,4403,4511,4696,4825,5034,5223,5321,5426",
                         "endColumns": "105,187,126,110,221,126,148,142,223,107,184,128,208,188,97,104,124",
                         "endOffsets": "2902,3090,3217,3328,3550,3677,3826,3969,4398,4506,4691,4820,5029,5218,5316,5421,5546"
+                    }
+                },
+                {
+                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/08db15c93db6fbb24dd5bb571fbed04a/core-1.2.0/res/values-sw/values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "5633",
+                        "endColumns": "100",
+                        "endOffsets": "5729"
                     }
                 },
                 {

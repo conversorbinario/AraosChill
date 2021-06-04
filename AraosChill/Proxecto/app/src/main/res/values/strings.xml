@@ -46,6 +46,7 @@
     <string name="aceptar">Insertar</string>
     <string name="cancelar">Cancelar</string>
     <string name="guardar">Gardar</string>
+    <string name="gardado">Gardado!</string>
 
     <string name="identificacion">Identificar aves rexistradas</string>
     <string name="deter">Deter Audio</string>

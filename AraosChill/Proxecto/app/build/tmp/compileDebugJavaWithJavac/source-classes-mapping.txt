@@ -34,8 +34,15 @@ com/example/proxecto/AmosarAvistadas.java
  com.example.proxecto.AmosarAvistadas$7
  com.example.proxecto.AmosarAvistadas$8
  com.example.proxecto.AmosarAvistadas$9
-com/example/proxecto/AvistamentoFB.java
- com.example.proxecto.AvistamentoFB
+com/example/proxecto/MainActivity.java
+ com.example.proxecto.MainActivity
+ com.example.proxecto.MainActivity$1
+ com.example.proxecto.MainActivity$2
+ com.example.proxecto.MainActivity$3
+ com.example.proxecto.MainActivity$4
+ com.example.proxecto.MainActivity$5
+ com.example.proxecto.MainActivity$6
+ com.example.proxecto.MainActivity$6$1
 com/example/proxecto/Tipo_AveFB.java
  com.example.proxecto.Tipo_AveFB
 com/example/proxecto/Avistamento.java
@@ -44,9 +51,13 @@ com/example/proxecto/Individuo.java
  com.example.proxecto.Individuo
 com/example/proxecto/Xenero_Especie.java
  com.example.proxecto.Xenero_Especie
-com/example/proxecto/Db.java
- com.example.proxecto.Db
- com.example.proxecto.Db$1
+com/example/proxecto/AxudaIdentificacion.java
+ com.example.proxecto.AxudaIdentificacion
+ com.example.proxecto.AxudaIdentificacion$1
+ com.example.proxecto.AxudaIdentificacion$2
+ com.example.proxecto.AxudaIdentificacion$2$1
+ com.example.proxecto.AxudaIdentificacion$2$2
+ com.example.proxecto.AxudaIdentificacion$2$3
 com/example/proxecto/VellosAvistamento.java
  com.example.proxecto.VellosAvistamento
  com.example.proxecto.VellosAvistamento$1
@@ -64,6 +75,7 @@ com/example/proxecto/NomeVulgar.java
  com.example.proxecto.NomeVulgar
  com.example.proxecto.NomeVulgar$1
  com.example.proxecto.NomeVulgar$2
+ com.example.proxecto.NomeVulgar$2$1
 com/example/proxecto/IndoIndiv.java
  com.example.proxecto.IndoIndiv
 com/example/proxecto/inicioProcessing.java
@@ -90,21 +102,11 @@ com/example/proxecto/Rexistro.java
  com.example.proxecto.Rexistro$9
 com/example/proxecto/Xenero_taxon.java
  com.example.proxecto.Xenero_taxon
-com/example/proxecto/AxudaIdentificacion.java
- com.example.proxecto.AxudaIdentificacion
- com.example.proxecto.AxudaIdentificacion$1
- com.example.proxecto.AxudaIdentificacion$2
- com.example.proxecto.AxudaIdentificacion$2$1
- com.example.proxecto.AxudaIdentificacion$2$2
- com.example.proxecto.AxudaIdentificacion$2$3
-com/example/proxecto/MainActivity.java
- com.example.proxecto.MainActivity
- com.example.proxecto.MainActivity$1
- com.example.proxecto.MainActivity$2
- com.example.proxecto.MainActivity$3
- com.example.proxecto.MainActivity$4
- com.example.proxecto.MainActivity$5
- com.example.proxecto.MainActivity$5$1
+com/example/proxecto/Db.java
+ com.example.proxecto.Db
+ com.example.proxecto.Db$1
+com/example/proxecto/AvistamentoFB.java
+ com.example.proxecto.AvistamentoFB
 com/example/proxecto/AmosarTodas.java
  com.example.proxecto.AmosarTodas
  com.example.proxecto.AmosarTodas$1

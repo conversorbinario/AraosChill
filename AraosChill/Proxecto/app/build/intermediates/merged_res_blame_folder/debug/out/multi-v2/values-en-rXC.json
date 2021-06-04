@@ -14,20 +14,20 @@
                     }
                 },
                 {
-                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/acf285bdb061b554b0b237a51cb64393/core-1.1.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/home/manuel/.gradle/caches/transforms-2/files-2.1/08db15c93db6fbb24dd5bb571fbed04a/core-1.2.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "202",
-                        "endOffsets": "253"
+                        "endColumns": "203",
+                        "endOffsets": "254"
                     },
                     "to": {
                         "startLines": "30",
                         "startColumns": "4",
                         "startOffsets": "5682",
-                        "endColumns": "202",
-                        "endOffsets": "5880"
+                        "endColumns": "203",
+                        "endOffsets": "5881"
                     }
                 }
             ]
