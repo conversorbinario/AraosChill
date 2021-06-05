@@ -43,6 +43,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Proxecto" >
+        <activity android:name="com.example.proxecto.Mapa" />
         <activity
             android:name="com.example.proxecto.inicioProcessing"
             android:noHistory="true" >
@@ -62,8 +63,7 @@
         <activity android:name="com.example.proxecto.AmosarTodas" />
         <activity android:name="com.example.proxecto.AxudaIdentificacion" />
         <activity android:name="com.example.proxecto.Rexistro" />
-        <activity android:name="com.example.proxecto.MainActivity" >
-        </activity>
+        <activity android:name="com.example.proxecto.MainActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

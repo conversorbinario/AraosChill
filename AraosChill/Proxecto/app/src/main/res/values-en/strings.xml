@@ -85,6 +85,7 @@
     <string name="cancelar">Cancel</string>
     <string name="guardar">Save</string>
     <string name="gardado">Saved!</string>
+    <string name="aceptarMapa">Accept</string>
 
     <string name="amosar">Show </string>
     <string name="todosAv">All sightings</string>
@@ -100,11 +101,15 @@
     <string name="desc">Unknown </string>
     <string name="indivAvis">This register already exists! </string>
 
+    <string name="introAuto">Automatically introduce your place</string>
+
     <string name="seleccione">Choose one </string>
     <string name="inRex">Previously sighted individual </string>
     <string name="criterioXen">Search for gender</string>
     <string name="criterioEsp">and species</string>
+    <string name="lonxitude">Longitude</string>
 
+    <string name="latitude">Latitude</string>
 
     <string-array name="sexo">
         <item>""</item>

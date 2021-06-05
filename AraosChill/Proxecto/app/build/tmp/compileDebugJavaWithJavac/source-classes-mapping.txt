@@ -1,3 +1,12 @@
+com/example/proxecto/AmosarTodas.java
+ com.example.proxecto.AmosarTodas
+ com.example.proxecto.AmosarTodas$1
+ com.example.proxecto.AmosarTodas$2
+ com.example.proxecto.AmosarTodas$3
+ com.example.proxecto.AmosarTodas$4
+ com.example.proxecto.AmosarTodas$5
+ com.example.proxecto.AmosarTodas$6
+ com.example.proxecto.AmosarTodas$7
 com/example/proxecto/ReproducirAudio.java
  com.example.proxecto.ReproducirAudio
  com.example.proxecto.ReproducirAudio$1
@@ -34,15 +43,8 @@ com/example/proxecto/AmosarAvistadas.java
  com.example.proxecto.AmosarAvistadas$7
  com.example.proxecto.AmosarAvistadas$8
  com.example.proxecto.AmosarAvistadas$9
-com/example/proxecto/MainActivity.java
- com.example.proxecto.MainActivity
- com.example.proxecto.MainActivity$1
- com.example.proxecto.MainActivity$2
- com.example.proxecto.MainActivity$3
- com.example.proxecto.MainActivity$4
- com.example.proxecto.MainActivity$5
- com.example.proxecto.MainActivity$6
- com.example.proxecto.MainActivity$6$1
+com/example/proxecto/AvistamentoFB.java
+ com.example.proxecto.AvistamentoFB
 com/example/proxecto/Tipo_AveFB.java
  com.example.proxecto.Tipo_AveFB
 com/example/proxecto/Avistamento.java
@@ -105,14 +107,14 @@ com/example/proxecto/Xenero_taxon.java
 com/example/proxecto/Db.java
  com.example.proxecto.Db
  com.example.proxecto.Db$1
-com/example/proxecto/AvistamentoFB.java
- com.example.proxecto.AvistamentoFB
-com/example/proxecto/AmosarTodas.java
- com.example.proxecto.AmosarTodas
- com.example.proxecto.AmosarTodas$1
- com.example.proxecto.AmosarTodas$2
- com.example.proxecto.AmosarTodas$3
- com.example.proxecto.AmosarTodas$4
- com.example.proxecto.AmosarTodas$5
- com.example.proxecto.AmosarTodas$6
- com.example.proxecto.AmosarTodas$7
+com/example/proxecto/Mapa.java
+ com.example.proxecto.Mapa
+com/example/proxecto/MainActivity.java
+ com.example.proxecto.MainActivity
+ com.example.proxecto.MainActivity$1
+ com.example.proxecto.MainActivity$2
+ com.example.proxecto.MainActivity$3
+ com.example.proxecto.MainActivity$4
+ com.example.proxecto.MainActivity$5
+ com.example.proxecto.MainActivity$6
+ com.example.proxecto.MainActivity$6$1

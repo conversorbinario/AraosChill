@@ -1391,6 +1391,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable araopapagaio
+drawable arrowsmall
 drawable avd_hide_password
 drawable avd_show_password
 drawable border
@@ -1646,6 +1647,7 @@ id line1
 id line3
 id listMode
 id list_item
+id localizacionCorreta
 id lugar
 id map
 id mapa
@@ -2011,6 +2013,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string aceptado
 string aceptar
+string aceptarMapa
 string act
 string amosar
 string app_explanation

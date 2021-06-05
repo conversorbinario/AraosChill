@@ -1,8 +1,5 @@
 package com.example.proxecto;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -11,6 +8,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
 import java.time.LocalTime;
@@ -24,6 +25,7 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
     Button seguinte;
     Button velloAvis;
     private long id_avistamento;
+    Button abrirGps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +39,15 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
             concello.setText(savedInstanceState.getString("Concello"));
             lugar.setText(savedInstanceState.getString("Lugar"));
         }
-
+        abrirGps=findViewById(R.id.gpsMapa);
+        abrirGps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent activityMapa = new Intent(getApplicationContext(), Mapa.class);
+                startActivityForResult(activityMapa, 2);
+            }
+        });
         seguinte = findViewById(R.id.continuar);
-
         seguinte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +97,16 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
         });
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==2){
+
+
+        }
     }
 
     @Override
