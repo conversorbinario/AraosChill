@@ -43,8 +43,9 @@ com/example/proxecto/AmosarAvistadas.java
  com.example.proxecto.AmosarAvistadas$7
  com.example.proxecto.AmosarAvistadas$8
  com.example.proxecto.AmosarAvistadas$9
-com/example/proxecto/AvistamentoFB.java
- com.example.proxecto.AvistamentoFB
+com/example/proxecto/Db.java
+ com.example.proxecto.Db
+ com.example.proxecto.Db$1
 com/example/proxecto/Tipo_AveFB.java
  com.example.proxecto.Tipo_AveFB
 com/example/proxecto/Avistamento.java
@@ -66,10 +67,8 @@ com/example/proxecto/VellosAvistamento.java
  com.example.proxecto.VellosAvistamento$2
 com/example/proxecto/User.java
  com.example.proxecto.User
-com/example/proxecto/Avistamentos.java
- com.example.proxecto.Avistamentos
- com.example.proxecto.Avistamentos$1
- com.example.proxecto.Avistamentos$2
+com/example/proxecto/AvistamentoFB.java
+ com.example.proxecto.AvistamentoFB
 com/example/proxecto/GravarAudio.java
  com.example.proxecto.GravarAudio
  com.example.proxecto.GravarAudio$1
@@ -104,11 +103,16 @@ com/example/proxecto/Rexistro.java
  com.example.proxecto.Rexistro$9
 com/example/proxecto/Xenero_taxon.java
  com.example.proxecto.Xenero_taxon
-com/example/proxecto/Db.java
- com.example.proxecto.Db
- com.example.proxecto.Db$1
 com/example/proxecto/Mapa.java
  com.example.proxecto.Mapa
+ com.example.proxecto.Mapa$1
+ com.example.proxecto.Mapa$1$1
+ com.example.proxecto.Mapa$2
+com/example/proxecto/Avistamentos.java
+ com.example.proxecto.Avistamentos
+ com.example.proxecto.Avistamentos$1
+ com.example.proxecto.Avistamentos$2
+ com.example.proxecto.Avistamentos$3
 com/example/proxecto/MainActivity.java
  com.example.proxecto.MainActivity
  com.example.proxecto.MainActivity$1

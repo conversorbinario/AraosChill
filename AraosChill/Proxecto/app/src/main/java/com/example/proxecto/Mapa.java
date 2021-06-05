@@ -11,9 +11,11 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,6 +25,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PointOfInterest;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.net.PlacesClient;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Mapa extends AppCompatActivity implements LocationListener, OnMapReadyCallback {
 
@@ -32,10 +42,17 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
     private double lonx, lat;
     private GoogleMap mapaGoogleReal;
     Button aceptar;
-
+    Button cancelar;
+    PlacesClient placesClient;
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        // Initialize the SDK
+        Places.initialize(getApplicationContext(), "AIzaSyBe_4P9qIEGawh_P9ANfAtcEp6jVsJzLkk");
+
+        // Create a new PlacesClient instance
+        placesClient = Places.createClient(this);
         // setContentView(R.layout.activity_main);
         setContentView(R.layout.mapa);
         permisoSD();
@@ -43,6 +60,40 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
 
         googleMap = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         googleMap.getMapAsync(this);
+
+        aceptar=findViewById(R.id.localizacionCorreta);
+        cancelar = findViewById(R.id.localizacionIncorreta);
+
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mapaGoogleReal.setOnPoiClickListener(new GoogleMap.OnPoiClickListener() {
+                    @Override
+                    public void onPoiClick(@NonNull PointOfInterest pointOfInterest) {
+
+                        final String placeId= pointOfInterest.placeId;
+                        final List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+                        final FetchPlaceRequest request = FetchPlaceRequest.newInstance(placeId, placeFields);
+                        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
+                            Place place = response.getPlace();
+
+                            setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(lat), String.valueOf(lonx), place.getName()}));
+                        }).addOnFailureListener((exception) -> {
+                            Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_LONG).show();
+                        });
+                    }
+                });
+
+
+            }
+        });
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 

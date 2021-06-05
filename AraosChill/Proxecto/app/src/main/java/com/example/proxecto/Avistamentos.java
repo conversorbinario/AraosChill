@@ -22,6 +22,8 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
 
     EditText concello;
     EditText lugar;
+    EditText latitude;
+    EditText lonxitue;
     Button seguinte;
     Button velloAvis;
     private long id_avistamento;
@@ -33,6 +35,9 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
         lugar = findViewById(R.id.lugar);
         concello = findViewById(R.id.concello);
         dp = findViewById(R.id.dataAvistamento);
+        latitude = findViewById(R.id.latitude);
+        lonxitue=findViewById(R.id.lonxitude);
+
 
         if (savedInstanceState!=null){
 
@@ -104,6 +109,10 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==2){
+            String []lonxlat=data.getStringArrayExtra("lonxlat");
+            latitude.setText(String.valueOf(lonxlat[0]));
+            lonxitue.setText(String.valueOf(lonxlat[1]));
+            Toast.makeText(getApplicationContext(), lonxlat[2], Toast.LENGTH_LONG).show();
 
 
         }
