@@ -65,6 +65,23 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
                     Toast.makeText(getApplicationContext(), R.string.lugarAvistamento, Toast.LENGTH_LONG).show();
 
                 }else{
+                    String lat="";
+                    String lonx="";
+                    if (latitude.getText()!=null && lonxitue.getText()!=null) {
+
+                         lat = String.valueOf(latitude.getText());
+                         lonx = String.valueOf(lonxitue.getText());
+                         if (!lat.matches("\\-*[0-9]{1,3}(\\.[0-9]*)?") || !lonx.matches("\\-*[0-9]{1,3}(\\.[0-9]*)?")){
+                             Toast.makeText(getApplicationContext(), R.string.formatoCoordenadas, Toast.LENGTH_LONG).show();
+                             lat="";
+                             lonx="";
+                         }
+                    }else{
+                        lat="";
+                        lonx="";
+                        Toast.makeText(getApplicationContext(), R.string.formatoCoordenadas+" / " +R.string.coordenadasBaleiras, Toast.LENGTH_LONG).show();
+
+                    }
 
                     int dia = dp.getDayOfMonth();
                     int mes = dp.getMonth();
@@ -78,10 +95,13 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
                     try {
                        // id_avistamento = MainActivity.bb_dd.addAvistamento(new Avistamento(conce, lug, data, momento));
                         Intent individuo = new Intent(getApplicationContext(), Rexistro.class);
-                        individuo.putExtra("idAvis", (Serializable) new Avistamento(conce, lug, data, momento));
-                        individuo.putExtra("idAvisFB", (Serializable) new AvistamentoFB(conce, lug, data, momento));
+                     //   individuo.putExtra("idAvis", (Serializable) new Avistamento(conce, lug, data, momento));
+                        //individuo.putExtra("idAvisFB", (Serializable) new AvistamentoFB(conce, lug, data, momento));
+                        individuo.putExtra("idAvisFB", (Serializable) new AvistamentoFB(conce, lug, data, momento, lat, lonx));
 
                         individuo.putExtra("existente", false);
+
+
 
                         startActivity(individuo);
                     } catch (Exception e) {
@@ -112,7 +132,7 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
             String []lonxlat=data.getStringArrayExtra("lonxlat");
             latitude.setText(String.valueOf(lonxlat[0]));
             lonxitue.setText(String.valueOf(lonxlat[1]));
-            Toast.makeText(getApplicationContext(), lonxlat[2], Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), lonxlat[2], Toast.LENGTH_LONG).show();
 
 
         }
@@ -122,7 +142,6 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
     public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
         String conce = String.valueOf(concello.getText());
         String lug = String.valueOf(lugar.getText());
-
         outState.putString("Concello", conce);
         outState.putString("Lugar", lug);
 

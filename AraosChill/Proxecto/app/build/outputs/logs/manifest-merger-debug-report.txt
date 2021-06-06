@@ -238,9 +238,7 @@ ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/a
 	android:name
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:13-46
 activity#com.example.proxecto.Avistamentos
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:9-36:40
-	android:noHistory
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:13-37
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:9-36:15
 	android:name
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:13-41
 activity#com.example.proxecto.AmosarTodas
@@ -248,7 +246,9 @@ ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/a
 	android:name
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:19-46
 activity#com.example.proxecto.AxudaIdentificacion
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-57
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-82
+	android:noHistory
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:55-79
 	android:name
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:19-54
 activity#com.example.proxecto.Rexistro

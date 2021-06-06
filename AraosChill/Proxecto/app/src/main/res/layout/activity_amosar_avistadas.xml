@@ -6,19 +6,19 @@
     <TextView
         android:text="@string/tituloprocura"
         android:id="@+id/tituloprocura"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 
 
-    <EditText
-        android:hint="@string/buscarCon"
+    <TextView
+        android:text="@string/buscarCon"
         android:id="@+id/edPorConcello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <ImageView
-        android:layout_marginTop="@dimen/marginDp"
+        android:layout_marginTop="0dp"
         android:id="@+id/buscarConcello"
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"

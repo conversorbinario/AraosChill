@@ -1,11 +1,5 @@
 package com.example.proxecto;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
-import androidx.fragment.app.FragmentManager;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -18,20 +12,22 @@ import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentManager;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -41,8 +37,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Rexistro extends AppCompatActivity {
 
@@ -69,12 +63,14 @@ public class Rexistro extends AppCompatActivity {
     Button amosarFoto;
     Avistamento avis;
     AvistamentoFB avisFB;
+    String pkAvisFB="";
+
     Boolean avistamentoVello = false;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        id_Avist = -2;
+        //id_Avist = -2;
 
     }
 
@@ -106,7 +102,7 @@ public class Rexistro extends AppCompatActivity {
 
         amosarFoto = findViewById(R.id.fotoAmos);
         Intent inte = getIntent();
-        avis = (Avistamento) inte.getSerializableExtra("idAvis");
+     //   avis = (Avistamento) inte.getSerializableExtra("idAvis");
         avisFB = (AvistamentoFB) inte.getSerializableExtra("idAvisFB");
         avistamentoVello = inte.getBooleanExtra("existente", false);
         //-3 se o individuo é un novo
@@ -117,9 +113,10 @@ public class Rexistro extends AppCompatActivity {
             xenero.setText(savedInstanceState.getString("Xenero"));
             especie.setText(savedInstanceState.getString("Especie"));
             //  avistamentoVello = savedInstanceState.getBoolean("existente");
-            // avis = (Avistamento)  savedInstanceState.getSerializable("obxAvis");
+        //    avisFB= (AvistamentoFB)  savedInstanceState.getSerializable("obxAvis");
             peso.setText(savedInstanceState.getString("peso"));
             tamanho.setText(savedInstanceState.getString("tamanho"));
+            pkAvisFB=savedInstanceState.getString("IDAvistamento");
 
 
         }
@@ -200,7 +197,7 @@ public class Rexistro extends AppCompatActivity {
                         int gramos = 0;
                         try {
                             gramos = Integer.parseInt(String.valueOf(peso.getText()));
-                        } catch (NumberFormatException nf) {
+                        } catch (Exception nf) {
                             gramos = 0;
                         }
                         String plumaxe = (String) sp_plumaxe.getSelectedItem();
@@ -214,9 +211,8 @@ public class Rexistro extends AppCompatActivity {
                             //id_individuo = MainActivity.bb_dd.addIndividuo(in);
                         }
                         //  }
-                        String pkAvisFB="";
                         if (id_Avist == -2) {
-                            id_Avist = avis.getPkAv();
+                        //    id_Avist = avis.getPkAv();
 
                             if (avistamentoVello == false) {
                                 pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
@@ -305,9 +301,8 @@ public class Rexistro extends AppCompatActivity {
                                 //}
 
                                 ///para a FB
-                                String pkAvisFB="";
                                 if (id_Avist == -2) {
-                                    id_Avist = avis.getPkAv();
+                                   // id_Avist = avis.getPkAv();
                                     if (avistamentoVello == false) {
                                         pkAvisFB = MainActivity.bb_dd.addAvistamentoFB(avisFB);
 
@@ -611,8 +606,9 @@ Log.i("IMXE ", exception.getMessage());
 
         outState.putString("Xenero", xenS);
         outState.putString("Especie", espS);
+        outState.putString("IDAvistamento", pkAvisFB);
         //   outState.putBoolean("existente", avistamentoVello);
-        //  outState.putSerializable("obxAvis", (Serializable) avis);
+       // outState.putSerializable("obxAvis", (Serializable) avisFB);
 
         outState.putString("peso", pes);
         outState.putString("tamanho", pes);
@@ -683,19 +679,13 @@ Log.i("IMXE ", exception.getMessage());
 
     }
 
+*/
 
-    /* @Override
-    protected void onStop() {
+
+    @Override
+    protected void onPause() {
         super.onPause();
-        File directorioFoto = new File(Environment.getExternalStorageDirectory() + "/ImaxeTemporal" + "/imaxe");
 
-        File directorioGravacion = new File(Environment.getExternalStorageDirectory() + "/AudioTemporal/audio.mp3");
-        if (directorioGravacion.exists()) {
-            directorioGravacion.delete();
-        }
-        if (directorioFoto.exists()) {
-            directorioFoto.delete();
-        }
 
-    } */
+    }
 }

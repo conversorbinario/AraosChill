@@ -8,12 +8,41 @@ public class AvistamentoFB implements Serializable{
     private String concello;
     private String nome_sitio;
     private String hora;
+    private String latitude;
+    private String lonxitude;
+
 
     public AvistamentoFB(String concello, String nome_sitio, String data, String hora) {
         this.data = data;
         this.concello = concello;
         this.nome_sitio = nome_sitio;
         this.hora = hora;
+    }
+
+    public AvistamentoFB(String concello, String nome_sitio, String data, String hora, String latitude, String lonxitude) {
+        this.data = data;
+        this.concello = concello;
+        this.nome_sitio = nome_sitio;
+        this.hora = hora;
+        this.latitude = latitude;
+        this.lonxitude=lonxitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+
+    public String getLonxitude() {
+        return lonxitude;
+    }
+
+    public void setLonxitude(String lonxitude) {
+        this.lonxitude = lonxitude;
     }
 
     @Override

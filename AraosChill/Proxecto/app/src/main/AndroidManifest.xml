@@ -33,9 +33,9 @@
             android:noHistory="true" />
         <activity
             android:name=".Avistamentos"
-            android:noHistory="true" />
+            />
         <activity android:name=".AmosarTodas" />
-        <activity android:name=".AxudaIdentificacion" />
+        <activity android:name=".AxudaIdentificacion" android:noHistory="true" />
         <activity android:name=".Rexistro" />
         <activity android:name=".MainActivity"></activity>
 

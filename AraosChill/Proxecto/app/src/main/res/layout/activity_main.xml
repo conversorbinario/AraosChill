@@ -30,10 +30,6 @@
         android:backgroundTint="@color/red"
         android:minWidth="250dp"
         android:text="@string/novoRexistro" />
-    <Button
-        android:id="@+id/mapa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"

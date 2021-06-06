@@ -42,6 +42,9 @@
     <string name="nomeUsuarioRepetido">O nome de usuario xa está en uso</string>
     <string name="usuarioContra">Usuario ou contrasinal incorrectos</string>
     <string name="aceptarMapa">Aceptar</string>
+    <string name="formatoCoordenadas">Formato numerico coordenadas incorrecto</string>
+    <string name="coordenadasBaleiras">Coordenadas baleiras</string>
+    <string name="sair">Sair</string>
 
     <string name="permission">Precísase permiso, téntao de novo</string>
     <string name="aceptar">Insertar</string>
@@ -89,7 +92,7 @@
     <string name="fot">Foto </string>
 
     <string name="tituloprocura">Realizar Procura</string>
-    <string name="buscarCon">Buscar por concello </string>
+    <string name="buscarCon">Amosar no mapa </string>
     <string name="buscarXen">Buscar por xénero taxonómico </string>
     <string name="buscarTipoPlumaxe">Buscar por tipo de plumaxe </string>
     <string name="gravaAudio">Grava audio primeiro </string>

@@ -109,18 +109,18 @@
 57-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:13-46
 58            android:noHistory="true" />
 58-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:33:13-37
-59        <activity
-59-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:9-36:40
-60            android:name="com.example.proxecto.Avistamentos"
-60-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:13-41
-61            android:noHistory="true" />
-61-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:13-37
-62        <activity android:name="com.example.proxecto.AmosarTodas" />
-62-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:9-49
-62-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:19-46
-63        <activity android:name="com.example.proxecto.AxudaIdentificacion" />
-63-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-57
-63-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:19-54
+59        <activity android:name="com.example.proxecto.Avistamentos" />
+59-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:9-36:15
+59-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:13-41
+60        <activity android:name="com.example.proxecto.AmosarTodas" />
+60-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:9-49
+60-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:19-46
+61        <activity
+61-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-82
+62            android:name="com.example.proxecto.AxudaIdentificacion"
+62-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:19-54
+63            android:noHistory="true" />
+63-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:55-79
 64        <activity android:name="com.example.proxecto.Rexistro" />
 64-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:9-46
 64-->/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:19-43

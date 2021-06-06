@@ -1,8 +1,5 @@
 package com.example.proxecto;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.graphics.Paint;
 import android.net.Uri;
@@ -18,6 +15,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -267,7 +267,7 @@ public class AmosarTodas extends AppCompatActivity {
                     // conn.setInstanceFollowRedirects(false);
                     conn.connect();
                 } catch (Exception e) {
-
+                    e.getMessage();
                     Toast.makeText(getApplicationContext(), R.string.erroDescargando, Toast.LENGTH_LONG).show();
                     return;
                 }

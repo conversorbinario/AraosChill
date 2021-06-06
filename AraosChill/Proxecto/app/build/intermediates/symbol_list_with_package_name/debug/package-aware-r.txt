@@ -2036,7 +2036,6 @@ id localizacionIncorreta
 id lonxitude
 id lugar
 id map
-id mapa
 id masked
 id message
 id middle
@@ -2474,6 +2473,7 @@ string common_signin_button_text_long
 string concelloBal
 string concelloBaleiro
 string contidoMultimedia
+string coordenadasBaleiras
 string criterioEsp
 string criterioXen
 string dataAvistamento
@@ -2490,6 +2490,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
 string foraRango
+string formatoCoordenadas
 string fot
 string foto
 string gardado
@@ -2591,6 +2592,7 @@ string repro
 string rex
 string rexistradoExito
 string sacaFoto
+string sair
 string search_menu_title
 string seguinte
 string seleccione

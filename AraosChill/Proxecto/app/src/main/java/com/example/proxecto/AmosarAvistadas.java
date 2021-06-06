@@ -1,10 +1,9 @@
 package com.example.proxecto;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -17,7 +16,6 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,7 +36,7 @@ public class AmosarAvistadas extends AppCompatActivity {
     int numViews;
     TextView totAv;
     ImageView todas;
-    EditText conc;
+    TextView amosarMapa;
     Button anterior;
     Button seguinte;
     int dende = 0;
@@ -56,7 +54,7 @@ public class AmosarAvistadas extends AppCompatActivity {
         setContentView(R.layout.activity_amosar_avistadas);
 
         cocnello = findViewById(R.id.buscarConcello);
-        conc = findViewById(R.id.edPorConcello);
+        amosarMapa = findViewById(R.id.edPorConcello);
         todas = findViewById(R.id.buscarTodas);
         taboa = (TableLayout) findViewById(R.id.tabAvist);
         totAv = findViewById(R.id.totalAvis);
@@ -111,7 +109,7 @@ public class AmosarAvistadas extends AppCompatActivity {
         cocnello.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String concS = String.valueOf(conc.getText());
+               /* String concS = String.valueOf(conc.getText());
 
                 if (concS.equalsIgnoreCase("")) {
                     Toast.makeText(getApplicationContext(), R.string.campobaleiro, Toast.LENGTH_LONG).show();
@@ -143,6 +141,41 @@ public class AmosarAvistadas extends AppCompatActivity {
 
 
                 }
+                */
+                ArrayList<Coordenadas> coordinadas = new ArrayList<>();
+
+
+                DatabaseReference myRef = database.getReference("Avistamento");
+                myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                    @Override
+                    public void onSuccess(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot avistamento : dataSnapshot.getChildren()) {
+                            //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
+                            try {
+                                String latitude = avistamento.child("latitude").getValue().toString();
+                                String lonxitude = avistamento.child("lonxitude").getValue().toString();
+                                coordinadas.add(new Coordenadas(latitude, lonxitude));
+                            }catch (Exception e){
+
+                                //se esta baleiro, entra na excepcion e sigue iterando
+                            }
+                          /*  int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
+                            String sexo = individuo.child("sexo").getValue().toString();
+                            String plumaxe = individuo.child("plumaxe").getValue().toString();
+                            String rutaFoto = individuo.child("rutaFoto").getValue().toString();
+                            String rutaAudio = individuo.child("rutaAudio").getValue().toString();
+                            int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
+                            //falta meter todo en una rray
+                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso)); */
+                        }
+                        enviarIntento(coordinadas);
+                    }
+
+                });
+
+
+
             }
         });
 
@@ -175,12 +208,18 @@ public class AmosarAvistadas extends AppCompatActivity {
                         cargarFilas(dende, ata);
                     }
                 }
-
-
             }
         });
 
+    }
 
+    public void enviarIntento(ArrayList<Coordenadas> coordinadas) {
+
+        Intent amosarAvisGPS = new Intent(getApplicationContext(), Mapa.class);
+        amosarAvisGPS.putExtra("amosarAvistamentos", true);
+
+        amosarAvisGPS.putParcelableArrayListExtra("avistamentosGPS", coordinadas);
+        startActivity(amosarAvisGPS);
     }
 
 
@@ -232,7 +271,6 @@ public class AmosarAvistadas extends AppCompatActivity {
                         if (!dirAudio.equalsIgnoreCase("")) {
                             if (xep!=null){
                                 descargarAudioFireBase(dirAudio, xep.getXenero(), xep.getEspecie());
-
 
                             }
                                 else {

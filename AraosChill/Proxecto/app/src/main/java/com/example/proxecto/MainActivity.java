@@ -71,14 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button map = findViewById(R.id.mapa);
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    Intent activityMapa = new Intent(getApplicationContext(), Mapa.class);
-                    startActivity(activityMapa);
-            }
-        });
+
 
         Button avistadas =findViewById(R.id.todosAvistamentos);
 

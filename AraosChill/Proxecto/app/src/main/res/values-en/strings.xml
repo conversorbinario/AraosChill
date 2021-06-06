@@ -92,7 +92,7 @@
     <string name="fot">Photo</string>
 
     <string name="tituloprocura">Search</string>
-    <string name="buscarCon">Search for town </string>
+    <string name="buscarCon">Show in map</string>
     <string name="buscarXen">Search for genre </string>
     <string name="buscarTipoPlumaxe">Search for pluamge type </string>
     <string name="gravaAudio">Uplodad a record before </string>
@@ -102,6 +102,9 @@
     <string name="indivAvis">This register already exists! </string>
 
     <string name="introAuto">Automatically introduce your place</string>
+    <string name="formatoCoordenadas">Incorrect coordinates number format</string>
+    <string name="coordenadasBaleiras">Empty coordinates values</string>
+    <string name="sair">Exit</string>
 
     <string name="seleccione">Choose one </string>
     <string name="inRex">Previously sighted individual </string>

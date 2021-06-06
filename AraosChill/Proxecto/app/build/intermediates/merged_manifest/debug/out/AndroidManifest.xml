@@ -56,11 +56,11 @@
         <activity
             android:name="com.example.proxecto.VellosAvistamento"
             android:noHistory="true" />
-        <activity
-            android:name="com.example.proxecto.Avistamentos"
-            android:noHistory="true" />
+        <activity android:name="com.example.proxecto.Avistamentos" />
         <activity android:name="com.example.proxecto.AmosarTodas" />
-        <activity android:name="com.example.proxecto.AxudaIdentificacion" />
+        <activity
+            android:name="com.example.proxecto.AxudaIdentificacion"
+            android:noHistory="true" />
         <activity android:name="com.example.proxecto.Rexistro" />
         <activity android:name="com.example.proxecto.MainActivity" />
 

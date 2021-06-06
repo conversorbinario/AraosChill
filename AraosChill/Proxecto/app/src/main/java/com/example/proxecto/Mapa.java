@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,14 +24,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PointOfInterest;
 import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.net.FetchPlaceRequest;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Mapa extends AppCompatActivity implements LocationListener, OnMapReadyCallback {
 
@@ -64,10 +59,15 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
         aceptar=findViewById(R.id.localizacionCorreta);
         cancelar = findViewById(R.id.localizacionIncorreta);
 
+
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mapaGoogleReal.setOnPoiClickListener(new GoogleMap.OnPoiClickListener() {
+                //a ver se vai google play
+
+                setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(lat), String.valueOf(lonx), null}));
+                 finish();
+               /* mapaGoogleReal.setOnPoiClickListener(new GoogleMap.OnPoiClickListener() {
                     @Override
                     public void onPoiClick(@NonNull PointOfInterest pointOfInterest) {
 
@@ -82,7 +82,7 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
                             Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_LONG).show();
                         });
                     }
-                });
+                }); */
 
 
             }
@@ -94,6 +94,9 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
                 finish();
             }
         });
+
+
+
     }
 
 
@@ -176,26 +179,33 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
 
     }
 
-    public void amosaPuntosAvistamento() {
+    public void amosaPuntosAvistamento( ArrayList<Coordenadas> cord) {
        // 42.26711147, -8.78709151
         if (mapaGoogleReal != null) {
-            double[][] lonxLat = new double[][]{{42.26711147, -8.78709151}, {42.20711147, -8.78709151}, {42.26711147, -8.801}};
             LatLng posicion = null;
-            for (int i = 0; i < lonxLat.length; i++) {
-                posicion = new LatLng(lonxLat[i][0], lonxLat[i][1]);
-                if (mapaGoogleReal != null) {
-                    mapaGoogleReal.addMarker(new MarkerOptions()
+            for (int i = 0; i < cord.size(); i++) {
+                try {
+                    double lat = Double.parseDouble(cord.get(i).getLatitude());
+                    double lonx = Double.parseDouble(cord.get(i).getLonxitude());
 
-                            //.position(mapaGoogleReal.getCameraPosition().target)
-                            .position(posicion)
+                    posicion = new LatLng(lat, lonx);
+                    if (mapaGoogleReal != null) {
+                        mapaGoogleReal.addMarker(new MarkerOptions()
+
+                                //.position(mapaGoogleReal.getCameraPosition().target)
+                                .position(posicion)
 
 
-                            .snippet("Avistador " + posicion)
+                                .snippet("Avistador " + posicion)
 
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.arrowsmall)));
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.arrowsmall)));
+                    }
+                }catch(Exception e){
+
+                    //por se lat/lonx esta baleiro
                 }
             }
-            mapaGoogleReal.moveCamera(CameraUpdateFactory.newLatLngZoom(posicion, 10));
+            mapaGoogleReal.moveCamera(CameraUpdateFactory.newLatLngZoom(posicion, 2));
         }
     }
 
@@ -217,6 +227,16 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
                     .snippet("Manuel González " + mapaGoogleReal.getCameraPosition().target.toString())
 
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.arrowsmall)));
+        }
+
+        boolean amosarAvis=getIntent().getBooleanExtra("amosarAvistamentos", false);
+
+        if (amosarAvis){
+            aceptar.setVisibility(View.GONE);
+            cancelar.setText(R.string.sair);
+            ArrayList<Coordenadas> coordenadas=getIntent().getParcelableArrayListExtra("avistamentosGPS");
+
+            amosaPuntosAvistamento(coordenadas);
         }
        // amosaPuntosAvistamento();
 
