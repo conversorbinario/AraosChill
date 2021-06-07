@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -166,6 +165,7 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
+
     public long add_xen_taxon(Xenero_taxon xenTax) {
         ContentValues valores = new ContentValues();
         valores.put("XENERO", xenTax.getXenero());
@@ -263,6 +263,72 @@ public class Db extends SQLiteOpenHelper {
     ////select X.XENERO,TA.ESPECIE from TIPO_AVE as TA join  XENERO_TAXON as X on TA.XENERO= x.ID_XENERO  WHERE TA.ID_AVE IN (SELECT ESPECIE FROM INDIVIDUOS WHERE ID_INDIVIDUO IN (SELECT INDIVIDUO FROM AVISTAMENTO_INDIVIDUOS))
     ////select X.XENERO,TA.ESPECIE from TIPO_AVE as TA join  XENERO_TAXON as X on TA.XENERO= x.ID_XENERO where TA.ID_AVE in (SELCT ESPECIE FROM INDIVIDUO WHERE ID_INDIVIDUO in (SELECT))
 
+    public String[] getEspecies(){
+        String [] especies;
+
+
+        Cursor cursor = db.rawQuery("select count(distinct especie) from tipo_ave", null);
+        int total = 0;
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+
+        cursor = db.rawQuery("select distinct especie from tipo_ave", null);
+
+        especies = new String[total];
+        int i =0;
+        if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
+            while (!cursor.isAfterLast()) {
+
+                String xenero = cursor.getString(0);
+                especies[i]=xenero;
+                i++;
+                cursor.moveToNext();
+            }
+
+        }
+        cursor.close();
+
+
+        return especies;
+
+
+
+    }
+
+    public String[] getXeneros(){
+
+        String [] xeneros;
+
+
+        Cursor cursor = db.rawQuery("select count(id_xenero) from xenero_taxon", null);
+        int total = 0;
+        if (cursor.moveToFirst()) {
+             total = cursor.getInt(0);
+        }
+        cursor.close();
+
+        cursor = db.rawQuery("select xenero from XENERO_TAXON", null);
+
+        xeneros = new String[total];
+        int i =0;
+        if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
+            while (!cursor.isAfterLast()) {
+
+                String xenero = cursor.getString(0);
+                xeneros[i]=xenero;
+                i++;
+                cursor.moveToNext();
+            }
+
+        }
+        cursor.close();
+
+
+        return xeneros;
+
+    }
 
 
     public ArrayList<Avistamento> getTodosAvistamentos() {

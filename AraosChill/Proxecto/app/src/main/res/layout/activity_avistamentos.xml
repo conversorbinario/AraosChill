@@ -64,7 +64,6 @@
                 android:hint="@string/lonxitude" />
         </LinearLayout>
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,15 +77,13 @@
             android:calendarViewShown="false"
             android:datePickerMode="spinner" />
 
-
-
         <Button
             android:text="@string/seguinte"
             android:id="@+id/continuar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
-
+            android:visibility="gone"
             android:text="@string/velloAvistamento"
             android:id="@+id/velloAvistamento"
             android:layout_width="wrap_content"

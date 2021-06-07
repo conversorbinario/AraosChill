@@ -29,7 +29,7 @@ public class FotoFrag extends DialogFragment {
          image = (ImageView) alertView.findViewById(R.id.imaxeFB);
 
 
-        image.setMaxHeight(R.dimen.sizeSpinner);
+        image.setMaxHeight(R.dimen.imageWidthMax);
         image.setMaxWidth(R.dimen.imageWidthMax);
         image.setImageBitmap(BitmapFactory.decodeFile(pathAmosar));
 

@@ -28,10 +28,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-
-
-                    <EditText
-
+                    <AutoCompleteTextView
+                        android:completionThreshold="3"
                         android:id="@+id/xeneroEd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -39,8 +37,8 @@
                         android:hint="@string/hinXenero"
                         android:inputType="textCapWords" />
 
-                    <EditText
-
+                    <AutoCompleteTextView
+                        android:completionThreshold="3"
                         android:id="@+id/especie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

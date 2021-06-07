@@ -107,6 +107,8 @@ public class AmosarTodas extends AppCompatActivity {
             }
         });
 
+
+
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +133,12 @@ public class AmosarTodas extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    public void buscarXenEsp(String xen, String esp){
+
+
 
     }
 

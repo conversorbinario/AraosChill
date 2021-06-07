@@ -12,6 +12,8 @@ import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -53,8 +55,8 @@ public class Rexistro extends AppCompatActivity {
     Button comeAgain;
     Button foto;
     Button audio;
-    EditText xenero;
-    EditText especie;
+    AutoCompleteTextView xenero;
+    AutoCompleteTextView especie;
     EditText peso;
     EditText tamanho;
     Spinner sp_plumaxe;
@@ -87,6 +89,20 @@ public class Rexistro extends AppCompatActivity {
         reprAudio = findViewById(R.id.reproAud);
         sp_plumaxe = findViewById(R.id.plumaxe);
         sexoAv = findViewById(R.id.sexo);
+
+        final String [] xeneros=  MainActivity.bb_dd.getXeneros();
+        final String [] especies  = MainActivity.bb_dd.getEspecies();
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, xeneros);
+        xenero.setAdapter(adapter);
+
+        ArrayAdapter<String> adapterEsp = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, especies);
+
+        especie.setAdapter(adapterEsp);
+
 
         comeAgain = findViewById(R.id.comeAgain);
 

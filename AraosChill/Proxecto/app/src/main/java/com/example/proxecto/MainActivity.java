@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             inputstream.close();
             outputstream.flush();
             outputstream.close();
-            Toast.makeText(getApplicationContext(), "BASE DE DATOS COPIADA", Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), "BASE DE DATOS COPIADA", Toast.LENGTH_LONG).show();
             bb_dd = new Db(getApplicationContext());
             bb_dd.getReadableDatabase();
         } catch (IOException e) {
