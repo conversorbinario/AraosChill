@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/camposEspXen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <AutoCompleteTextView
+        android:hint="@string/hinXenero"
+        android:id="@+id/xeneroId"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="wrap_content" />
+
+    <AutoCompleteTextView
+        android:hint="@string/hinEspecie"
+        android:id="@+id/especieID"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/cancelarID"
+
+            android:layout_alignParentBottom="true"
+            android:text="@string/cancelar"
+            android:backgroundTint="@color/common_google_signin_btn_text_dark_disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/aceptarID"
+            android:layout_alignParentBottom="true"
+
+            android:layout_alignParentRight="true"
+            android:text="@string/aceptar"
+            android:backgroundTint="@color/quantum_lightgreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

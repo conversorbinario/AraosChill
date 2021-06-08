@@ -48,10 +48,13 @@ public class AmosarAvistadas extends AppCompatActivity {
     ArrayList<IndividuoFB> avistadasFB;
     ArrayList<Avis_Esp> avis = new ArrayList<Avis_Esp>();
 
+    private boolean identificar=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amosar_avistadas);
+        identificar= getIntent().getBooleanExtra("identificar", false);
 
         cocnello = findViewById(R.id.buscarConcello);
         amosarMapa = findViewById(R.id.edPorConcello);
@@ -72,6 +75,11 @@ public class AmosarAvistadas extends AppCompatActivity {
                         for (DataSnapshot individuo : dataSnapshot.getChildren()) {
                             //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
                             int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
+                            //es decir, si nos ponemos en modo identificar y especie ha sido identificado, no la añadimos al array
+                            //  (ene ste modo solo nos interesan las que NO estan identificadas)
+
+                            if (identificar && esp!=0)
+                                continue;
                             String sexo = individuo.child("sexo").getValue().toString();
                             String plumaxe = individuo.child("plumaxe").getValue().toString();
                             String rutaFoto = individuo.child("rutaFoto").getValue().toString();
@@ -248,12 +256,16 @@ public class AmosarAvistadas extends AppCompatActivity {
                 }
                 //amosamos nome
 
-                tv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                if (identificar){
+                    tv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
-                    }
-                });
+                        }
+                    });
+                }
+
+
                 fila.addView(tv);
                 Button canto = new Button(getApplicationContext());
                 // b.setTag(xenero + " " + especie);

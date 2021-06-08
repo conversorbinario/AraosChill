@@ -38,50 +38,9 @@ public class AxudaIdentificacion extends AppCompatActivity {
 
             }
         });
-
         identificar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                avis = bb_dd.getAvis_indivCTod();
-                avistadasFB = new ArrayList<>();
-                DatabaseReference myRef = database.getReference("Individuo");
-                myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                    @Override
-                    public void onSuccess(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot individuo : dataSnapshot.getChildren()) {
-                            //public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
-                            int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
-                            String sexo = individuo.child("sexo").getValue().toString();
-                            String plumaxe = individuo.child("plumaxe").getValue().toString();
-                            String rutaFoto = individuo.child("rutaFoto").getValue().toString();
-                            String rutaAudio = individuo.child("rutaAudio").getValue().toString();
-                            int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
-                            //falta meter todo en una rray
-                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso));
-                        }
-                        long totalAmos = dataSnapshot.getChildrenCount();
-                        if (totalAmos == 0) {
-                            Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
-
-                        } else {
-
-                            if (totalAmos % 5 != 0) {
-                                numViews = ((int) totalAmos / 5) + 1;
-
-                            } else {
-                                numViews = ((int) totalAmos / 5);
-                            }
-
-                            totAv.setText(getResources().getString(R.string.cero) + totalAmos);
-                            if (ata > totalAmos) {
-                                cargarFilas(dende, (int) totalAmos);
-                            } else {
-                                cargarFilas(dende, ata);
-                            }
-
-                        }
-                    }
-                });
+            public void onClick(View v) {
 
             }
         });

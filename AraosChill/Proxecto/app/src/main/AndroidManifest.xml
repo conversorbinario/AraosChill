@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proxecto">
-        <activity android:name=".Mapa"></activity>
+        <activity android:name=".FormularioIdentificacion"></activity>
+        <activity android:name=".Mapa" />
         <activity
             android:name=".inicioProcessing"
             android:noHistory="true">
@@ -31,13 +32,13 @@
         <activity
             android:name=".VellosAvistamento"
             android:noHistory="true" />
-        <activity
-            android:name=".Avistamentos"
-            />
+        <activity android:name=".Avistamentos" />
         <activity android:name=".AmosarTodas" />
-        <activity android:name=".AxudaIdentificacion" android:noHistory="true" />
+        <activity
+            android:name=".AxudaIdentificacion"
+            android:noHistory="true" />
         <activity android:name=".Rexistro" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

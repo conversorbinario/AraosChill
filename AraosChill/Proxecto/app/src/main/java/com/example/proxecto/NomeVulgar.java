@@ -79,20 +79,7 @@ public class NomeVulgar extends DialogFragment {
             }
         });
 
-       /* AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                .setTitle("Imaxe")
-                .setView(image)
-                .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                            dismiss();
-                    }
-                });
 
-
-        return builder.create();        TextView tv2 = (TextView) alertView.findViewById(R.id.sexoI);
-
-        */
         return  builder.create();
 
     }
