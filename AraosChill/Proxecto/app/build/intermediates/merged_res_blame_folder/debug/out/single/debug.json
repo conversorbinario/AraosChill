@@ -1,19 +1,23 @@
 [
     {
-        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/drawable-v24_arrowsmall.png.flat",
-        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable-v24/arrowsmall.png"
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_vellos_avistamento.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_vellos_avistamento.xml"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_amosar_todas.xml.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_amosar_todas.xml"
     },
     {
-        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_activity_vellos_avistamento.xml.flat",
-        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/activity_vellos_avistamento.xml"
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/drawable-v24_arrowsmall.png.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/drawable-v24/arrowsmall.png"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_formulario_identificar.xml.flat",
+        "source": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/res/layout/formulario_identificar.xml"
     },
     {
         "merged": "/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/res/merged/debug/layout_dialogo_info.xml.flat",

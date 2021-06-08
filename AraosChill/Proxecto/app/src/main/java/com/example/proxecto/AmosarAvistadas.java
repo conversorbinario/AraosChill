@@ -63,6 +63,7 @@ public class AmosarAvistadas extends AppCompatActivity {
         totAv = findViewById(R.id.totalAvis);
 
 
+
         todas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,13 +81,14 @@ public class AmosarAvistadas extends AppCompatActivity {
 
                             if (identificar && esp!=0)
                                 continue;
+                            String clave = individuo.getKey();
                             String sexo = individuo.child("sexo").getValue().toString();
                             String plumaxe = individuo.child("plumaxe").getValue().toString();
                             String rutaFoto = individuo.child("rutaFoto").getValue().toString();
                             String rutaAudio = individuo.child("rutaAudio").getValue().toString();
                             int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
                             //falta meter todo en una rray
-                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso));
+                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso, clave));
                         }
                         long totalAmos = dataSnapshot.getChildrenCount();
                         if (totalAmos == 0) {
@@ -255,14 +257,26 @@ public class AmosarAvistadas extends AppCompatActivity {
 
                 }
                 //amosamos nome
+                if (identificar) {
+                    tv.setTag(avistadasFB.get(i).getClave());
+                    if (identificar) {
+                        tv.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String clave_indiv = (String) tv.getTag();
+                                FragmentManager fm = getSupportFragmentManager();
 
-                if (identificar){
-                    tv.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
+                                FormularioIdentificacion fi = new FormularioIdentificacion();
 
-                        }
-                    });
+                                fi.setClaveIndiv(clave_indiv);
+                                fi.setCancelable(false);
+
+                                fi.show(fm, "identificar");
+
+
+                            }
+                        });
+                    }
                 }
 
 
@@ -342,7 +356,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                 ra.setElementoReproducir(finalLocalFile1.getAbsolutePath());
                 ra.setXenero(xenero);
                 ra.setEspecie(especie);
-                ra.setCancelable(false);
+
 
                 ra.show(fm, "Reproducindo");
             }

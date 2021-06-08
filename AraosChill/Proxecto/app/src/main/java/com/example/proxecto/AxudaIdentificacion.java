@@ -4,17 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-
-import java.util.ArrayList;
-
-import static com.example.proxecto.MainActivity.bb_dd;
 
 public class AxudaIdentificacion extends AppCompatActivity {
 
@@ -38,10 +29,13 @@ public class AxudaIdentificacion extends AppCompatActivity {
 
             }
         });
+
         identificar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
+                Intent amosarNonIdentificadas = new Intent(getApplicationContext(), AmosarAvistadas.class);
+                amosarNonIdentificadas.putExtra("identificar", true);
+                startActivity(amosarNonIdentificadas);
             }
         });
 

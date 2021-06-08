@@ -1,17 +1,19 @@
 package com.example.proxecto;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.fragment.app.DialogFragment;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FormularioIdentificacion extends DialogFragment {
 
@@ -21,6 +23,11 @@ public class FormularioIdentificacion extends DialogFragment {
     Button cancelar;
     Button aceptar;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    DatabaseReference myRef = database.getReference("Individuo");
+
+    private String claveIndiv;
 
 
     public Dialog onCreateDialog(Bundle savedInstanceState){
@@ -28,7 +35,7 @@ public class FormularioIdentificacion extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        View alertView = LayoutInflater.from(getContext()).inflate(R.layout.info_especie, null);
+        View alertView = LayoutInflater.from(getContext()).inflate(R.layout.formulario_identificar, null);
         xenero = alertView.findViewById(R.id.xeneroId);
         especie = alertView.findViewById(R.id.especieID);
         cancelar = alertView.findViewById(R.id.cancelarID);
@@ -48,9 +55,52 @@ public class FormularioIdentificacion extends DialogFragment {
 
         especie.setAdapter(adapterEsp);
 
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
 
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String xener= String.valueOf(xenero.getText());
+                String specie = String.valueOf(especie.getText());
+                try {
+                    if (!MainActivity.bb_dd.existeXenero(xener)) {
+                        Toast.makeText(getContext(), R.string.nonXen, Toast.LENGTH_LONG).show();
+                        return;
+
+                    } else {
+                        int pk_xenero = MainActivity.bb_dd.getIdTaxon(specie);
+                        if (!MainActivity.bb_dd.existeEspecie(specie, pk_xenero)) {
+                            Toast.makeText(getContext(), R.string.nonSp, Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }
+                    int especie = MainActivity.bb_dd.getIdEspecie(xener, specie);
+
+                    DatabaseReference islandRef = myRef.child("Individuo/"+especie+"/especie");
+                    islandRef.setValue(especie);
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         //builder.show();
         return builder.create();
+    }
+
+    public String getClaveIndiv() {
+        return claveIndiv;
+    }
+
+    public void setClaveIndiv(String claveIndiv) {
+        this.claveIndiv = claveIndiv;
     }
 }

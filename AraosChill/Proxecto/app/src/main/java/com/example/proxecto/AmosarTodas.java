@@ -214,11 +214,8 @@ public class AmosarTodas extends AppCompatActivity {
 
 
                    }
-
-
                 }
             });
-
 
         }
 

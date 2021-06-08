@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
 MERGED from [com.google.android.libraries.places:places:2.4.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/3fc4170a7d931066d98175bdb9d38ef1/jetified-places-2.4.0/AndroidManifest.xml:2:1-23:12
 MERGED from [com.google.android.gms:play-services-location:18.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/d90c6c950325ac8869669dd3b01d6e20/jetified-play-services-location-18.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] /home/manuel/.gradle/caches/transforms-2/files-2.1/47dc19604ad9ded2465ff83c95031273/jetified-play-services-maps-17.0.1/AndroidManifest.xml:17:1-44:12
@@ -68,20 +68,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/manuel/.gradle/cach
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/2c57ca5c5cb33722ba8060cd1e094990/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
-INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
 	package
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-62:12
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:1-63:12
 		INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:2:11-69
@@ -132,7 +132,7 @@ ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/a
 	android:name
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:10:22-78
 application
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:13:5-60:19
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:13:5-61:19
 MERGED from [com.google.android.libraries.places:places:2.4.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/3fc4170a7d931066d98175bdb9d38ef1/jetified-places-2.4.0/AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.android.libraries.places:places:2.4.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/3fc4170a7d931066d98175bdb9d38ef1/jetified-places-2.4.0/AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.android.gms:play-services-location:18.0.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/d90c6c950325ac8869669dd3b01d6e20/jetified-play-services-location-18.0.0/AndroidManifest.xml:7:5-20
@@ -207,88 +207,92 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/manuel/.gradle/ca
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:14:9-35
 	android:theme
 		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:19:9-46
+activity#com.example.proxecto.FormularioIdentificacion
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:9-71
+	android:name
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:19-59
 activity#com.example.proxecto.Mapa
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:9-51
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:21:9-42
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:20:19-39
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:21:19-39
 activity#com.example.proxecto.inicioProcessing
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:21:9-29:20
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:22:9-30:20
 	android:noHistory
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:23:13-37
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:24:13-37
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:22:13-45
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:23:13-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:24:13-28:29
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:17-77
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:28:27-74
 activity#com.example.proxecto.AmosarAvistadas
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:9-53
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:9-53
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:30:19-50
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:19-50
 activity#com.example.proxecto.VellosAvistamento
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:31:9-33:40
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:9-34:40
 	android:noHistory
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:33:13-37
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:32:13-46
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:33:13-46
 activity#com.example.proxecto.Avistamentos
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:34:9-36:15
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:9-50
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:13-41
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:35:19-47
 activity#com.example.proxecto.AmosarTodas
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:9-49
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:9-49
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:19-46
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:36:19-46
 activity#com.example.proxecto.AxudaIdentificacion
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:9-82
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:37:9-39:40
 	android:noHistory
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:55-79
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:19-54
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:38:13-48
 activity#com.example.proxecto.Rexistro
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:9-46
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:40:9-46
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:39:19-43
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:40:19-43
 activity#com.example.proxecto.MainActivity
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:40:9-59
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:41:9-50
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:40:19-47
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:41:19-47
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:42:9-44:71
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:43:9-45:71
 	android:value
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:44:13-68
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:45:13-68
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:43:13-58
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:44:13-58
 meta-data#com.google.android.gms.version
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:45:9-47:69
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:46:9-48:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/b55b9a229f2f09f47cd1fcb0cfdb02a7/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.5.0] /home/manuel/.gradle/caches/transforms-2/files-2.1/b55b9a229f2f09f47cd1fcb0cfdb02a7/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:47:13-66
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:48:13-66
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:46:13-58
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:47:13-58
 provider#androidx.core.content.FileProvider
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:49:9-59:20
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:50:9-60:20
 	android:grantUriPermissions
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:53:13-47
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:54:13-47
 	android:authorities
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:51:13-64
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:52:13-64
 	android:exported
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:52:13-37
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:50:13-62
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:51:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:56:13-58:54
+ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:57:13-59:54
 	android:resource
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:58:17-51
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:59:17-51
 	android:name
-		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:57:17-67
+		ADDED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml:58:17-67
 uses-sdk
 INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/src/main/AndroidManifest.xml

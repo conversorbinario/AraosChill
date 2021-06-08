@@ -5,6 +5,7 @@ public class IndividuoFB {
 
     //vamos a guardar la PK de la bases de datos LOCAL para mejorar el rendimiento
     private int especie;
+    private String clave;
 
     private String tipoPlumaxe;
     private int wingspan;
@@ -25,6 +26,14 @@ public class IndividuoFB {
         this.peso = peso;
     }
 
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
     public String getTipoPlumaxe() {
         return tipoPlumaxe;
     }
@@ -41,6 +50,8 @@ public class IndividuoFB {
         this.wingspan = wingspan;
     }
 
+
+
     public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
         this.especie = especie;
         this.sexo = sexo;
@@ -50,14 +61,19 @@ public class IndividuoFB {
         this.peso = peso;
     }
 
-    public IndividuoFB( String rutaFoto, String rutaAudio, String plumaxe, int peso) {
+
+    public IndividuoFB(int especie, String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso, String clave) {
         this.especie = especie;
         this.sexo = sexo;
         this.rutaFoto = rutaFoto;
         this.rutaAudio = rutaAudio;
         this.plumaxe = plumaxe;
         this.peso = peso;
+        this.clave=clave;
     }
+
+
+
     public IndividuoFB( String sexo, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
         this.especie = especie;
         this.sexo = sexo;
@@ -68,14 +84,6 @@ public class IndividuoFB {
     }
 
 
-    public IndividuoFB(int especie, String rutaFoto, String rutaAudio, String plumaxe, int peso) {
-        this.especie = especie;
-        this.sexo = sexo;
-        this.rutaFoto = rutaFoto;
-        this.rutaAudio = rutaAudio;
-        this.plumaxe = plumaxe;
-        this.peso = peso;
-    }
 
     public int getEspecie() {
         return especie;

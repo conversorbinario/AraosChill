@@ -1896,6 +1896,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id aceptar
+id aceptarID
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1933,7 +1934,9 @@ id bottom
 id buscarConcello
 id buscarTodas
 id buttonPanel
+id camposEspXen
 id cancel_button
+id cancelarID
 id center
 id center_horizontal
 id center_vertical
@@ -1980,6 +1983,7 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id especie
+id especieID
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2244,6 +2248,7 @@ id withText
 id wrap
 id wrap_content
 id xeneroEd
+id xeneroId
 id zoaNomeVulgar
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2330,6 +2335,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialogo_info
+layout formulario_identificar
 layout info_especie
 layout inicioprocessing
 layout mapa
