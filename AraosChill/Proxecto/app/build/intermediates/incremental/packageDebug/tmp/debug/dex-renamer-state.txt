@@ -1,7 +1,7 @@
-#Tue Jun 08 19:54:15 CEST 2021
-base.0=/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+#Wed Jun 09 13:20:27 CEST 2021
+base.0=C\:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/home/manuel/Desktop/ProxectoGitLab/a19manuelgp/AraosChill/Proxecto/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+base.1=C\:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex

@@ -12,6 +12,7 @@
 
     <string name="novoRexistro">New register</string>
     <string name="foto">Photo</string>
+    <string name="identificado">Identified</string>
 
     <string name="escoitar">Birdsong</string>
     <string name="audioNonTopado">No audio for this species</string>

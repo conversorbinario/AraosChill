@@ -31,7 +31,7 @@ import static com.example.proxecto.MainActivity.bb_dd;
 
 public class AmosarAvistadas extends AppCompatActivity {
 
-    ImageView cocnello;
+    ImageView botonAmosarMapa;
     TableLayout taboa;
     int numViews;
     TextView totAv;
@@ -48,21 +48,24 @@ public class AmosarAvistadas extends AppCompatActivity {
     ArrayList<IndividuoFB> avistadasFB;
     ArrayList<Avis_Esp> avis = new ArrayList<Avis_Esp>();
 
-    private boolean identificar=false;
+    private boolean identificar = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amosar_avistadas);
-        identificar= getIntent().getBooleanExtra("identificar", false);
+        identificar = getIntent().getBooleanExtra("identificar", false);
 
-        cocnello = findViewById(R.id.buscarConcello);
+        botonAmosarMapa = findViewById(R.id.buscarConcello);
         amosarMapa = findViewById(R.id.edPorConcello);
         todas = findViewById(R.id.buscarTodas);
         taboa = (TableLayout) findViewById(R.id.tabAvist);
         totAv = findViewById(R.id.totalAvis);
 
-
+        if (identificar){
+            amosarMapa.setVisibility(View.GONE);
+            botonAmosarMapa.setVisibility(View.GONE);
+        }
 
         todas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                 avis = bb_dd.getAvis_indivCTod();
                 avistadasFB = new ArrayList<>();
                 DatabaseReference myRef = database.getReference("Individuo");
+                int[] tot = new int[1];
                 myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
                     @Override
                     public void onSuccess(DataSnapshot dataSnapshot) {
@@ -78,8 +82,8 @@ public class AmosarAvistadas extends AppCompatActivity {
                             int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
                             //es decir, si nos ponemos en modo identificar y especie ha sido identificado, no la añadimos al array
                             //  (ene ste modo solo nos interesan las que NO estan identificadas)
-
-                            if (identificar && esp!=0)
+                            // si y solo si esp no identificada, esp=0
+                            if (identificar && esp != 0)
                                 continue;
                             String clave = individuo.getKey();
                             String sexo = individuo.child("sexo").getValue().toString();
@@ -89,11 +93,11 @@ public class AmosarAvistadas extends AppCompatActivity {
                             int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
                             //falta meter todo en una rray
                             avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso, clave));
+                            tot[0] = tot[0] + 1;
                         }
-                        long totalAmos = dataSnapshot.getChildrenCount();
+                        long totalAmos = tot[0];
                         if (totalAmos == 0) {
                             Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
-
                         } else {
 
                             if (totalAmos % 5 != 0) {
@@ -103,7 +107,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                                 numViews = ((int) totalAmos / 5);
                             }
 
-                            totAv.setText(getResources().getString(R.string.cero) + totalAmos);
+                            totAv.setText(getResources().getString(R.string.cero) + " " + totalAmos);
                             if (ata > totalAmos) {
                                 cargarFilas(dende, (int) totalAmos);
                             } else {
@@ -116,7 +120,7 @@ public class AmosarAvistadas extends AppCompatActivity {
 
             }
         });
-        cocnello.setOnClickListener(new View.OnClickListener() {
+        botonAmosarMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                /* String concS = String.valueOf(conc.getText());
@@ -166,7 +170,7 @@ public class AmosarAvistadas extends AppCompatActivity {
                                 String latitude = avistamento.child("latitude").getValue().toString();
                                 String lonxitude = avistamento.child("lonxitude").getValue().toString();
                                 coordinadas.add(new Coordenadas(latitude, lonxitude));
-                            }catch (Exception e){
+                            } catch (Exception e) {
 
                                 //se esta baleiro, entra na excepcion e sigue iterando
                             }
@@ -183,7 +187,6 @@ public class AmosarAvistadas extends AppCompatActivity {
                     }
 
                 });
-
 
 
             }
@@ -247,9 +250,9 @@ public class AmosarAvistadas extends AppCompatActivity {
                     int numEsp = avistadasFB.get(i).getEspecie();
                     ;
                     Xenero_Especie xe = bb_dd.getXeneroEspecieFB(numEsp);
-                    if (xe!=null)
-                    tv.setText(xe.getXenero() + " " + xe.getEspecie());
-                    else{
+                    if (xe != null)
+                        tv.setText(xe.getXenero() + " " + xe.getEspecie());
+                    else {
                         tv.setText(R.string.ufo);
                     }
                 } catch (StringIndexOutOfBoundsException e) {
@@ -258,27 +261,25 @@ public class AmosarAvistadas extends AppCompatActivity {
                 }
                 //amosamos nome
                 if (identificar) {
+
                     tv.setTag(avistadasFB.get(i).getClave());
-                    if (identificar) {
-                        tv.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                String clave_indiv = (String) tv.getTag();
-                                FragmentManager fm = getSupportFragmentManager();
+                    tv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String clave_indiv = (String) tv.getTag();
+                            FragmentManager fm = getSupportFragmentManager();
 
-                                FormularioIdentificacion fi = new FormularioIdentificacion();
+                            FormularioIdentificacion fi = new FormularioIdentificacion();
 
-                                fi.setClaveIndiv(clave_indiv);
-                                fi.setCancelable(false);
+                            fi.setClaveIndiv(clave_indiv);
+                            fi.setCancelable(false);
 
-                                fi.show(fm, "identificar");
+                            fi.show(fm, "identificar");
 
+                        }
+                    });
 
-                            }
-                        });
-                    }
                 }
-
 
                 fila.addView(tv);
                 Button canto = new Button(getApplicationContext());
@@ -291,22 +292,18 @@ public class AmosarAvistadas extends AppCompatActivity {
                 canto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        IndividuoFB indi = (IndividuoFB)canto.getTag();
+                        IndividuoFB indi = (IndividuoFB) canto.getTag();
                         String dirAudio = indi.getRutaAudio();
-                Xenero_Especie xep = bb_dd.getXeneroEspecieFB(indi.getEspecie());
+                        Xenero_Especie xep = bb_dd.getXeneroEspecieFB(indi.getEspecie());
                         if (!dirAudio.equalsIgnoreCase("")) {
-                            if (xep!=null){
+                            if (xep != null) {
                                 descargarAudioFireBase(dirAudio, xep.getXenero(), xep.getEspecie());
-
-                            }
-                                else {
+                            } else {
                                 descargarAudioFireBase(dirAudio, "", "");
                             }
                         } else {
-
                             Toast.makeText(getApplicationContext(), R.string.audioNonTopado, Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
                 fila.addView(foto);
@@ -317,28 +314,22 @@ public class AmosarAvistadas extends AppCompatActivity {
                 foto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                       // String dirFoto = (String) foto.getTag();
+                        // String dirFoto = (String) foto.getTag();
                         IndividuoFB dirFoto = (IndividuoFB) foto.getTag();
                         if (dirFoto != null) {
                             descargarFotoFirebase(dirFoto);
-
                         }
-
                     }
                 });
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
     public void descargarAudioFireBase(String ruta, String xenero, String especie) {
 
-
-        StorageReference islandRef = storageRef.child("audios/"+ruta+".mp3");
+        StorageReference islandRef = storageRef.child("audios/" + ruta + ".mp3");
 
         File localFile = null;
         try {
@@ -357,7 +348,6 @@ public class AmosarAvistadas extends AppCompatActivity {
                 ra.setXenero(xenero);
                 ra.setEspecie(especie);
 
-
                 ra.show(fm, "Reproducindo");
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -368,12 +358,11 @@ public class AmosarAvistadas extends AppCompatActivity {
         });
     }
 
-   // public void descargarFotoFirebase(String ruta) {
-     public void descargarFotoFirebase(IndividuoFB individuo) {
+    // public void descargarFotoFirebase(String ruta) {
+    public void descargarFotoFirebase(IndividuoFB individuo) {
 
-
-       // StorageReference islandRef = storageRef.child("imagenes/"+ruta);
-         StorageReference islandRef = storageRef.child("imagenes/"+individuo.getRutaFoto());
+        // StorageReference islandRef = storageRef.child("imagenes/"+ruta);
+        StorageReference islandRef = storageRef.child("imagenes/" + individuo.getRutaFoto());
 
         File localFile = null;
         try {
