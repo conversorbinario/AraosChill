@@ -32,7 +32,6 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/cancelarID"
-
             android:layout_alignParentBottom="true"
             android:text="@string/sair"
             android:backgroundTint="@color/common_google_signin_btn_text_dark_disabled"
@@ -42,19 +41,12 @@
         <Button
             android:id="@+id/aceptarID"
             android:layout_alignParentBottom="true"
-
             android:layout_alignParentRight="true"
             android:text="@string/aceptar"
             android:backgroundTint="@color/quantum_lightgreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
-
         </Button>
-
-
     </RelativeLayout>
-
-
 
 </RelativeLayout>

@@ -29,6 +29,10 @@ public class VellosAvistamento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vellos_avistamento);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         seleccionado = findViewById(R.id.avistamentoSelec);
         avistamentoSelec = findViewById(R.id.seleccionadoAvis);
         lvSelecion = findViewById(R.id.avistamentosVellos);

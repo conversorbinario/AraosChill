@@ -18,8 +18,6 @@ public class Tipo_ave {
     }
 
 
-
-
     public String getXeneroString() {
         return xeneroString;
     }

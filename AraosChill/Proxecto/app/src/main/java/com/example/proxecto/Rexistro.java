@@ -80,6 +80,10 @@ public class Rexistro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rexistro);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         foto = findViewById(R.id.foto);
         xenero = findViewById(R.id.xeneroEd);
         tamanho = findViewById(R.id.tamanho);

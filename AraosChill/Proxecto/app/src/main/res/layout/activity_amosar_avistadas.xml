@@ -4,8 +4,6 @@
     android:layout_height="wrap_content">
 
 
-
-
     <TextView
         android:text="@string/buscarCon"
         android:id="@+id/edPorConcello"

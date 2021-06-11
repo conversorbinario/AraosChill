@@ -4,7 +4,9 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -28,10 +30,14 @@ import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Mapa extends AppCompatActivity implements LocationListener, OnMapReadyCallback {
 
 
+    Geocoder geo;
+    String nomeVila="";
+    String lugar="";
     LocationManager locManager;
     private MapFragment googleMap;
     private double lonx, lat;
@@ -43,6 +49,8 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        geo=new Geocoder(getApplicationContext());
         // Initialize the SDK
         Places.initialize(getApplicationContext(), "AIzaSyBe_4P9qIEGawh_P9ANfAtcEp6jVsJzLkk");
 
@@ -65,25 +73,8 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
             public void onClick(View view) {
                 //a ver se vai google play
 
-                setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(lat), String.valueOf(lonx), null}));
+                setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(lat), String.valueOf(lonx), lugar, nomeVila}));
                  finish();
-               /* mapaGoogleReal.setOnPoiClickListener(new GoogleMap.OnPoiClickListener() {
-                    @Override
-                    public void onPoiClick(@NonNull PointOfInterest pointOfInterest) {
-
-                        final String placeId= pointOfInterest.placeId;
-                        final List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
-                        final FetchPlaceRequest request = FetchPlaceRequest.newInstance(placeId, placeFields);
-                        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
-                            Place place = response.getPlace();
-
-                            setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(lat), String.valueOf(lonx), place.getName()}));
-                        }).addOnFailureListener((exception) -> {
-                            Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_LONG).show();
-                        });
-                    }
-                }); */
-
 
             }
         });
@@ -206,6 +197,8 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
                 }
             }
             mapaGoogleReal.moveCamera(CameraUpdateFactory.newLatLngZoom(posicion, 2));
+
+
         }
     }
 
@@ -227,6 +220,16 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
                     .snippet("Manuel González " + mapaGoogleReal.getCameraPosition().target.toString())
 
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.arrowsmall)));
+
+            try {
+                List<Address> direccions = geo.getFromLocation(lat, lonx, 1);
+
+                Address dir =direccions.get(0);
+                nomeVila=dir.getLocality();
+                lugar=dir.getThoroughfare();
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(), R.string.nonDir, Toast.LENGTH_LONG).show();
+            }
         }
 
         boolean amosarAvis=getIntent().getBooleanExtra("amosarAvistamentos", false);

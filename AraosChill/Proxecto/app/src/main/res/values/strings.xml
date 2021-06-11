@@ -46,7 +46,11 @@
     <string name="formatoCoordenadas">Formato numerico coordenadas incorrecto</string>
     <string name="coordenadasBaleiras">Coordenadas baleiras</string>
     <string name="sair">Sair</string>
-
+    <string name="mantenPulsad">Mantén pulsado para engadir o nome que utilices na túa zoa para a especie</string>
+    <string name="aindaNon">Aínda non se rexistraron outros nomes para </string>
+    <string name="tamenCh">Tamén chamado... </string>
+<string name="nome">Nome</string>
+    <string name="ou">Ou cobre os campos a continuación</string>
     <string name="permission">Precísase permiso, téntao de novo</string>
     <string name="aceptar">Insertar</string>
     <string name="cancelar">Cancelar</string>
@@ -55,6 +59,7 @@
     <string name="lonxitude">Lonxitude</string>
     <string name="latitude">Latitude</string>
     <string name="introAuto">Introducir dirección automáticamente</string>
+    <string name="nonDir">Non se puido localizar a dirección completa a partir das coordenadas GPS</string>
 
     <string name="identificacion">Identificar aves rexistradas</string>
     <string name="deter">Deter Audio</string>

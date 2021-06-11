@@ -31,6 +31,7 @@
     <EditText
         android:backgroundTint="@color/lightGrey"
         android:textColor="@color/black"
+        android:textColorHint="@color/white"
         android:visibility="gone"
         android:layout_below="@+id/iniciarSes"
         android:id="@+id/usuario"
@@ -43,7 +44,9 @@
     <EditText
         android:backgroundTint="@color/lightGrey"
 
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+
         android:visibility="gone"
 
         android:inputType="textPassword"
@@ -73,7 +76,9 @@
 
     <EditText
         android:backgroundTint="@color/lightGrey"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+
         android:visibility="gone"
         android:layout_below="@+id/iniciarSes"
         android:id="@+id/novoUsuario"
@@ -82,8 +87,9 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:backgroundTint="@color/lightGrey"
+        android:textColorHint="@color/white"
 
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:visibility="gone"
 
         android:inputType="textPassword"
@@ -94,8 +100,9 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:backgroundTint="@color/lightGrey"
+        android:textColorHint="@color/white"
 
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:visibility="gone"
 
         android:inputType="textPassword"

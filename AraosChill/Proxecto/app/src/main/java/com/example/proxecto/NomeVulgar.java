@@ -62,21 +62,26 @@ public class NomeVulgar extends DialogFragment {
             String xen = String.valueOf(xenEsp.getText());
                 final boolean[] semaforo = {true};
                     DatabaseReference fillo = myRef.child(String.valueOf(xen));
-                    fillo.child("nome").setValue(String.valueOf(nomeEsp.getText()));
-                   // fillo.setValue(String.valueOf(nomeEsp.getText()) + " " + String.valueOf(xenEsp.getText()));
+
+                DatabaseReference myRef2= fillo.push();
+                String pk = myRef.getKey();
+                AreaNome an = new AreaNome( String.valueOf(nomeZoa.getText()), String.valueOf(nomeEsp.getText()));
+                myRef2.setValue(an);
+                   // fillo.child("nome").setValue(String.valueOf(nomeEsp.getText()));
+
                 Toast.makeText(getActivity().getApplicationContext(), R.string.gardado, Toast.LENGTH_LONG).show();
 
-                fillo.addValueEventListener(new ValueEventListener() {
+               /* fillo.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                fillo.child("area").setValue(String.valueOf(nomeZoa.getText()));
+
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
-                    });
+                    }); */
 
 
             }

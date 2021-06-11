@@ -9,12 +9,14 @@
     <string name="outros">More actions </string>
     <string name="hintSitio">Mass Lake, Tamesis River, Anapurna...</string>
     <string name="hintCocello">Town\'s name</string>
+    <string name="mantenPulsad">Hold down the button to add a local name for the species</string>
 
     <string name="novoRexistro">New register</string>
     <string name="foto">Photo</string>
     <string name="identificado">Identified</string>
-
-    <string name="escoitar">Birdsong</string>
+    <string name="ou">Or manually fill the fields below</string>
+    <string name="nonDir">Full address could not be retrieved from the GPS coordinates</string>
+    <string name="escoitar">Listen</string>
     <string name="audioNonTopado">No audio for this species</string>
     <string name="erroDescargando">Error downloading</string>
     <string name="erroDatos">Error downloading data</string>
@@ -37,10 +39,15 @@
     <string name="hinXenero">Genre</string>
     <string name="usuario">Introduce usuer</string>
     <string name="password">Introduce password</string>
-<string name="aceptado">Aceptar</string>
+    <string name="nome">Name</string>
+
+    <string name="aceptado">Aceptar</string>
     <string name="permission">Permission needed. Try again</string>
     <string name="aceptar">Insert</string>
-    <string name="identificacion">Identify preivous sightings</string>
+    <string name="identificacion">Identify previous sightings</string>
+    <string name="aindaNon">No other common names for the specie </string>
+    <string name="tamenCh">Also called... </string>
+
     <string name="deter">Stop Audio</string>
     <string name="cantoDe">Birdsing of </string>
     <string name="concelloBaleiro">Town is empty </string>

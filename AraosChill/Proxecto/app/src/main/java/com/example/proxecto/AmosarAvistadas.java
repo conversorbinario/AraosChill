@@ -54,6 +54,10 @@ public class AmosarAvistadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amosar_avistadas);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         identificar = getIntent().getBooleanExtra("identificar", false);
 
         botonAmosarMapa = findViewById(R.id.buscarConcello);
@@ -72,6 +76,7 @@ public class AmosarAvistadas extends AppCompatActivity {
             public void onClick(View view) {
                 avis = bb_dd.getAvis_indivCTod();
                 avistadasFB = new ArrayList<>();
+
                 DatabaseReference myRef = database.getReference("Individuo");
                 int[] tot = new int[1];
                 myRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
@@ -123,39 +128,7 @@ public class AmosarAvistadas extends AppCompatActivity {
         botonAmosarMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* String concS = String.valueOf(conc.getText());
 
-                if (concS.equalsIgnoreCase("")) {
-                    Toast.makeText(getApplicationContext(), R.string.campobaleiro, Toast.LENGTH_LONG).show();
-
-                } else {
-                    avis = bb_dd.getAvis_indivCon(concS);
-                    if (avis.size() == 0) {
-
-                        Toast.makeText(getApplicationContext(), R.string.nonSeTop, Toast.LENGTH_LONG).show();
-
-                    } else {
-                        int totalAmos = avis.size();
-                        if (totalAmos % 5 != 0) {
-                            numViews = (totalAmos / 5) + 1;
-
-                        } else {
-                            numViews = (totalAmos / 5);
-                        }
-
-                        totAv.setText(getResources().getString(R.string.cero) + totalAmos);
-                        if (ata > totalAmos) {
-                            cargarFilas(dende, totalAmos);
-                        } else {
-                            cargarFilas(dende, ata);
-                        }
-
-
-                    }
-
-
-                }
-                */
                 ArrayList<Coordenadas> coordinadas = new ArrayList<>();
 
 
@@ -174,14 +147,7 @@ public class AmosarAvistadas extends AppCompatActivity {
 
                                 //se esta baleiro, entra na excepcion e sigue iterando
                             }
-                          /*  int esp = Integer.parseInt(individuo.child("especie").getValue().toString());
-                            String sexo = individuo.child("sexo").getValue().toString();
-                            String plumaxe = individuo.child("plumaxe").getValue().toString();
-                            String rutaFoto = individuo.child("rutaFoto").getValue().toString();
-                            String rutaAudio = individuo.child("rutaAudio").getValue().toString();
-                            int peso = Integer.parseInt(individuo.child("peso").getValue().toString());
-                            //falta meter todo en una rray
-                            avistadasFB.add(new IndividuoFB(esp, sexo, rutaFoto, rutaAudio, plumaxe, peso)); */
+
                         }
                         enviarIntento(coordinadas);
                     }
@@ -223,6 +189,8 @@ public class AmosarAvistadas extends AppCompatActivity {
                 }
             }
         });
+
+        todas.performClick();
 
     }
 

@@ -2,6 +2,7 @@ package com.example.proxecto;
 
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,8 +17,15 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,17 +54,31 @@ public class AmosarTodas extends AppCompatActivity {
     int numViews;
     EditText et;
     private boolean fotoSacada=false;
+    boolean subir_nome_esp=false;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
     int numVista=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amosar_todas);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         iv = findViewById(R.id.ir);
         todasEspecies = new ArrayList<Xenero_Especie>();
         todasEspecies=MainActivity.bb_dd.getTodoXeneroEspecie();
       /*  todasEspecies = new ArrayList<Tipo_ave>();
         todasEspecies = MainActivity.bb_dd.getTodasEspecies(); */
+        Intent inte = getIntent();
+
+         subir_nome_esp=inte.getBooleanExtra("actividade", false);
+         if (subir_nome_esp){
+
+             Toast.makeText(getApplicationContext(), R.string.mantenPulsad,Toast.LENGTH_LONG).show();
+         }
         int numEspecies = todasEspecies.size();
         et=findViewById(R.id.numVista);
         if (numEspecies%10!=0){
@@ -85,8 +107,6 @@ public class AmosarTodas extends AppCompatActivity {
                     cargarFilas(dende, ata);
                     numVista--;
                     et.setHint(numVista + "/"+numViews);
-
-
                 }
 
             }
@@ -101,7 +121,6 @@ public class AmosarTodas extends AppCompatActivity {
                     cargarFilas(dende, ata);
                     numVista++;
                     et.setHint(numVista + "/"+numViews);
-
                 }
 
             }
@@ -136,15 +155,11 @@ public class AmosarTodas extends AppCompatActivity {
 
     }
 
-    public void buscarXenEsp(String xen, String esp){
-
-
-
-    }
 
     public void cargarFilas(int dende, int ata){
         for (int i = dende; i <= ata; i++) {
             TableRow fila = new TableRow(getApplicationContext());
+
             taboa.addView(fila);
             String especie = todasEspecies.get(i).getEspecie();
             //int pkXenero =todasEspecies.get(i).getXenero();
@@ -152,20 +167,21 @@ public class AmosarTodas extends AppCompatActivity {
             //amosamos nome
 
             String xenero = todasEspecies.get(i).getXenero();
+
             TextView tv = new TextView(getApplicationContext());
-            tv.setHeight(25);
+            tv.setWidth(80);
+            tv.setMinLines(3);
             tv.setText(xenero + " " + especie);
             tv.setTextColor(getResources().getColor(R.color.darkBlue));
             tv.setPaintFlags(tv.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
-            Intent inte = getIntent();
+            //Intent inte = getIntent();
 
-            boolean subir_nome_esp=inte.getBooleanExtra("actividade", false);
+           // boolean subir_nome_esp=inte.getBooleanExtra("actividade", false);
 
             if (subir_nome_esp) {
                 tv.setTag( xenero + " " + especie);
-                tv.setBackground(getDrawable(R.drawable.border_text_view));
-
+                tv.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
                 tv.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
@@ -175,7 +191,6 @@ public class AmosarTodas extends AppCompatActivity {
                         String xen_esp=(String)tv.getTag();
                         nv.setEspecieRenomear(xen_esp);
                         nv.show(fm, "nomeEspecie");
-                        Toast.makeText(getApplicationContext(), "LONGO", Toast.LENGTH_SHORT).show();
                         return true;
                     }
                 });
@@ -217,9 +232,54 @@ public class AmosarTodas extends AppCompatActivity {
                 }
             });
 
+            Button verNom = new Button(getApplicationContext());
+            verNom.setText(R.string.tamenCh);
+            verNom.setTag(xenero + " " + especie);
+            fila.addView(verNom);
+
+            verNom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String xeneroEsp = (String) verNom.getTag();
+                    DatabaseReference myRef = database.getReference("Especie_nome/"+xeneroEsp);
+                    myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                          if (snapshot.getChildrenCount()==0){
+                                estaBaleiro(xeneroEsp);
+                          }else{
+                              ArrayList<AreaNome> nomesAreas=new ArrayList();
+                              for (DataSnapshot especieNome:snapshot.getChildren()){
+                                  String area = (String) especieNome.child("area").getValue();
+                                  String nome = (String) especieNome.child("nome").getValue();
+                                  nomesAreas.add(new AreaNome(area, nome));
+
+                              }
+                              FragmentManager fm = getSupportFragmentManager();
+                              DialogAmosarNomesArea nv = new DialogAmosarNomesArea();
+                              nv.setCancelable(false);
+                              String xen_esp=(String)tv.getTag();
+                              nv.setAreaNomes(nomesAreas);
+                              nv.show(fm, "nomeEspecie");
+                          }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }
+            });
         }
 
     }
+
+    public void estaBaleiro(String sp){
+            Toast.makeText(getApplicationContext(), getString(R.string.aindaNon) + " " + sp, Toast.LENGTH_LONG).show();
+    }
+
 
     public String procesarJsonGetUrl(){
         String urlAudioCompleta=null;
@@ -236,7 +296,6 @@ public class AmosarTodas extends AppCompatActivity {
 
             urlAudioCompleta = "https:"+urlAudio;
             Log.i("probaJson", urlAudio);
-
 
         } catch(Exception e){
 
@@ -307,7 +366,6 @@ public class AmosarTodas extends AppCompatActivity {
             ra.show(fm, "Proba");
 
         }
-
 
     }
 }

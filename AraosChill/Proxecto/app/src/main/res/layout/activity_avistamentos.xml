@@ -4,90 +4,116 @@
     android:layout_height="match_parent"
     android:background="@color/lighter_blue">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
         <Button
-            android:backgroundTint="@color/purple_200"
-            android:text="@string/introAuto"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
             android:id="@+id/gpsMapa"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_200"
+            android:text="@string/introAuto" />
+        <TextView
+            android:gravity="center"
+            android:text="@string/ou"
+            android:layout_below="@+id/gpsMapa"
+            android:id="@+id/ouor"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/subtitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lugarAvistamento"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/lugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintSitio" />
-
-        <EditText
-            android:id="@+id/concello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintCocello" />
-
-        <TextView
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:id="@+id/gps"
+        <View
+            android:layout_below="@id/ouor"
+            android:id="@+id/barraSep"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GPS"
-            android:textColor="@color/black" />
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/darker_gray"/>
 
-
-        <LinearLayout
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@id/barraSep"
+            android:layout_marginTop="10px"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <EditText
-                android:layout_weight="1"
-                android:id="@+id/lonxitude"
+            <TextView
+                android:id="@+id/subtitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/latitude" />
+                android:text="@string/lugarAvistamento"
+                android:textColor="@color/black" />
 
             <EditText
-                android:layout_weight="1"
-
-                android:id="@+id/latitude"
+                android:id="@+id/lugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/lonxitude" />
+                android:hint="@string/hintSitio" />
+
+            <EditText
+                android:id="@+id/concello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintCocello" />
+
+            <TextView
+                android:id="@+id/gps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GPS"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/lonxitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/latitude" />
+
+                <EditText
+                    android:id="@+id/latitude"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/lonxitude" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dataAvistamento"
+                android:textColor="@color/black" />
+
+            <DatePicker
+                android:id="@+id/dataAvistamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
+
+            <Button
+                android:id="@+id/continuar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seguinte" />
+
+            <Button
+                android:id="@+id/velloAvistamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/velloAvistamento"
+                android:visibility="gone" />
+
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dataAvistamento"
-            android:textColor="@color/black" />
-
-        <DatePicker
-            android:id="@+id/dataAvistamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
-
-        <Button
-            android:text="@string/seguinte"
-            android:id="@+id/continuar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:visibility="gone"
-            android:text="@string/velloAvistamento"
-            android:id="@+id/velloAvistamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

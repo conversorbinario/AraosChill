@@ -1820,6 +1820,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable icon
+drawable logo
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1927,6 +1928,7 @@ id audio
 id auto
 id avistamentoSelec
 id avistamentosVellos
+id barraSep
 id barrier
 id beginning
 id blocking
@@ -2027,6 +2029,7 @@ id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id latitude
+id layoutPaiTaboa
 id layoutScro
 id layoutSketch
 id left
@@ -2089,6 +2092,7 @@ id novoUsuario
 id numVista
 id off
 id on
+id ouor
 id outline
 id outros
 id packed
@@ -2190,6 +2194,7 @@ id submit_area
 id subtitulo
 id tabAvist
 id tabMode
+id taboaNomeArea
 id taboa_dinamica
 id taboa_nova
 id tag_accessibility_actions
@@ -2318,6 +2323,7 @@ layout activity_axuda_identificacion
 layout activity_main
 layout activity_rexistro
 layout activity_vellos_avistamento
+layout amosar_area_nome
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2398,6 +2404,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw places_keep
@@ -2432,6 +2439,7 @@ string aceptado
 string aceptar
 string aceptarMapa
 string act
+string aindaNon
 string amosar
 string app_explanation
 string app_name
@@ -2528,6 +2536,7 @@ string latitude
 string lonxitude
 string lugarAvistamento
 string lugarBaleiro
+string mantenPulsad
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
@@ -2563,14 +2572,17 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string next
+string nome
 string nomeUsuarioRepetido
 string nomesComuns
+string nonDir
 string nonSeTop
 string nonSp
 string nonTP
 string nonXen
 string nonseSubiu
 string novoRexistro
+string ou
 string outros
 string pDom
 string password
@@ -2606,6 +2618,7 @@ string sexoP
 string sexoSp
 string status_bar_notification_info_overflow
 string tamanhoP
+string tamenCh
 string tipoPlum
 string tituloprocura
 string todasAves

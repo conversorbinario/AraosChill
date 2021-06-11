@@ -32,6 +32,12 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avistamentos);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
         lugar = findViewById(R.id.lugar);
         concello = findViewById(R.id.concello);
         dp = findViewById(R.id.dataAvistamento);
@@ -132,8 +138,9 @@ public class Avistamentos extends AppCompatActivity implements Serializable {
             String []lonxlat=data.getStringArrayExtra("lonxlat");
             latitude.setText(String.valueOf(lonxlat[0]));
             lonxitue.setText(String.valueOf(lonxlat[1]));
+            lugar.setText(String.valueOf(lonxlat[2]));
+            concello.setText(String.valueOf(lonxlat[3]));
            // Toast.makeText(getApplicationContext(), lonxlat[2], Toast.LENGTH_LONG).show();
-
 
         }
     }

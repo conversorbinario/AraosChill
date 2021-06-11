@@ -4,6 +4,10 @@
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_axuda_identificacion.xml.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\layout\\activity_axuda_identificacion.xml"
     },
@@ -30,6 +34,14 @@
     {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_amosar_avistadas.xml.flat",
@@ -76,6 +88,10 @@
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_amosar_todas.xml.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\layout\\activity_amosar_todas.xml"
     },
@@ -104,6 +120,10 @@
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\drawable\\border_text_view.xml"
     },
     {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -112,12 +132,20 @@
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_amosar_area_nome.xml.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\layout\\amosar_area_nome.xml"
+    },
+    {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\USUARIO I\\Desktop\\ProxectoGitLab2\\a19manuelgp\\AraosChill\\Proxecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_info_especie.xml.flat",
