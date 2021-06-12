@@ -105,29 +105,6 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
-   /* FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-    DatabaseReference myRef = database.getReference("usuarios");
-                    myRef.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot snapshot) {
-            for (DataSnapshot sp : snapshot.getChildren() ){
-                if (sp.getKey().equals(nomeUsuario) && sp.getValue().equals(passw)){
-                    Intent activityPrincipal = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(activityPrincipal);
-                    return;
-                }
-
-            }
-            Toast.makeText(getApplicationContext(), R.string.usuarioContra, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
-    }); */
-
 
 
 
@@ -413,33 +390,6 @@ public class Db extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<Avis_Esp> getAvis_indivCon(String concello) {
-        //select  AV.CONCELLO, AV.NOME_SITIO, AV.DATA, I.ID_INDIVIDUO, AI.FOTO, AI.AUDIO from AVISTAMENTO_INDIVIDUOS as AI inner join INDIVIDUOS as I on AI.INDIVIDUO=I.ID_INDIVIDUO inner join AVISTAMENTOS as AV on AV.ID_AVISTAMENTO=AI.AVISTAMENTO where AV.NOME_SITIO="cangas"
-        //select  AV.CONCELLO, AV.NOME_SITIO, AV.DATA, I.ID_INDIVIDUO, AI.FOTO, AI.AUDIO from AVISTAMENTO_INDIVIDUOS as AI inner join INDIVIDUOS as I on AI.INDIVIDUO=I.ID_INDIVIDUO inner join AVISTAMENTOS as AV on AV.ID_AVISTAMENTO=AI.AVISTAMENTO where AV.NOME_SITIO="cangas"
-        concello = concello.toLowerCase();
-        ArrayList<Avis_Esp> avis_esp = new ArrayList<Avis_Esp>();
-        int id_xenero = -1;
-        Cursor cursor = db.rawQuery("select  AV.CONCELLO, AV.NOME_SITIO, AV.DATA, I.ID_INDIVIDUO, AI.FOTO, AI.AUDIO from AVISTAMENTO_INDIVIDUOS as AI inner join INDIVIDUOS as I on AI.INDIVIDUO=I.ID_INDIVIDUO inner join AVISTAMENTOS as AV on AV.ID_AVISTAMENTO=AI.AVISTAMENTO where AV.CONCELLO=?", new String[]{concello});
-
-
-        if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
-            while (!cursor.isAfterLast()) {
-                String conce = cursor.getString(0);
-                String nomeSitio = cursor.getString(1);
-                String data = cursor.getString(2);
-                int idINdiv = cursor.getInt(3);
-                String xen_esp = getXeneroEspecie(idINdiv);
-                String dir_foto = cursor.getString(4);
-                String dir_audio = cursor.getString(5);
-                avis_esp.add(new Avis_Esp(conce, nomeSitio, data, xen_esp, dir_foto, dir_audio));
-                cursor.moveToNext();
-            }
-
-        }
-        cursor.close();
-        return avis_esp;
-    }
-
 
 
     public ArrayList<Avis_Esp> getAvis_indivCTod() {
@@ -518,16 +468,6 @@ public class Db extends SQLiteOpenHelper {
 
 
 
-    public long addAvistamento(Avistamento av) throws Exception {
-        ContentValues valores = new ContentValues();
-        valores.put("DATA", av.getData());
-        valores.put("NOME_SITIO", av.getNome_sitio().toLowerCase());
-        valores.put("CONCELLO", av.getConcello().toLowerCase());
-        valores.put("HORA", av.getHora());
-        long id = db.insertOrThrow("AVISTAMENTOS", null, valores);
-        valores.clear();
-        return id;
-    }
 
     public String addAvistamentoFB(AvistamentoFB av) throws Exception {
 
@@ -542,23 +482,6 @@ public class Db extends SQLiteOpenHelper {
 
 
 
-
-
-
-    /*public String addTipo_aveFB(Tipo_AveFB esp) throws Exception {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        DatabaseReference myRef = database.getReference("Tipo_Ave");
-
-        DatabaseReference myRef2= myRef.push();
-        String pk = myRef.getKey();
-        myRef2.setValue(esp);
-        return pk;
-
-    } */
-
-
-
     public String addAvisIndividuoFB(String pkIndividuo, String pkAvistamento) {
 
         DatabaseReference myRef = database.getReference("Individuos_Avistamentos/"+pkIndividuo+"/Lugar");
@@ -567,36 +490,6 @@ public class Db extends SQLiteOpenHelper {
         return "";
     }
 
-
-
-    public long addAvisIndividuio(long pk_avis, long pk_indiv, String rutaAudio, String rutfoto, int peso, String plumaxe) {
-        ContentValues valores = new ContentValues();
-        valores.put("AVISTAMENTO", pk_avis);
-        valores.put("INDIVIDUO", pk_indiv);
-        valores.put("FOTO", rutfoto);
-        valores.put("AUDIO", rutaAudio);
-        valores.put("PESO_GRAMOS", peso);
-        valores.put("plumaxe", plumaxe);
-        long id = db.insertOrThrow("AVISTAMENTO_INDIVIDUOS", null, valores);
-        valores.clear();
-        return id;
-
-    }
-
-
-    public long addIndividuo(Individuo pax, int idEspecie) throws Exception {
-        ContentValues valores = new ContentValues();
-        //pares nome_campo - valor_campo
-
-        valores.put("ESPECIE", idEspecie);
-        valores.put("SEXO", pax.getSexo());
-
-        //para que lance excepcións de ser preciso (p ex, against PK)
-        long id = db.insertOrThrow("INDIVIDUOS", null, valores);
-        valores.clear();
-        return id;
-
-    }
 
 
 
@@ -615,34 +508,6 @@ public class Db extends SQLiteOpenHelper {
     }
 
 
-    public long addIndividuo(Individuo pax) throws Exception {
-        ContentValues valores = new ContentValues();
-        //pares nome_campo - valor_campo
-        valores.put("SEXO", pax.getSexo());
-        valores.putNull("ESPECIE");
-
-        //para que lance excepcións de ser preciso (p ex, against PK)
-        long id = db.insertOrThrow("INDIVIDUOS", null, valores);
-        valores.clear();
-        return id;
-
-    }
-
-    public ArrayList<String> getXeneroAvistados() {
-        ArrayList<String> especies = new ArrayList<String>();
-
-        String xenero = "";
-        Cursor cursor = db.rawQuery("select XENERO from XENERO_TAXON where ID_XENERO in (select XENERO from TIPO_AVE)ORDER BY XENERO DESC", null);
-        if (cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                xenero = cursor.getString(0);
-                especies.add(xenero);
-            }
-        }
-        cursor.close();
-        return especies;
-
-    }
 
     public Xenero_Especie getXeneroEspecieFB(long claveIndiv){
         db = getReadableDatabase();
@@ -714,26 +579,6 @@ public class Db extends SQLiteOpenHelper {
 
         return especies;
 
-    }
-
-    public ArrayList<Tipo_ave> getTodasEspeciesAlf() {
-        ArrayList<Tipo_ave> especies = new ArrayList<Tipo_ave>();
-        Cursor cursor = db.rawQuery("select * from TIPO_AVE", null);
-
-        if (cursor.moveToFirst()) {                // Se non ten datos xa non entra
-            while (!cursor.isAfterLast()) {     // Quédase no bucle ata que remata de percorrer o cursor.
-                int id_ave = cursor.getInt(0);
-                String especie = cursor.getString(1);
-                int xenero = cursor.getInt(2);
-                Tipo_ave esp = new Tipo_ave(id_ave, xenero, especie);
-                especies.add(esp);
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
-
-
-        return especies;
     }
 
 

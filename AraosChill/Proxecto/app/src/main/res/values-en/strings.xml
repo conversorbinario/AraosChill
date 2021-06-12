@@ -10,6 +10,7 @@
     <string name="hintSitio">Mass Lake, Tamesis River, Anapurna...</string>
     <string name="hintCocello">Town\'s name</string>
     <string name="mantenPulsad">Hold down the button to add a local name for the species</string>
+    <string name="identi">Click on the bird you want to identify </string>
 
     <string name="novoRexistro">New register</string>
     <string name="foto">Photo</string>

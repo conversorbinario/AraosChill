@@ -67,6 +67,7 @@ public class AmosarAvistadas extends AppCompatActivity {
         totAv = findViewById(R.id.totalAvis);
 
         if (identificar){
+            Toast.makeText(getApplicationContext(), R.string.identi, Toast.LENGTH_LONG).show();
             amosarMapa.setVisibility(View.GONE);
             botonAmosarMapa.setVisibility(View.GONE);
         }

@@ -82,6 +82,8 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setResult(2, new Intent().putExtra("lonxlat", new String[]{String.valueOf(""), String.valueOf(""), "", ""}));
+
                 finish();
             }
         });

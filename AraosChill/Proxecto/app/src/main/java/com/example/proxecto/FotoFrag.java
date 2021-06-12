@@ -37,9 +37,18 @@ public class FotoFrag extends DialogFragment {
         TextView tv2 = (TextView) alertView.findViewById(R.id.sexoI);
         TextView tv3 = (TextView) alertView.findViewById(R.id.plumaxeI);
 
-        String wind = String.valueOf(individuo.getWingspan());
-        String plumaxe = individuo.getPlumaxe();
-        String sexo = individuo.getSexo();
+        String wind="";
+        String plumaxe="";
+        String sexo="";
+        try {
+             wind = String.valueOf(individuo.getWingspan());
+            plumaxe = individuo.getPlumaxe();
+            sexo = individuo.getSexo();
+        }catch(Exception e){
+
+
+        }
+
         tv.setText(" " + wind);
         tv2.setText(" " + sexo);
         tv3.setText(" " + plumaxe);

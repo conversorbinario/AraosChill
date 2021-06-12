@@ -96,6 +96,7 @@
     <string name="amosar">Ver </string>
     <string name="todosAv">Todos os avistamentos</string>
     <string name="fot">Foto </string>
+    <string name="identi">Fai clic sobre a ave que queres identificar </string>
 
     <string name="tituloprocura">Realizar Procura</string>
     <string name="buscarCon">Amosar no mapa </string>
